@@ -8,6 +8,7 @@ public class Game extends BasicGameState {
     private int id;
     private static GameContainer gc;
     private static StateBasedGame sbg;
+    Clipboard clipboard = new Clipboard();
 
     public Game(int id)
     {
@@ -26,7 +27,6 @@ public class Game extends BasicGameState {
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-
     }
 
     @Override
