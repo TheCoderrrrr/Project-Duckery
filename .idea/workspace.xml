@@ -5,10 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="Updated natives and hopefully allowed program to run">
-      <change afterPath="$PROJECT_DIR$/src/Clipboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/buttons/Button.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/ibxm.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/jinput.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/jnlp.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/jogg-0.0.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/jorbis-0.0.15.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/lwjgl.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/lwjgl_util.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/lwjgl_util_applet.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives-linux.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives-mac.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives-windows.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives/OpenAL32.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives/OpenAL64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives/jinput-dx8.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives/jinput-dx8_64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives/jinput-raw.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives/jinput-raw_64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives/lwjgl.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/natives/lwjgl64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/slick-examples.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/slick.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/tinylinepp.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Opening.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/Clipboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/MoneyManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/News.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/clipboard/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/clipboard/MiniManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/clipboard/MiniProgressBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/clipboard/ProgressBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/entities/Duck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/entities/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/entities/Machine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/entities/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/open/IntroAnimation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/open/TitleScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/natives.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/natives.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Clipboard.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,20 +76,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/Project-Duckery/.idea/libraries/natives&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/NS254/Downloads/Project-Duckery/src",
+    "onboarding.tips.debug.path": "C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\NS254\Downloads\Project-Duckery\src" />
+      <recent name="C:\Users\NS254\Downloads\Project-Duckery\libs" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,5 +124,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated natives and hopefully allowed program to run" />
     <option name="LAST_COMMIT_MESSAGE" value="Updated natives and hopefully allowed program to run" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/libs/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

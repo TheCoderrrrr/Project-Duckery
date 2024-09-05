@@ -3,7 +3,7 @@
     <CLASSES />
     <JAVADOC />
     <NATIVE>
-      <root url="file://D:/projects/Project-Duckery/.idea/libraries/natives" />
+      <root url="file://$PROJECT_DIR$/libs/natives" />
     </NATIVE>
     <SOURCES />
   </library>
