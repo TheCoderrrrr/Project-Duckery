@@ -6,8 +6,8 @@ import org.newdawn.slick.Graphics;
 
 public class Room {
 
-    final static int SIZE = 400;
-    final int DIST_FROM_LEFT = 20;
+    final static int SIZE = 200;
+    final int DIST_FROM_LEFT = 125;
     int x;
     int y;
     int numDucks;
@@ -21,14 +21,15 @@ public class Room {
         myFloor = floor;
         myRoom = number;
         x = DIST_FROM_LEFT + number*SIZE;
-        y = 400-floor*SIZE;
+        y = 4*SIZE-floor*SIZE;
         numDucks = 0;
+
 
     }
 
     public void render(Graphics g)
     {
-        if ( ( (myFloor+1)*(myRoom+1) ) %2 ==0 )
+        if ( ( myFloor+myRoom ) %2 ==0 )
         {
             myColor = (Color.white);
         }
@@ -39,7 +40,8 @@ public class Room {
         g.setColor(myColor);
         g.fillRect(x,y,SIZE,SIZE); // creates a square room at a given location
         g.setColor(Color.black);
-        g.drawString("Num Ducks: "+numDucks, x, y);
+        g.drawString("Num Ducks: "+numDucks+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
+                "\nmycolor:"+( (myFloor+myRoom)%2 == 0 ), x, y);
     }
 
     public void mousePressed(int button, int x, int y) {
@@ -56,6 +58,7 @@ public class Room {
         if (numDucks < 3) //sets maximum number of ducks to 3
         {
             numDucks ++;
+
         }
     }
 

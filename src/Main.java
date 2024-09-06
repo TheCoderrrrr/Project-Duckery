@@ -21,6 +21,8 @@ public class Main extends StateBasedGame {
         open = new Opening(OPEN_ID);
         game = new Game(GAME_ID);
 
+
+
     }
 
     public static int getScreenWidth() {

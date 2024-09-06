@@ -12,16 +12,20 @@ public class World {
     ArrayList<Room[]> rooms;
     ArrayList<Duck> ducks;
     MoneyManager wallet;
+    int currFloor;
+    int currRoom;
 
     public World(MoneyManager wallet)
     {
         rooms = new ArrayList<Room[]>();
+        rooms.add(new Room[4]);
         ducks = new ArrayList<Duck>();
 
         this.wallet = wallet;
 
-        Room[] room = {new Room(0,0), new Room(0,1), null, null};
-        rooms.add(room);
+
+        addRoom();
+
 
         wallet.setRooms(rooms);
 
@@ -30,6 +34,8 @@ public class World {
     public void render (Graphics g) {
         //makes the sky
         g.setBackground(Color.cyan);
+
+        g.setColor(Color.black);
 
         //makes the grass
         g.setColor(Color.green);
@@ -46,6 +52,16 @@ public class World {
                 }
             }
         }
+
+        if (currFloor < 3)
+        {
+            g.drawString("PRESS [1] to add room", 10,580);
+        }
+        else
+        {
+            g.drawString("PRESS [1] to add FLOOR!!!", 10,580);
+        }
+
     }
 
     public void update() {
@@ -53,6 +69,10 @@ public class World {
     }
 
     public void keyPressed(int key, char c) {
+        if ( c == '1')
+        {
+            addRoom();
+        }
 
 
 
@@ -74,6 +94,60 @@ public class World {
         }
     }
 
-    //public void addRoom()
+    public void addRoom(){
+
+        //adding a room on the same floor.
+        if(currFloor < 3)
+        {
+            rooms.getLast()[currRoom] = new Room(currFloor,currRoom);
+
+            if(spaceOnFloor())
+            {
+                currRoom++;
+
+            }
+            else
+            {
+                currFloor++;
+                currRoom = 0;
+
+                Room[] newFloor = new Room[4];
+                rooms.add(newFloor);
+                wallet.addFloor(currFloor, currRoom);
+            }
+
+
+        }
+        else //adding a new floor
+        {
+            currRoom = 0;
+            Room [] newFloor = new Room[4];
+            for (int i=0; i<newFloor.length; i++)
+            {
+                newFloor[i] = new Room(currFloor, currRoom);
+                currRoom++;
+            }
+            rooms.add(newFloor);
+            wallet.addFloor(currFloor,currRoom);
+            currFloor++;
+        }
+
+    }
+
+    //checks if there are 4 to a floor.
+    public boolean spaceOnFloor(){
+        int count = 0;
+        for(int i = 0; i<rooms.getLast().length; i++)
+        {
+            if (rooms.getLast() [i] != null)
+            {
+                count++;
+            }
+
+        }
+
+        return (count<4);
+
+    }
 
 }
