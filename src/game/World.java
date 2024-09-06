@@ -15,12 +15,21 @@ public class World {
     int currFloor;
     int currRoom;
 
+    private static int yDisplace;
+    
+    
+    private final int Y_SPEED = Room.SIZE;
+    private final double GROUND_CHANGE = 0.75;//changes the valyue of y-speed to make background look far
+    
+    
+    
+
     public World(MoneyManager wallet)
     {
         rooms = new ArrayList<Room[]>();
         rooms.add(new Room[4]);
         ducks = new ArrayList<Duck>();
-
+        yDisplace =0;
         this.wallet = wallet;
 
 
@@ -33,13 +42,20 @@ public class World {
 
     public void render (Graphics g) {
         //makes the sky
-        g.setBackground(Color.cyan);
+        if (yDisplace<-2000)
+        {
+            g.setBackground(Color.green);
+        }
+        else {
+            g.setBackground(Color.cyan);
+        }
+
 
         g.setColor(Color.black);
 
         //makes the grass
         g.setColor(Color.green);
-        g.fillRect(0, 700, 2000, 800);
+        g.fillRect(0, (int) (yDisplace*GROUND_CHANGE) +700, 2000, 2000);
 
         //draws the building
         for (Room[] r :rooms)
@@ -69,12 +85,39 @@ public class World {
     }
 
     public void keyPressed(int key, char c) {
-        if ( c == '1')
-        {
+        if (c == '1') {
             addRoom();
+        }
+        if (c == 'w' || c == 'W') {
+            yDisplace+= Y_SPEED;
+        }
+        if (c == 's' || c == 'S') {
+            yDisplace-= Y_SPEED;
         }
 
 
+    }
+
+    //ACCESSOR
+
+    public static int getYDisplace()
+    {
+        return yDisplace;
+    }
+
+    //checks if there are 4 to a floor.
+    public boolean spaceOnFloor(){
+        int count = 0;
+        for(int i = 0; i<rooms.getLast().length; i++)
+        {
+            if (rooms.getLast() [i] != null)
+            {
+                count++;
+            }
+
+        }
+
+        return (count<4);
 
     }
 
@@ -94,6 +137,7 @@ public class World {
         }
     }
 
+//mutator
     public void addRoom(){
 
         //adding a room on the same floor.
@@ -134,20 +178,6 @@ public class World {
 
     }
 
-    //checks if there are 4 to a floor.
-    public boolean spaceOnFloor(){
-        int count = 0;
-        for(int i = 0; i<rooms.getLast().length; i++)
-        {
-            if (rooms.getLast() [i] != null)
-            {
-                count++;
-            }
 
-        }
-
-        return (count<4);
-
-    }
 
 }

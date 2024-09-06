@@ -1,12 +1,13 @@
 package game.entities;
 
 
+import game.World;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
 public class Room {
 
-    final static int SIZE = 200;
+    final public static int SIZE = 200;
     final int DIST_FROM_LEFT = 125;
     int x;
     int y;
@@ -38,10 +39,10 @@ public class Room {
             myColor = Color.lightGray;
         }
         g.setColor(myColor);
-        g.fillRect(x,y,SIZE,SIZE); // creates a square room at a given location
+        g.fillRect(x, World.getYDisplace() + y,SIZE,SIZE); // creates a square room at a given location
         g.setColor(Color.black);
         g.drawString("Num Ducks: "+numDucks+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
-                "\nmycolor:"+( (myFloor+myRoom)%2 == 0 ), x, y);
+                "\nmycolor:"+( (myFloor+myRoom)%2 == 0 ), x, World.getYDisplace() + y);
     }
 
     public void mousePressed(int button, int x, int y) {
