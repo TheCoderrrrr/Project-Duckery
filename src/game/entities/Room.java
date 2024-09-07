@@ -72,6 +72,6 @@ public class Room {
     {
         //tells you if an x and y value is over the room
         return (x>=this.x && x<= (this.x + SIZE)
-                && y>= this.y && y<= (this.y + SIZE));
+                && y>= (this.y+World.getYDisplace()) && y<= (this.y+World.getYDisplace() + SIZE));
     }
 }

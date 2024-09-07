@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="added a room/floor-adding system">
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="added skuffed movement up &amp; down">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +41,9 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/Carnival (4)/Carnival",
+    "last_opened_file_path": "C:/Users/senmr/.jdks",
     "onboarding.tips.debug.path": "C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -84,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725588080587</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added skuffed movement up &amp; down">
+      <option name="closed" value="true" />
+      <created>1725592991270</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725592991270</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,7 +108,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated natives and hopefully allowed program to run" />
     <MESSAGE value="added a room/floor-adding system" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a room/floor-adding system" />
+    <MESSAGE value="added skuffed movement up &amp; down" />
+    <option name="LAST_COMMIT_MESSAGE" value="added skuffed movement up &amp; down" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
