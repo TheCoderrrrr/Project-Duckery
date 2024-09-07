@@ -3,7 +3,9 @@ package game;
 import game.entities.Duck;
 import game.entities.Room;
 import org.newdawn.slick.Color;
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Input;
 
 import java.util.ArrayList;
 
@@ -14,18 +16,21 @@ public class World {
     MoneyManager wallet;
     int currFloor;
     int currRoom;
+    GameContainer gc;
 
     private static int yDisplace;
     
     
-    private final int Y_SPEED = Room.SIZE;
+    private final int Y_SPEED = Room.SIZE/10;
     private final double GROUND_CHANGE = 0.75;//changes the valyue of y-speed to make background look far
     
     
     
 
-    public World(MoneyManager wallet)
+    public World(MoneyManager wallet, GameContainer gc)
     {
+
+        this.gc = gc;
         rooms = new ArrayList<Room[]>();
         rooms.add(new Room[4]);
         ducks = new ArrayList<Duck>();
@@ -81,6 +86,14 @@ public class World {
     }
 
     public void update() {
+        if (gc.getInput().isKeyDown(Input.KEY_UP)||gc.getInput().isKeyDown(Input.KEY_W))
+        {
+            yDisplace+=Y_SPEED;
+        }
+        else if (gc.getInput().isKeyDown(Input.KEY_DOWN)||gc.getInput().isKeyDown(Input.KEY_S))
+        {
+            yDisplace-=Y_SPEED;
+        }
 
     }
 
@@ -88,12 +101,7 @@ public class World {
         if (c == '1') {
             addRoom();
         }
-        if (c == 'w' || c == 'W') {
-            yDisplace+= Y_SPEED;
-        }
-        if (c == 's' || c == 'S') {
-            yDisplace-= Y_SPEED;
-        }
+
 
 
     }

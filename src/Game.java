@@ -33,7 +33,7 @@ public class Game extends BasicGameState {
 
         clipboard = new Clipboard();
         wallet = new MoneyManager();
-        world = new World(wallet);
+        world = new World(wallet, gc);
 
 
         gc.setShowFPS(true);
@@ -66,7 +66,6 @@ public class Game extends BasicGameState {
     {
         world.keyPressed(key,c);
         clipboard.keyPressed(key, c);
-        Main.getScreenHeight();
     }
     public void mousePressed(int button , int x, int y)
     {
