@@ -49,7 +49,6 @@ public class Game extends BasicGameState {
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
-
         world.update();
         clipboard.update();
         wallet.update();
@@ -71,5 +70,6 @@ public class Game extends BasicGameState {
     {
         world.mousePressed(button, x, y);
         clipboard.mousePressed(button, x, y);
+        System.out.println(x + " : " + y);
     }
 }

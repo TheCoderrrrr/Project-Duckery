@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class World {
 
     ArrayList<Room[]> rooms;
-    ArrayList<Duck> ducks;
+    public static ArrayList<Duck> ducks;
     MoneyManager wallet;
     int currFloor;
     int currRoom;
@@ -94,7 +94,16 @@ public class World {
         {
             yDisplace-=Y_SPEED;
         }
-
+        for (Room[] r :rooms)
+        {
+            for (int i = 0; i<=3; i++)
+            {
+                if (r[i] != null)
+                {
+                    r[i].update();
+                }
+            }
+        }
     }
 
     public void keyPressed(int key, char c) {
@@ -185,7 +194,5 @@ public class World {
         }
 
     }
-
-
 
 }
