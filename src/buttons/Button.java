@@ -1,6 +1,6 @@
 package buttons;
 
-public class Button {
+public abstract class Button {
     private int x;
     private int y;
     private int w;
@@ -25,6 +25,15 @@ public class Button {
         this.h = h;
     }
 
+    private boolean isMouseOver(int mX, int mY)
+    {
+        return (mX > x && mX < x + w && mY > y && mY < y + h);
+    }
+    public void mousePressed(int mX, int mY)
+    {
 
+    }
+
+    public abstract void onClick();
 
 }
