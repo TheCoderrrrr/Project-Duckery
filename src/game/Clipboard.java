@@ -1,15 +1,25 @@
 package game;
 
+import buttons.AdvertisingButton;
+import buttons.Button;
+import buttons.HiringButton;
+import buttons.ResearchingButton;
 import game.clipboard.MiniManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
+import java.util.ArrayList;
+
 public class Clipboard {
 
     MiniManager hire;
+    ArrayList<Button> buttons = new ArrayList<>();
 
     public Clipboard()
     {
+        buttons.add(new HiringButton(1150, 100));
+        buttons.add(new AdvertisingButton(1150, 450));
+        buttons.add(new ResearchingButton(1150, 800));
 
     }
 
@@ -18,14 +28,10 @@ public class Clipboard {
         g.setColor(Color.orange);
         g.fillRect(1100,70,700,900);
 
-        g.setColor(Color.magenta);
-        g.fillRect(1150,100, 100, 100);
-
-        g.setColor(Color.blue);
-        g.fillRect(1150, 450, 100, 100);
-
-        g.setColor(Color.darkGray);
-        g.fillRect(1150, 800, 100,100);
+        for(Button b: buttons)
+        {
+            b.render(g);
+        }
     }
 
     public void update() {
@@ -38,19 +44,9 @@ public class Clipboard {
 
     public void mousePressed(int button, int x, int y) {
 
-        if(button == 0 && x >= 1150 && x <= 1250 && y >= 110 && y <= 198)
+        for(Button b: buttons)
         {
-            System.out.println("Duck hired!");
-        }
-
-        if(button == 0 && x >= 1153 && x <= 1245 && y >= 455 && y <= 545)
-        {
-            System.out.println("Researching products..");
-        }
-
-        if(button == 0 && x >= 1154 && x <= 1245 && y >= 502 && y <= 889)
-        {
-            System.out.println("Advertising!!");
+            b.mousePressed(x, y);
         }
 
 
