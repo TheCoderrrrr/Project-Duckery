@@ -4,15 +4,16 @@ import game.World;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
+import core.Images;
 
-
-public class Duck extends Entity{
+public class Duck extends Entity {
     private Room room;
     public Duck(Room room)
     {
         super(room.x, room.y);
         this.room = room;
-        size = 60;
+        image = Images.DUC1;
+        size = image.getWidth();
 
     }
     public void render(Graphics g) {
@@ -20,7 +21,7 @@ public class Duck extends Entity{
         {
             System.out.println("OVERRR");
         }
-        g.fillRect(x, y + World.getYDisplace(), size, size );
+        g.drawImage(image, x, y + World.getYDisplace());
     }
 
     public void update() {
@@ -38,6 +39,6 @@ public class Duck extends Entity{
     {
         //tells you if an x and y value is over the duck
         return (x>=this.x && x<= (this.x + size)
-                && y>= this.y && y<= (this.y + size + World.getYDisplace()));
+                && y>= this.y + World.getYDisplace() && y<= (this.y + size + World.getYDisplace()));
     }
 }

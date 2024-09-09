@@ -1,3 +1,5 @@
+package core;
+
 import game.Clipboard;
 import game.World;
 import game.MoneyManager;
@@ -31,6 +33,7 @@ public class Game extends BasicGameState {
         this.gc = gc;
         this.sbg = sbg;
 
+        Images.loadImages();
         clipboard = new Clipboard();
         wallet = new MoneyManager();
         world = new World(wallet, gc);
