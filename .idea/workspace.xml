@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="expanded menu system-- can withdraw money and more items">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Duck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +40,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/Carnival (4)/Carnival",
+    "last_opened_file_path": "C:/Users/senmr/Downloads/9.10 - Project-Duckery - updatedmenu/Project-Duckery",
     "onboarding.tips.debug.path": "C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -88,7 +82,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725588080587</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="expanded menu system-- can withdraw money and more items">
+      <option name="closed" value="true" />
+      <created>1726009655417</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726009655417</updated>
+    </task>
+    <task id="LOCAL-00004" summary="expanded menu system-- can withdraw money and more items">
+      <option name="closed" value="true" />
+      <created>1726009697912</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726009697912</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
