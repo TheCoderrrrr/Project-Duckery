@@ -195,4 +195,15 @@ public class World {
 
     }
 
+    public void mouseWheelMoved(int newValue) {
+        if (newValue> 0)
+        {
+            yDisplace+=Y_SPEED;
+        }
+        if (newValue< 0)
+        {
+            yDisplace-=Y_SPEED;
+        }
+
+    }
 }

@@ -1,10 +1,14 @@
 package game;
 
-import buttons.AdvertisingButton;
-import buttons.Button;
-import buttons.HiringButton;
-import buttons.ResearchingButton;
+import game.clipboard.buttons.AdvertisingButton;
+import game.clipboard.buttons.Button;
+import game.clipboard.buttons.HiringButton;
+import game.clipboard.buttons.ResearchingButton;
 import game.clipboard.MiniManager;
+import game.clipboard.menus.AdvertisingMenu;
+import game.clipboard.menus.HiringMenu;
+import game.clipboard.menus.Menu;
+import game.clipboard.menus.ResearchMenu;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -14,12 +18,17 @@ public class Clipboard {
 
     MiniManager hire;
     ArrayList<Button> buttons = new ArrayList<>();
+    ArrayList<Menu> menus = new ArrayList<Menu>();
 
     public Clipboard()
     {
-        buttons.add(new HiringButton(1150, 100));
-        buttons.add(new AdvertisingButton(1150, 450));
-        buttons.add(new ResearchingButton(1150, 800));
+//        buttons.add(new HiringButton(1150, 100));
+//        buttons.add(new AdvertisingButton(1150, 450));
+//        buttons.add(new ResearchingButton(1150, 800));
+
+        menus.add(new HiringMenu());
+        menus.add(new AdvertisingMenu());
+        menus.add(new ResearchMenu());
 
     }
 
@@ -28,9 +37,9 @@ public class Clipboard {
         g.setColor(Color.orange);
         g.fillRect(1100,70,700,900);
 
-        for(Button b: buttons)
+        for(Menu m: menus)
         {
-            b.render(g);
+            m.render(g);
         }
     }
 
@@ -44,9 +53,9 @@ public class Clipboard {
 
     public void mousePressed(int button, int x, int y) {
 
-        for(Button b: buttons)
+        for(Menu m: menus)
         {
-            b.mousePressed(x, y);
+            m.click(x, y);
         }
 
 

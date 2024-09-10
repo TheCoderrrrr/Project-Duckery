@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class MoneyManager {
 
-    double fund;
+    static private double fund;
     ArrayList<double[]> roomVals;
     double incomeRate;// amount of money/5 seconds.
 
@@ -17,7 +17,7 @@ public class MoneyManager {
 
     public MoneyManager()
     {
-        fund = 10.0;
+        fund = 100.0;
         roomVals = new ArrayList<>();
         incomeRate = 0.0;
     }
@@ -90,6 +90,14 @@ public class MoneyManager {
 
         calculateIncomeRate();
 
+
+    }
+
+    public static void withdraw(int value)
+    {
+        if (value<=fund){
+            fund -= value;
+        }
 
     }
 
