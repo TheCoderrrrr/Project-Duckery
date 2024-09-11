@@ -29,13 +29,28 @@ public class MoneyManager {
 
     }
 
-    public void update() {
-        timer ++;
-        if (timer%300 == 0)
+    public void update(ArrayList<Room[]> rooms) {
+        addFunds(rooms);
+    }
+    public void addFunds(ArrayList<Room[]> rooms)
+    {
+        if(!rooms.isEmpty())
         {
-            fund += incomeRate;
+            for (Room[] r :rooms)
+            {
+                for(Room room : r)
+                {
+                    if(room != null)
+                    {
+                        if(room.completedProduct())
+                        {
+                            fund += room.getValue();
+                            room.resetTimer();
+                        }
+                    }
+                }
+            }
         }
-
     }
 
     public void setRooms(ArrayList<Room[]> rooms)

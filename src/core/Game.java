@@ -17,7 +17,7 @@ public class Game extends BasicGameState {
 
     private World world;
     private Clipboard clipboard;
-    private MoneyManager wallet;
+
 
     public Game(int id)
     {
@@ -36,8 +36,7 @@ public class Game extends BasicGameState {
         Images.loadImages();
 
         clipboard = new Clipboard();
-        wallet = new MoneyManager();
-        world = new World(wallet, gc);
+        world = new World(gc);
 
 
         gc.setShowFPS(true);
@@ -48,14 +47,12 @@ public class Game extends BasicGameState {
         g.setBackground(Color.darkGray);
         world.render(g);
         clipboard.render(g);
-        wallet.render(g);
     }
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         world.update();
         clipboard.update();
-        wallet.update();
     }
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException
     {

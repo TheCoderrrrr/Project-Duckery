@@ -11,14 +11,15 @@ import java.util.ArrayList;
 
 public class World {
 
-    ArrayList<Room[]> rooms;
+    private ArrayList<Room[]> rooms;
     public static ArrayList<Duck> ducks;
-    MoneyManager wallet;
-    int currFloor;
-    int currRoom;
-    GameContainer gc;
-
+    private MoneyManager wallet;
+    private int currFloor;
+    private int currRoom;
+    private GameContainer gc;
     private static int yDisplace;
+    //private maxDucks;
+    //private curDucks;
     
     
     private final int Y_SPEED = Room.SIZE/10;
@@ -27,7 +28,7 @@ public class World {
     
     
 
-    public World(MoneyManager wallet, GameContainer gc)
+    public World(GameContainer gc)
     {
 
         this.gc = gc;
@@ -35,7 +36,7 @@ public class World {
         rooms.add(new Room[4]);
         ducks = new ArrayList<Duck>();
         yDisplace =0;
-        this.wallet = wallet;
+        wallet = new MoneyManager();
 
 
         addRoom();
@@ -54,6 +55,7 @@ public class World {
         else {
             g.setBackground(Color.cyan);
         }
+        wallet.render(g);
 
 
         g.setColor(Color.black);
@@ -104,6 +106,7 @@ public class World {
                 }
             }
         }
+        wallet.update(rooms);
     }
 
     public void keyPressed(int key, char c) {

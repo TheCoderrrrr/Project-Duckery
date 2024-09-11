@@ -10,7 +10,7 @@ public class Duck extends Entity {
     private Room room;
     public Duck(Room room)
     {
-        super(room.x, room.y);
+        super(room.getX(), room.getY());
         this.room = room;
         image = Images.DUC1;
         size = image.getWidth();

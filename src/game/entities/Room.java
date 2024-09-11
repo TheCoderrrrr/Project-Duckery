@@ -1,7 +1,11 @@
 package game.entities;
 
 
+import game.MoneyManager;
 import game.World;
+import game.clipboard.items.Item;
+import game.clipboard.items.bread.BlandBread;
+import game.clipboard.items.bread.CosmicBread;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -11,12 +15,15 @@ public class Room {
 
     final public static int SIZE = 200;
     final int DIST_FROM_LEFT = 125;
-    int x;
-    int y;
+    private int x;
+    private int y;
     int myFloor;
     private ArrayList<Duck> ducks;
     int myRoom;
-    Color myColor;
+    private Color myColor;
+    private ArrayList<Item> products = new ArrayList<>();
+    private int curItem;
+    private int timer;
 
     public Room (int floor, int number)
     {
@@ -26,7 +33,10 @@ public class Room {
         myRoom = number;
         x = DIST_FROM_LEFT + number*SIZE;
         y = 4*SIZE-floor*SIZE;
-
+        curItem = 0;
+        timer = 0;
+        products.add(new BlandBread());
+        products.add(new CosmicBread());
 
     }
 
@@ -44,7 +54,7 @@ public class Room {
         g.fillRect(x, World.getYDisplace() + y,SIZE,SIZE); // creates a square room at a given location
         g.setColor(Color.black);
         g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
-                "\nmycolor:"+( (myFloor+myRoom)%2 == 0 ), x, World.getYDisplace() + y);
+                "\nmycolor:"+( (myFloor+myRoom)%2 == 0 ) + "\nTime to completion:" + (getTimeToMake() - timer) + "\nValue:" + getValue(), x, World.getYDisplace() + y);
         for (Duck duck : ducks) duck.render(g);
 
     }
@@ -54,19 +64,29 @@ public class Room {
         {
             duck.update();
         }
+        if(timer < getTimeToMake())
+        {
+            timer++;
+        }
     }
 
     public void mousePressed(int button, int x, int y) {
 
         if(button == 0 && isOver(x,y)) addDuck();
+        else if(button == 1 && isOver(x,y) && curItem < products.size() - 1) curItem++;
         else for(int i = 0; i < ducks.size(); i++) ducks.get(i).mousePressed(button, x, y);
 
+    }
+    public boolean completedProduct()
+    {
+        return timer == getTimeToMake();
     }
 //mutator
     public void addDuck()
     {
         // adds to the amount of ducks
         ducks.add(new Duck(this));
+        resetTimer();
     }
     public void removeDucks(Duck duck)
     {
@@ -87,5 +107,29 @@ public class Room {
         //tells you if an x and y value is over the room
         return (x>=this.x && x<= (this.x + SIZE)
                 && y>= (this.y+World.getYDisplace()) && y<= (this.y+World.getYDisplace() + SIZE));
+    }
+    public int getX()
+    {
+        return x;
+    }
+    public int getY()
+    {
+        return y;
+    }
+    public int getValue()
+    {
+        return products.get(curItem).getValue();
+    }
+    public int getTimeToMake()
+    {
+        return products.get(curItem).getTimeToCreate();
+    }
+    public String getProductName()
+    {
+        return products.get(curItem).getName();
+    }
+    public void resetTimer()
+    {
+        timer = 0;
     }
 }
