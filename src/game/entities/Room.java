@@ -54,7 +54,7 @@ public class Room {
         g.fillRect(x, World.getYDisplace() + y,SIZE,SIZE); // creates a square room at a given location
         g.setColor(Color.black);
         g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
-                "\nmycolor:"+( (myFloor+myRoom)%2 == 0 ) + "\nTime to completion:" + (getTimeToMake() - timer) + "\nValue:" + getValue(), x, World.getYDisplace() + y);
+                "\nmycolor:"+( (myFloor+myRoom)%2 == 0 ) + "\nTime to completion:" + (getTimeToMake() - timer) + "\nValue:" + getValue() + "\nProduct" + getProductName(), x, World.getYDisplace() + y);
         for (Duck duck : ducks) duck.render(g);
 
     }
@@ -72,9 +72,17 @@ public class Room {
 
     public void mousePressed(int button, int x, int y) {
 
-        if(button == 0 && isOver(x,y)) addDuck();
-        else if(button == 1 && isOver(x,y) && curItem < products.size() - 1) curItem++;
-        else for(int i = 0; i < ducks.size(); i++) ducks.get(i).mousePressed(button, x, y);
+        if(button == 0 && isOver(x,y) ) addDuck();
+        else if(button == 2 && isOver(x,y) && curItem < products.size() - 1) curItem++;
+        else if(button == 1)
+        {
+            for (Duck duck : ducks) {
+                if (duck.isOver(x, y)) {
+                    duck.mousePressed(button, x, y);
+                    break;
+                }
+            }
+        }
 
     }
     public boolean completedProduct()
@@ -85,8 +93,12 @@ public class Room {
     public void addDuck()
     {
         // adds to the amount of ducks
-        ducks.add(new Duck(this));
-        resetTimer();
+        if(World.getTotalDucks() < World.getDuckLimit())
+        {
+            ducks.add(new Duck(this));
+            resetTimer();
+        }
+        System.out.println((World.getTotalDucks() < World.getDuckLimit()) + "");
     }
     public void removeDucks(Duck duck)
     {
@@ -131,5 +143,21 @@ public class Room {
     public void resetTimer()
     {
         timer = 0;
+    }
+    public int getLeftWall()
+    {
+        return x;
+    }
+    public int getRightWall()
+    {
+        return x + SIZE;
+    }
+    public int getFloor()
+    {
+        return curYPosition() + SIZE;
+    }
+    public ArrayList<Duck> getDucks()
+    {
+        return ducks;
     }
 }

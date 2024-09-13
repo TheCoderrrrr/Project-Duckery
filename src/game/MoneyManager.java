@@ -67,16 +67,8 @@ public class MoneyManager {
     }
     public void addFloor(int currFloor, int currRoom)
     {
-        if ((currFloor <3)&&(currFloor+1 > roomVals.size()))
-            {
-                roomVals.add(new double[4]);
-                roomVals.getLast()[0] = 0;
-            }
-        else
-        {
-            roomVals.add(new double[4]);
-            roomVals.getLast()[0] = 0;
-        }
+        roomVals.add(new double[4]);
+        roomVals.getLast()[0] = 0;
 
     }
 

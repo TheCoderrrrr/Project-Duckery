@@ -18,6 +18,7 @@ public class World {
     private int currRoom;
     private GameContainer gc;
     private static int yDisplace;
+    private static int duckLimit;
     //private maxDucks;
     //private curDucks;
     
@@ -37,6 +38,7 @@ public class World {
         ducks = new ArrayList<Duck>();
         yDisplace =0;
         wallet = new MoneyManager();
+        duckLimit = 1;
 
 
         addRoom();
@@ -147,11 +149,11 @@ public class World {
         {
             for (int i = 0; i<r.length; i++)
             {
-                if (r[i] != null && r[i].isOver(x, y) && r[i].getNumDucks()<3)
+                if (r[i] != null && r[i].isOver(x, y))
                 {
                     r[i].mousePressed(button, x, y);
+                    ducks.clear();
                     wallet.updateRoom(rooms.indexOf(r),i, r[i].getNumDucks());
-
                 }
             }
         }
@@ -197,7 +199,18 @@ public class World {
         }
 
     }
-
+    public static int getDuckLimit()
+    {
+        return duckLimit;
+    }
+    public static void increaseDuckLimit()
+    {
+        duckLimit++;
+    }
+    public static int getTotalDucks()
+    {
+        return ducks.size();
+    }
     public void mouseWheelMoved(int newValue) {
         if (newValue> 0)
         {
@@ -207,6 +220,19 @@ public class World {
         {
             yDisplace-=Y_SPEED;
         }
-
+    }
+    private void updateDuckCount()
+    {
+        ducks.clear();
+        for(Room[] rooms : rooms)
+        {
+            for(Room r : rooms)
+            {
+                if(r != null)
+                {
+                    ducks.addAll(r.getDucks());
+                }
+            }
+        }
     }
 }
