@@ -152,7 +152,6 @@ public class World {
                 if (r[i] != null && r[i].isOver(x, y))
                 {
                     r[i].mousePressed(button, x, y);
-                    ducks.clear();
                     wallet.updateRoom(rooms.indexOf(r),i, r[i].getNumDucks());
                 }
             }
@@ -221,18 +220,14 @@ public class World {
             yDisplace-=Y_SPEED;
         }
     }
-    private void updateDuckCount()
+    public static void updateDuckCount(Duck duck, boolean remove)
     {
-        ducks.clear();
-        for(Room[] rooms : rooms)
+        if(remove)
         {
-            for(Room r : rooms)
-            {
-                if(r != null)
-                {
-                    ducks.addAll(r.getDucks());
-                }
-            }
+            ducks.remove(duck);
+        }else
+        {
+            ducks.add(duck);
         }
     }
 }

@@ -1,5 +1,6 @@
 package game.clipboard.buttons;
 
+import game.World;
 import org.newdawn.slick.Color;
 
 public class HiringButton extends Button {
@@ -15,6 +16,7 @@ public class HiringButton extends Button {
     @Override
     public void onClick() {
         super.onClick();
+        World.increaseDuckLimit();
         System.out.println("Hiring Duck!");
     }
 

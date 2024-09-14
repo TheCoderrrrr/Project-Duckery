@@ -95,7 +95,9 @@ public class Room {
         // adds to the amount of ducks
         if(World.getTotalDucks() < World.getDuckLimit())
         {
-            ducks.add(new Duck(this));
+            Duck duck = new Duck(this);
+            ducks.add(duck);
+            World.updateDuckCount(duck, false);
             resetTimer();
         }
         System.out.println((World.getTotalDucks() < World.getDuckLimit()) + "");
@@ -103,6 +105,7 @@ public class Room {
     public void removeDucks(Duck duck)
     {
         ducks.remove(duck);
+        World.updateDuckCount(duck, true);
     }
 
     // accessor
