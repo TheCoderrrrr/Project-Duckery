@@ -149,7 +149,7 @@ public class World {
         {
             for (int i = 0; i<r.length; i++)
             {
-                if (r[i] != null && r[i].isOver(x, y))
+                if (r[i] != null && r[i].isOver(x, y) && r[i].getNumDucks() <3)
                 {
                     r[i].mousePressed(button, x, y);
                     wallet.updateRoom(rooms.indexOf(r),i, r[i].getNumDucks());
