@@ -10,7 +10,8 @@ public class MoneyManager {
 
     static private int fund;
     ArrayList<double[]> roomVals;
-    double incomeRate;// amount of money/5 seconds.
+    static double incomeRate;// amount of money/5 seconds.
+    static double adLevel;
 
     int timer;
 
@@ -50,6 +51,14 @@ public class MoneyManager {
                     }
                 }
             }
+        }
+    }
+
+    public static void advertise(int level){
+        if (level == 1)
+        {
+            adLevel = 1.10;
+           incomeRate *= adLevel;
         }
     }
 

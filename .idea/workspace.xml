@@ -4,27 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="can buy rooms now!">
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ScrollButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/entities/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="scrollable menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Clipboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Clipboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/MoneyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/MoneyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/AdvertisingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/AdvertisingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/HiringMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/HiringMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/ResearchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/ResearchMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +129,23 @@
       <option name="project" value="LOCAL" />
       <updated>1726430349156</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="scrollable menu">
+      <option name="closed" value="true" />
+      <created>1726444208206</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726444208206</updated>
+    </task>
+    <task id="LOCAL-00008" summary="scrollable menu">
+      <option name="closed" value="true" />
+      <created>1726444222707</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1726444222707</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,7 +166,8 @@
     <MESSAGE value="quick fix -- added room limits" />
     <MESSAGE value="fixed number of rooms per floor" />
     <MESSAGE value="can buy rooms now!" />
-    <option name="LAST_COMMIT_MESSAGE" value="can buy rooms now!" />
+    <MESSAGE value="scrollable menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="scrollable menu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
