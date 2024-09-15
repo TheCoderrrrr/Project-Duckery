@@ -23,8 +23,9 @@ public class World {
     //private curDucks;
     
     
-    private final int Y_SPEED = Room.SIZE/10;
+    private final int Y_SPEED = Room.HEIGHT/10;
     private final double GROUND_CHANGE = 0.75;//changes the valyue of y-speed to make background look far
+    private final int ROOMS_IN_FLOOR = 2;
     
     
     
@@ -34,7 +35,7 @@ public class World {
 
         this.gc = gc;
         rooms = new ArrayList<Room[]>();
-        rooms.add(new Room[4]);
+        rooms.add(new Room[ROOMS_IN_FLOOR]);
         ducks = new ArrayList<Duck>();
         yDisplace =0;
         wallet = new MoneyManager();
@@ -69,7 +70,7 @@ public class World {
         //draws the building
         for (Room[] r :rooms)
         {
-            for (int i = 0; i<=3; i++)
+            for (int i = 0; i<ROOMS_IN_FLOOR; i++)
             {
                 if (r[i] != null)
                 {
@@ -86,6 +87,7 @@ public class World {
         {
             g.drawString("PRESS [1] to add FLOOR!!!", 10,580);
         }
+        g.drawString("number of ducks not placed:"+ (duckLimit - getTotalDucks() ), 10, 600);
 
     }
 
@@ -100,7 +102,7 @@ public class World {
         }
         for (Room[] r :rooms)
         {
-            for (int i = 0; i<=3; i++)
+            for (int i = 0; i<ROOMS_IN_FLOOR; i++)
             {
                 if (r[i] != null)
                 {
@@ -127,7 +129,7 @@ public class World {
         return yDisplace;
     }
 
-    //checks if there are 4 to a floor.
+    //checks if there are 2 to a floor.
     public boolean spaceOnFloor(){
         int count = 0;
         for(int i = 0; i<rooms.getLast().length; i++)
@@ -139,7 +141,7 @@ public class World {
 
         }
 
-        return (count<4);
+        return (count<ROOMS_IN_FLOOR);
 
     }
 
@@ -176,7 +178,7 @@ public class World {
                 currFloor++;
                 currRoom = 0;
 
-                Room[] newFloor = new Room[4];
+                Room[] newFloor = new Room[ROOMS_IN_FLOOR];
                 rooms.add(newFloor);
                 wallet.addFloor(currFloor, currRoom);
             }
@@ -186,7 +188,7 @@ public class World {
         else //adding a new floor
         {
             currRoom = 0;
-            Room [] newFloor = new Room[4];
+            Room [] newFloor = new Room[ROOMS_IN_FLOOR];
             for (int i=0; i<newFloor.length; i++)
             {
                 newFloor[i] = new Room(currFloor, currRoom);

@@ -13,7 +13,9 @@ import java.util.ArrayList;
 
 public class Room {
 
-    final public static int SIZE = 200;
+    //final public static int SIZE = 200;
+    final public static int WIDTH = 400;
+    final public static int HEIGHT = 200;
     final int DIST_FROM_LEFT = 125;
     private int x;
     private int y;
@@ -31,8 +33,8 @@ public class Room {
         ducks = new ArrayList<>();
         myFloor = floor;
         myRoom = number;
-        x = DIST_FROM_LEFT + number*SIZE;
-        y = 4*SIZE-floor*SIZE;
+        x = DIST_FROM_LEFT + number*WIDTH;
+        y = 4*HEIGHT-floor*HEIGHT;
         curItem = 0;
         timer = 0;
         products.add(new BlandBread());
@@ -51,7 +53,7 @@ public class Room {
             myColor = Color.lightGray;
         }
         g.setColor(myColor);
-        g.fillRect(x, World.getYDisplace() + y,SIZE,SIZE); // creates a square room at a given location
+        g.fillRect(x, World.getYDisplace() + y,WIDTH,HEIGHT); // creates a square room at a given location
         g.setColor(Color.black);
         g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
                 "\nmycolor:"+( (myFloor+myRoom)%2 == 0 ) + "\nTime to completion:" + (getTimeToMake() - timer) + "\nValue:" + getValue() + "\nProduct" + getProductName(), x, World.getYDisplace() + y);
@@ -120,8 +122,8 @@ public class Room {
     public boolean isOver(int x, int y)
     {
         //tells you if an x and y value is over the room
-        return (x>=this.x && x<= (this.x + SIZE)
-                && y>= (this.y+World.getYDisplace()) && y<= (this.y+World.getYDisplace() + SIZE));
+        return (x>=this.x && x<= (this.x + WIDTH)
+                && y>= (this.y+World.getYDisplace()) && y<= (this.y+World.getYDisplace() + HEIGHT));
     }
     public int getX()
     {
@@ -153,11 +155,11 @@ public class Room {
     }
     public int getRightWall()
     {
-        return x + SIZE;
+        return x + WIDTH;
     }
     public int getFloor()
     {
-        return curYPosition() + SIZE;
+        return curYPosition() + HEIGHT;
     }
     public ArrayList<Duck> getDucks()
     {
