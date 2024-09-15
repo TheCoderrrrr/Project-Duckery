@@ -2,7 +2,7 @@ package game.clipboard.buttons;
 
 import org.newdawn.slick.Color;
 
-public class AdvertisingButton extends Button{
+public class AdvertisingButton extends BuyingButton {
 
     public AdvertisingButton(int x, int y) {
         super(x, y);

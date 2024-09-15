@@ -4,7 +4,7 @@ import game.MoneyManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
-public abstract class Button {
+public abstract class BuyingButton {
     protected int x;
     protected int y;
     protected int w;
@@ -14,19 +14,19 @@ public abstract class Button {
     protected String name;
     protected int price;
 
-    public Button(int x, int y){
+    public BuyingButton(int x, int y){
         this.x = x;
         this.y = y;
         w = SIZE;
         h = SIZE;
     }
-    public Button(int x, int y, int w) {
+    public BuyingButton(int x, int y, int w) {
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = w;
     }
-    public Button(int x, int y, int w, int h){
+    public BuyingButton(int x, int y, int w, int h){
         this.x = x;
         this.y = y;
         this.w = w;
