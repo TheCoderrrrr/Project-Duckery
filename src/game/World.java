@@ -1,6 +1,7 @@
 package game;
 
 import game.entities.Duck;
+import game.entities.Floor;
 import game.entities.Room;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -12,9 +13,11 @@ import java.util.ArrayList;
 public class World {
 
     private ArrayList<Room[]> rooms;
+    private ArrayList<Floor> floors;
     public static ArrayList<Duck> ducks;
     private MoneyManager wallet;
     private int currFloor;
+    private int currBasement;
     private int currRoom;
     private GameContainer gc;
     private static int yDisplace;
@@ -25,7 +28,9 @@ public class World {
     
     private final int Y_SPEED = Room.HEIGHT/10;
     private final double GROUND_CHANGE = 0.75;//changes the valyue of y-speed to make background look far
-    private final int ROOMS_IN_FLOOR = 2;
+    public static final int ROOMS_IN_FLOOR = 2;
+    public static final int FLOOR_UNLOCK_ROOMS = 5;
+    public static final int BASEMENT_UNLOCK_FLOOR=7;
     
     
     
@@ -35,11 +40,14 @@ public class World {
 
         this.gc = gc;
         rooms = new ArrayList<Room[]>();
+        floors = new ArrayList<Floor>();
         rooms.add(new Room[ROOMS_IN_FLOOR]);
         ducks = new ArrayList<Duck>();
         yDisplace =0;
         wallet = new MoneyManager();
         duckLimit = 1;
+        currBasement = -1;
+        currRoom = 0;
 
 
         addRoom();
@@ -61,6 +69,7 @@ public class World {
         wallet.render(g);
 
 
+
         g.setColor(Color.black);
 
         //makes the grass
@@ -78,16 +87,27 @@ public class World {
                 }
             }
         }
+        for (Floor f :floors)
+        {
+            f.render(g);
+        }
 
-        if (currFloor < 3)
+        if (currFloor < FLOOR_UNLOCK_ROOMS)
         {
-            g.drawString("PRESS [1] to add room", 10,580);
+            //g.drawString("PRESS [1] to add room| Price:" + wallet.getRoomPrice(currFloor, currBasement), 10,580);
+            g.drawString("PRESS [1] to add room| Price: " + wallet.getRoomPrice(currFloor, currRoom), 10,580);
         }
-        else
+        else if (currFloor < BASEMENT_UNLOCK_FLOOR)
         {
-            g.drawString("PRESS [1] to add FLOOR!!!", 10,580);
+            g.drawString("PRESS [2] to add FLOOR!!!" + wallet.getFloorPrice(currFloor), 10,580);
         }
-        g.drawString("number of ducks not placed:"+ (duckLimit - getTotalDucks() ), 10, 600);
+        else {
+
+            g.drawString("PRESS [2] to add FLOOR!!!"+ wallet.getFloorPrice(currFloor), 10,580);
+            g.drawString("PRESS [3] to add BASEMENT!!!"+ wallet.getFloorPrice(currBasement), 10,600);
+
+        }
+        g.drawString("number of ducks not placed:"+ (duckLimit - getTotalDucks() ), 10, 620);
 
     }
 
@@ -110,13 +130,33 @@ public class World {
                 }
             }
         }
+        for (Floor f :floors)
+        {
+            f.update();
+        }
+
         wallet.update(rooms);
     }
 
     public void keyPressed(int key, char c) {
-        if (c == '1') {
+        if (c == '1' && MoneyManager.getFunds()>wallet.getRoomPrice(currFloor, currRoom)) {
             addRoom();
+            MoneyManager.withdraw(wallet.getRoomPrice(currFloor, currRoom));
         }
+        if (c == '2'&& currFloor>=FLOOR_UNLOCK_ROOMS && MoneyManager.getFunds()>=wallet.getFloorPrice(currFloor))
+        {
+            floors.add(new Floor (currFloor));
+            currFloor ++;
+            MoneyManager.withdraw(wallet.getFloorPrice(currFloor));
+        }
+        if (c == '3'&& currFloor>= BASEMENT_UNLOCK_FLOOR
+        && MoneyManager.getFunds()>=wallet.getFloorPrice(currBasement))
+        {
+            floors.add (new Floor (currBasement));
+            currBasement --;
+            MoneyManager.withdraw(wallet.getFloorPrice(currBasement));
+        }
+
 
 
 
@@ -151,12 +191,20 @@ public class World {
         {
             for (int i = 0; i<r.length; i++)
             {
-                if (r[i] != null && r[i].isOver(x, y) && r[i].getNumDucks() <3)
+                if (r[i] != null && r[i].isOver(x, y))
                 {
                     r[i].mousePressed(button, x, y);
                     wallet.updateRoom(rooms.indexOf(r),i, r[i].getNumDucks());
                 }
             }
+        }
+        for (Floor f :floors)
+        {
+            if (f.isOver(x,y))
+            {
+                f.mousePressed(button, x, y);
+            }
+
         }
     }
 
@@ -164,7 +212,7 @@ public class World {
     public void addRoom(){
 
         //adding a room on the same floor.
-        if(currFloor < 3)
+        if(currFloor < FLOOR_UNLOCK_ROOMS)
         {
             rooms.getLast()[currRoom] = new Room(currFloor,currRoom);
 
@@ -182,24 +230,10 @@ public class World {
                 rooms.add(newFloor);
                 wallet.addFloor(currFloor, currRoom);
             }
-
-
-        }
-        else //adding a new floor
-        {
-            currRoom = 0;
-            Room [] newFloor = new Room[ROOMS_IN_FLOOR];
-            for (int i=0; i<newFloor.length; i++)
-            {
-                newFloor[i] = new Room(currFloor, currRoom);
-                currRoom++;
-            }
-            rooms.add(newFloor);
-            wallet.addFloor(currFloor,currRoom);
-            currFloor++;
         }
 
     }
+
     public static int getDuckLimit()
     {
         return duckLimit;

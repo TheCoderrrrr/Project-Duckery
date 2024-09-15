@@ -1,7 +1,6 @@
 package game.entities;
 
 
-import game.MoneyManager;
 import game.World;
 import game.clipboard.items.Item;
 import game.clipboard.items.bread.BlandBread;
@@ -17,15 +16,15 @@ public class Room {
     final public static int WIDTH = 400;
     final public static int HEIGHT = 200;
     final int DIST_FROM_LEFT = 125;
-    private int x;
-    private int y;
+    protected int x;
+    protected int y;
     int myFloor;
-    private ArrayList<Duck> ducks;
+    protected ArrayList<Duck> ducks;
     int myRoom;
-    private Color myColor;
-    private ArrayList<Item> products = new ArrayList<>();
-    private int curItem;
-    private int timer;
+    protected Color myColor;
+    protected ArrayList<Item> products = new ArrayList<>();
+    protected int curItem;
+    protected int timer;
 
     public Room (int floor, int number)
     {
@@ -55,8 +54,12 @@ public class Room {
         g.setColor(myColor);
         g.fillRect(x, World.getYDisplace() + y,WIDTH,HEIGHT); // creates a square room at a given location
         g.setColor(Color.black);
-        g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
-                "\nmycolor:"+( (myFloor+myRoom)%2 == 0 ) + "\nTime to completion:" + (getTimeToMake() - timer) + "\nValue:" + getValue() + "\nProduct" + getProductName(), x, World.getYDisplace() + y);
+        if (myFloor >= 0 && myFloor < World.FLOOR_UNLOCK_ROOMS)
+        {
+            g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
+                    "\nmycolor:"+( getTimeToMake() ) + "\nTime to completion:" + (getTimeToMake() - timer) + "\nValue:" + getValue() + "\nProduct" + getProductName(), x, World.getYDisplace() + y);
+        }
+
         for (Duck duck : ducks) duck.render(g);
 
     }
@@ -74,7 +77,7 @@ public class Room {
 
     public void mousePressed(int button, int x, int y) {
 
-        if(button == 0 && isOver(x,y) ) addDuck();
+        if(button == 0 && isOver(x,y) && getNumDucks()<3) addDuck();
         else if(button == 2 && isOver(x,y) && curItem < products.size() - 1) curItem++;
         else if(button == 1)
         {
@@ -139,7 +142,7 @@ public class Room {
     }
     public int getTimeToMake()
     {
-        return products.get(curItem).getTimeToCreate();
+        return (int) ( products.get(curItem).getTimeToCreate() * Math.pow(0.65,ducks.size()) ) ;
     }
     public String getProductName()
     {

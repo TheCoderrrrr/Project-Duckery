@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class MoneyManager {
 
-    static private double fund;
+    static private int fund;
     ArrayList<double[]> roomVals;
     double incomeRate;// amount of money/5 seconds.
 
@@ -17,7 +17,7 @@ public class MoneyManager {
 
     public MoneyManager()
     {
-        fund = 100.0;
+        fund = 100;
         roomVals = new ArrayList<>();
         incomeRate = 0.0;
     }
@@ -52,6 +52,8 @@ public class MoneyManager {
             }
         }
     }
+
+    public static double getFunds(){ return fund;}
 
     public void setRooms(ArrayList<Room[]> rooms)
     {
@@ -123,4 +125,45 @@ public class MoneyManager {
         // if advertising is true, multiply by some value.
     }
 
+    public int getRoomPrice(int floor, int room)
+    {
+        //return room;
+        double price = 30;
+
+        int exp = floor*World.ROOMS_IN_FLOOR + room;
+
+        for (int i = 0; i< exp; i++)
+        {
+          price *= 1.25;
+        }
+        return (int)price;
+
+    }
+
+    public int getFloorPrice(int floor)
+    {
+        if ( floor >0)
+        {
+            double price = (int)(getRoomPrice(World.FLOOR_UNLOCK_ROOMS*World.ROOMS_IN_FLOOR, 0)/10);
+            int exp = floor - World.FLOOR_UNLOCK_ROOMS;
+
+            for (int i = 0; i< exp; i++)
+            {
+                price *= 1.5;
+            }
+            return (int)price;
+        }
+        else
+        {
+            double price = (int)(getRoomPrice(World.BASEMENT_UNLOCK_FLOOR*World.ROOMS_IN_FLOOR, 0)/10);
+            int exp = floor - World.BASEMENT_UNLOCK_FLOOR;
+
+            for (int i = 0; i< exp; i++)
+            {
+                price *= 1.75;
+            }
+            return (int) price;
+        }
+
+    }
 }

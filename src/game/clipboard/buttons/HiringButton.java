@@ -2,8 +2,9 @@ package game.clipboard.buttons;
 
 import game.World;
 import org.newdawn.slick.Color;
+import game.MoneyManager;
 
-public class HiringButton extends Button {
+public class HiringButton extends BuyingButton {
 
     public HiringButton(int x, int y) {
         super(x, y);
@@ -16,8 +17,13 @@ public class HiringButton extends Button {
     @Override
     public void onClick() {
         super.onClick();
-        World.increaseDuckLimit();
-        System.out.println("Hiring Duck!");
+
+        if (MoneyManager.getFunds()>= price)
+        {
+            World.increaseDuckLimit();
+            System.out.println("Hiring Duck!");
+        }
+
     }
 
 
