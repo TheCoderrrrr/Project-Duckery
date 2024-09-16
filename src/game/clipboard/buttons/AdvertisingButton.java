@@ -10,7 +10,7 @@ public class AdvertisingButton extends BuyingButton {
         color = Color.blue;
         name = "Ad";
 
-        price = 200;
+        price = 30;
     }
 
 

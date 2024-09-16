@@ -18,7 +18,7 @@ public class MoneyManager {
 
     public MoneyManager()
     {
-        fund = 100;
+        fund = 200;
         roomVals = new ArrayList<>();
         incomeRate = 0.0;
     }
@@ -57,7 +57,7 @@ public class MoneyManager {
     public static void advertise(int level){
         if (level == 1)
         {
-            adLevel = 1.10;
+            adLevel = 1.50;
            incomeRate *= adLevel;
         }
     }
