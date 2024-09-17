@@ -35,6 +35,7 @@ public class News {
         if(timerRunning) {
             elapseTime ++;
         }
+
     }
 
     public String formatTime(int elapseTime)

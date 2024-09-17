@@ -19,7 +19,7 @@ public class MoneyManager {
 
     public MoneyManager()
     {
-        fund = 200;
+        fund = 20000000;
         roomVals = new ArrayList<>();
         incomeRate = 0.0;
         adLevel = 1.0;

@@ -1,6 +1,7 @@
 package core;
 
 import game.Clipboard;
+import game.News;
 import game.World;
 import game.MoneyManager;
 import org.newdawn.slick.Color;
@@ -17,7 +18,7 @@ public class Game extends BasicGameState {
 
     private World world;
     private Clipboard clipboard;
-    private MoneyManager wallet;
+    private News news;
 
     public Game(int id)
     {
@@ -36,8 +37,8 @@ public class Game extends BasicGameState {
         Images.loadImages();
 
         clipboard = new Clipboard();
-        wallet = new MoneyManager();
-        world = new World(wallet, gc);
+        world = new World(gc);
+        news = new News();
 
 
         gc.setShowFPS(true);
@@ -48,14 +49,14 @@ public class Game extends BasicGameState {
         g.setBackground(Color.darkGray);
         world.render(g);
         clipboard.render(g);
-        wallet.render(g);
+        news.render(g);
     }
 
     @Override
-    public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
+    public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
         world.update();
         clipboard.update();
-        wallet.update();
+        news.update(delta);
     }
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException
     {
@@ -74,7 +75,7 @@ public class Game extends BasicGameState {
     {
         world.mousePressed(button, x, y);
         clipboard.mousePressed(button, x, y);
-        System.out.println(x + " : " + y);
+        news.mouseClicked();
     }
 
     @Override

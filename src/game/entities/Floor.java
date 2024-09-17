@@ -53,7 +53,7 @@ public class Floor extends Room {
         }
         else if(button == 2 && isOver(x,y) && curItem < products.size() - 1)
         {
-            curItem++;
+            switchProduct();
         }
         else if(button == 1)
         {

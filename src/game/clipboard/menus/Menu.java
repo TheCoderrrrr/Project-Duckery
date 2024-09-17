@@ -58,9 +58,12 @@ abstract public class Menu {
     {
         if (y>myY && y < myY + BuyingButton.SIZE)
         {
-            for (BuyingButton b:myButtons)
+            for (int i = slide*3; i< slide*3 +3; i++)
             {
-                b.mousePressed(x,y);
+                if (i>= 0 && i< myButtons.length) {
+                    myButtons[i].mousePressed(x, y);
+                }
+
             }
             if (scrollers[0].isMouseOver(x,y) && slide>0)
             {

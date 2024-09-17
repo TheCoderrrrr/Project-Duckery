@@ -71,12 +71,18 @@ public class Room {
         {
             timer++;
         }
+        for(Item i : products)
+        {
+            System.out.println(i.getName());
+
+        }
+        System.out.println();
     }
 
     public void mousePressed(int button, int x, int y) {
 
         if(button == 0 && isOver(x,y) && getNumDucks()<3) addDuck();
-        else if(button == 2 && isOver(x,y) && curItem < products.size() - 1) curItem++;
+        else if(button == 2 && isOver(x,y)) switchProduct();
         else if(button == 1)
         {
             for (Duck duck : ducks) {
@@ -91,6 +97,12 @@ public class Room {
     public boolean completedProduct()
     {
         return timer == getTimeToMake();
+    }
+    public void switchProduct()
+    {
+        if(curItem < products.size() - 1) curItem++;
+        else curItem = 0;
+        resetTimer();
     }
 //mutator
     public void addDuck()
@@ -113,6 +125,10 @@ public class Room {
     public static void addProduct(Item product)
     {
         products.add(product);
+    }
+    public static ArrayList<Item> getProducts()
+    {
+        return products;
     }
 
     // accessor

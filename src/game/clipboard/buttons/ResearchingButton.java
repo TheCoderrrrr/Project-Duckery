@@ -7,7 +7,7 @@ import org.newdawn.slick.Color;
 
 public class ResearchingButton extends BuyingButton {
 
-    Item myProduct;
+    protected Item myProduct;
 
     public ResearchingButton(int x, int y) {
         super(x, y);
