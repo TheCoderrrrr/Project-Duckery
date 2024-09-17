@@ -10,7 +10,7 @@ public class Images {
     {
         try
         {
-            DUC1 = new Image("res/duck/DUCK1.png");
+            DUC1 = new Image("res/duck/duck_one.png");
         }
         catch (SlickException e)
         {
