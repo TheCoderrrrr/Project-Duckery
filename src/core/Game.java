@@ -1,6 +1,7 @@
 package core;
 
 import game.Clipboard;
+import game.News;
 import game.World;
 import game.MoneyManager;
 import org.newdawn.slick.Color;
@@ -18,6 +19,10 @@ public class Game extends BasicGameState {
     private World world;
     private Clipboard clipboard;
     private MoneyManager wallet;
+    private News news;
+
+//    public boolean timerRunning;
+//    public int elapseTime;
 
     public Game(int id)
     {
@@ -38,6 +43,8 @@ public class Game extends BasicGameState {
         clipboard = new Clipboard();
         wallet = new MoneyManager();
         world = new World(wallet, gc);
+        news = new News();
+
 
 
         gc.setShowFPS(true);
@@ -45,17 +52,39 @@ public class Game extends BasicGameState {
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+
         g.setBackground(Color.darkGray);
         world.render(g);
         clipboard.render(g);
         wallet.render(g);
+        news.render(g);
+
+//        g.drawString("Time: " + formatTime(elapseTime) + "\n elapse time:"+ elapseTime, 1697, 42);
+//        timerRunning = true;
+//
+//        if (elapseTime == 2)
+//        {
+//            g.setColor(Color.white);
+//            g.fillRect(0, 0, Main.getScreenWidth(), Main.getScreenHeight());
+//            g.setColor(Color.black);
+//            g.drawString("NEWS INCOMING!!!", Main.getScreenWidth() / 2, Main.getScreenHeight() / 2);
+//            System.out.println("News");
+//            timerRunning = false;
+//        }
+
+
     }
 
     @Override
-    public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
+    public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
         world.update();
         clipboard.update();
         wallet.update();
+        news.update(delta);
+
+//        if(timerRunning) {
+//            elapseTime ++;
+//        }
     }
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException
     {
@@ -82,5 +111,13 @@ public class Game extends BasicGameState {
         super.mouseWheelMoved(newValue);
         world.mouseWheelMoved(newValue);
     }
+
+//    public String formatTime(int elapseTime)
+//    {
+//        int totalSeconds = elapseTime / 1000;
+//        int minutes = totalSeconds / 60;
+//        int seconds = totalSeconds % 60;
+//
+//        return String.format("%02d:%02d", minutes, seconds);
+//    }
 }
-// this is a test
