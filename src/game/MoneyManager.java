@@ -1,5 +1,6 @@
 package game;
 
+import core.Main;
 import game.entities.Room;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 
 public class MoneyManager {
 
-    static private int fund;
+    static private double fund;
     ArrayList<double[]> roomVals;
     static double incomeRate;// amount of money/5 seconds.
     static double adLevel;
@@ -21,12 +22,13 @@ public class MoneyManager {
         fund = 200;
         roomVals = new ArrayList<>();
         incomeRate = 0.0;
+        adLevel = 1.0;
     }
 
 
     public void render(Graphics g) {
         g.setColor (Color.black);
-        g.drawString("$" + fund +"\nINCOME:" + incomeRate, 20,20);
+        g.drawString("$" + fund +"\nINCOME:" + incomeRate + " per second", 20,20);
 
     }
 
@@ -35,6 +37,7 @@ public class MoneyManager {
     }
     public void addFunds(ArrayList<Room[]> rooms)
     {
+        incomeRate = 0;
         if(!rooms.isEmpty())
         {
             for (Room[] r :rooms)
@@ -45,20 +48,26 @@ public class MoneyManager {
                     {
                         if(room.completedProduct())
                         {
-                            fund += room.getValue();
+                            fund += ((double)room.getValue()*adLevel);//increases ad level.
                             room.resetTimer();
+
                         }
+                        if (room.getNumDucks() >0)
+                        {
+                            incomeRate += ((double)room.getValue()*adLevel)/(room.getTimeToMake())* Main.FRAMES_PER_SECOND;
+                        }
+
                     }
                 }
             }
         }
+        incomeRate = ((int) (incomeRate *100))/100.0;
     }
 
     public static void advertise(int level){
         if (level == 1)
         {
             adLevel = 1.50;
-           incomeRate *= adLevel;
         }
     }
 
@@ -128,7 +137,7 @@ public class MoneyManager {
             for (int j =0; j< roomVals.get(i).length; j++)
             {
                 double[] val = roomVals.get(i);
-                incomeRate += val[j];
+                incomeRate += val[j]*adLevel;
             }
         }
         // if advertising is true, multiply by some value.

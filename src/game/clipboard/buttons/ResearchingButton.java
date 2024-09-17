@@ -1,13 +1,17 @@
 package game.clipboard.buttons;
 
+import game.MoneyManager;
+import game.clipboard.items.Item;
+import game.entities.Room;
 import org.newdawn.slick.Color;
 
 public class ResearchingButton extends BuyingButton {
 
+    Item myProduct;
+
     public ResearchingButton(int x, int y) {
         super(x, y);
         color = Color.white;
-
         name = "research";
         price = 20;
     }
@@ -16,6 +20,10 @@ public class ResearchingButton extends BuyingButton {
     @Override
     public void onClick() {
         super.onClick();
-        System.out.println("Researching products..");
+        if (MoneyManager.getFunds()>price)
+        {
+            Room.addProduct(myProduct);
+            MoneyManager.withdraw(price);
+        }
     }
 }

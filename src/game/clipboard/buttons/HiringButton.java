@@ -21,7 +21,7 @@ public class HiringButton extends BuyingButton {
         if (MoneyManager.getFunds()>= price)
         {
             World.increaseDuckLimit();
-            System.out.println("Hiring Duck!");
+            MoneyManager.withdraw(price);
         }
 
     }

@@ -61,7 +61,6 @@ public abstract class BuyingButton {
 
     protected void onClick()
     {
-        MoneyManager.withdraw(price);
     }
 
 }

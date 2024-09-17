@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="scrollable menu">
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="can advertise/kind of">
+      <change afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BlandBreadButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/CosmicBreadButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/MoneyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/MoneyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/AdvertisingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/AdvertisingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/ResearchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/ResearchMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +31,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "HappyHat952"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HappyHat952&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/TheCoderrrrr/Project-Duckery",
-    "accountId": "6de6eea3-8c01-474b-ac67-0e568ccd8f77"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TheCoderrrrr/Project-Duckery&quot;,
+    &quot;accountId&quot;: &quot;6de6eea3-8c01-474b-ac67-0e568ccd8f77&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
     &quot;associatedIndex&quot;: 6
     }</component>
@@ -46,23 +52,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/senmr/Downloads/9.10 - Project-Duckery - updatedmenu/Project-Duckery&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/senmr/Downloads/Project-Duckery",
+    "onboarding.tips.debug.path": "C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\NS254\Downloads\Project-Duckery\src" />
@@ -145,7 +151,23 @@
       <option name="project" value="LOCAL" />
       <updated>1726444222707</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="can advertise">
+      <option name="closed" value="true" />
+      <created>1726444555629</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1726444555629</updated>
+    </task>
+    <task id="LOCAL-00010" summary="can advertise/kind of">
+      <option name="closed" value="true" />
+      <created>1726444824175</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1726444824175</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,7 +189,9 @@
     <MESSAGE value="fixed number of rooms per floor" />
     <MESSAGE value="can buy rooms now!" />
     <MESSAGE value="scrollable menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="scrollable menu" />
+    <MESSAGE value="can advertise" />
+    <MESSAGE value="can advertise/kind of" />
+    <option name="LAST_COMMIT_MESSAGE" value="can advertise/kind of" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -184,7 +208,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/game/entities/Room.java</url>
-          <line>115</line>
+          <line>117</line>
           <properties class="game.entities.Room" method="getNumDucks">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

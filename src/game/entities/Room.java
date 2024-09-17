@@ -22,7 +22,7 @@ public class Room {
     protected ArrayList<Duck> ducks;
     int myRoom;
     protected Color myColor;
-    protected ArrayList<Item> products = new ArrayList<>();
+    protected static ArrayList<Item> products = new ArrayList<>();
     protected int curItem;
     protected int timer;
 
@@ -36,8 +36,6 @@ public class Room {
         y = 4*HEIGHT-floor*HEIGHT;
         curItem = 0;
         timer = 0;
-        products.add(new BlandBread());
-        products.add(new CosmicBread());
 
     }
 
@@ -69,7 +67,7 @@ public class Room {
         {
             duck.update();
         }
-        if(timer < getTimeToMake())
+        if(timer < getTimeToMake() && ducks.size()>0)
         {
             timer++;
         }
@@ -112,6 +110,10 @@ public class Room {
         ducks.remove(duck);
         World.updateDuckCount(duck, true);
     }
+    public static void addProduct(Item product)
+    {
+        products.add(product);
+    }
 
     // accessor
     public int getNumDucks() {
@@ -138,15 +140,35 @@ public class Room {
     }
     public int getValue()
     {
-        return products.get(curItem).getValue();
+        if (products.size()>0)
+        {
+            return products.get(curItem).getValue();
+        }
+        else {
+            return 0;
+        }
+
     }
     public int getTimeToMake()
     {
-        return (int) ( products.get(curItem).getTimeToCreate() * Math.pow(0.65,ducks.size()) ) ;
+        if (products.size()>0)
+        {
+            return (int) ( products.get(curItem).getTimeToCreate() * Math.pow(0.50,ducks.size()) ) ;
+        }
+        else {
+            return 1;
+        }
+
     }
     public String getProductName()
     {
-        return products.get(curItem).getName();
+        if (products.size()>0)
+        {
+            return products.get(curItem).getName();
+        }
+        else {
+            return "none-purchase to add";
+        }
     }
     public void resetTimer()
     {
