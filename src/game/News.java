@@ -13,15 +13,14 @@ public class News {
     public int elapseTime;
 
     public News() {
-
+        timerRunning = true;
     }
 
     public void render(Graphics g)
     {
-        g.drawString("Time: " + formatTime(elapseTime) + "\n elapse time:"+ elapseTime, 1697, 42);
-        timerRunning = true;
+        g.drawString("Time: " + formatTime(elapseTime), 1697, 42);
 
-        if (elapseTime == 2)
+        if (elapseTime == 600 || elapseTime == 1200)
         {
             g.setColor(Color.white);
             g.fillRect(0, 0, Main.getScreenWidth(), Main.getScreenHeight());
@@ -40,11 +39,16 @@ public class News {
 
     public String formatTime(int elapseTime)
     {
-        int totalSeconds = elapseTime / 1000;
+        int totalSeconds = elapseTime / 60;
         int minutes = totalSeconds / 60;
         int seconds = totalSeconds % 60;
 
         return String.format("%02d:%02d", minutes, seconds);
+    }
+
+    public void mouseClicked()
+    {
+        timerRunning = true;
     }
 
 

@@ -61,7 +61,7 @@ public class Game extends BasicGameState {
 
 //        g.drawString("Time: " + formatTime(elapseTime) + "\n elapse time:"+ elapseTime, 1697, 42);
 //        timerRunning = true;
-//
+
 //        if (elapseTime == 2)
 //        {
 //            g.setColor(Color.white);
@@ -104,6 +104,7 @@ public class Game extends BasicGameState {
         world.mousePressed(button, x, y);
         clipboard.mousePressed(button, x, y);
         System.out.println(x + " : " + y);
+        news.mouseClicked();
     }
 
     @Override
