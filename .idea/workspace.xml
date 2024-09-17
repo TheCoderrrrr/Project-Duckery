@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="expanded menu system-- can withdraw money and more items">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="can probably research" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HappyHat952&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TheCoderrrrr/Project-Duckery&quot;,
+    &quot;accountId&quot;: &quot;6de6eea3-8c01-474b-ac67-0e568ccd8f77&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
     &quot;associatedIndex&quot;: 6
     }</component>
@@ -40,7 +50,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/senmr/Downloads/9.10 - Project-Duckery - updatedmenu/Project-Duckery",
+    "last_opened_file_path": "C:/Users/senmr/Downloads/Project-Duckery",
     "onboarding.tips.debug.path": "C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -98,7 +108,63 @@
       <option name="project" value="LOCAL" />
       <updated>1726009697912</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="quick fix -- added room limits">
+      <option name="closed" value="true" />
+      <created>1726428813103</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726428813103</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed number of rooms per floor">
+      <option name="closed" value="true" />
+      <created>1726430349156</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1726430349156</updated>
+    </task>
+    <task id="LOCAL-00007" summary="scrollable menu">
+      <option name="closed" value="true" />
+      <created>1726444208206</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726444208206</updated>
+    </task>
+    <task id="LOCAL-00008" summary="scrollable menu">
+      <option name="closed" value="true" />
+      <created>1726444222707</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1726444222707</updated>
+    </task>
+    <task id="LOCAL-00009" summary="can advertise">
+      <option name="closed" value="true" />
+      <created>1726444555629</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1726444555629</updated>
+    </task>
+    <task id="LOCAL-00010" summary="can advertise/kind of">
+      <option name="closed" value="true" />
+      <created>1726444824175</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1726444824175</updated>
+    </task>
+    <task id="LOCAL-00011" summary="can probably research">
+      <option name="closed" value="true" />
+      <created>1726543019153</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1726543019153</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,7 +182,14 @@
     <MESSAGE value="Updated natives and hopefully allowed program to run" />
     <MESSAGE value="added a room/floor-adding system" />
     <MESSAGE value="expanded menu system-- can withdraw money and more items" />
-    <option name="LAST_COMMIT_MESSAGE" value="expanded menu system-- can withdraw money and more items" />
+    <MESSAGE value="quick fix -- added room limits" />
+    <MESSAGE value="fixed number of rooms per floor" />
+    <MESSAGE value="can buy rooms now!" />
+    <MESSAGE value="scrollable menu" />
+    <MESSAGE value="can advertise" />
+    <MESSAGE value="can advertise/kind of" />
+    <MESSAGE value="can probably research" />
+    <option name="LAST_COMMIT_MESSAGE" value="can probably research" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -133,8 +206,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/game/entities/Room.java</url>
-          <line>65</line>
-          <properties class="game.entities.Room" method="addDuck">
+          <line>117</line>
+          <properties class="game.entities.Room" method="getNumDucks">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

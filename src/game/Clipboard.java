@@ -1,9 +1,6 @@
 package game;
 
-import game.clipboard.buttons.AdvertisingButton;
-import game.clipboard.buttons.Button;
-import game.clipboard.buttons.HiringButton;
-import game.clipboard.buttons.ResearchingButton;
+import game.clipboard.buttons.BuyingButton;
 import game.clipboard.MiniManager;
 import game.clipboard.menus.AdvertisingMenu;
 import game.clipboard.menus.HiringMenu;
@@ -17,7 +14,7 @@ import java.util.ArrayList;
 public class Clipboard {
 
     MiniManager hire;
-    ArrayList<Button> buttons = new ArrayList<>();
+    ArrayList<BuyingButton> buttons = new ArrayList<>();
     ArrayList<Menu> menus = new ArrayList<Menu>();
 
     public Clipboard()

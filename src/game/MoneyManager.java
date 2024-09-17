@@ -1,5 +1,6 @@
 package game;
 
+import core.Main;
 import game.entities.Room;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -10,33 +11,67 @@ public class MoneyManager {
 
     static private double fund;
     ArrayList<double[]> roomVals;
-    double incomeRate;// amount of money/5 seconds.
+    static double incomeRate;// amount of money/5 seconds.
+    static double adLevel;
 
     int timer;
 
 
     public MoneyManager()
     {
-        fund = 100.0;
+        fund = 200;
         roomVals = new ArrayList<>();
         incomeRate = 0.0;
+        adLevel = 1.0;
     }
 
 
     public void render(Graphics g) {
         g.setColor (Color.black);
-        g.drawString("$" + fund +"\nINCOME:" + incomeRate, 20,20);
+        g.drawString("$" + fund +"\nINCOME:" + incomeRate + " per second", 20,20);
 
     }
 
-    public void update() {
-        timer ++;
-        if (timer%300 == 0)
+    public void update(ArrayList<Room[]> rooms) {
+        addFunds(rooms);
+    }
+    public void addFunds(ArrayList<Room[]> rooms)
+    {
+        incomeRate = 0;
+        if(!rooms.isEmpty())
         {
-            fund += incomeRate;
-        }
+            for (Room[] r :rooms)
+            {
+                for(Room room : r)
+                {
+                    if(room != null)
+                    {
+                        if(room.completedProduct())
+                        {
+                            fund += ((double)room.getValue()*adLevel);//increases ad level.
+                            room.resetTimer();
 
+                        }
+                        if (room.getNumDucks() >0)
+                        {
+                            incomeRate += ((double)room.getValue()*adLevel)/(room.getTimeToMake())* Main.FRAMES_PER_SECOND;
+                        }
+
+                    }
+                }
+            }
+        }
+        incomeRate = ((int) (incomeRate *100))/100.0;
     }
+
+    public static void advertise(int level){
+        if (level == 1)
+        {
+            adLevel = 1.50;
+        }
+    }
+
+    public static double getFunds(){ return fund;}
 
     public void setRooms(ArrayList<Room[]> rooms)
     {
@@ -52,16 +87,8 @@ public class MoneyManager {
     }
     public void addFloor(int currFloor, int currRoom)
     {
-        if ((currFloor <3)&&(currFloor+1 > roomVals.size()))
-            {
-                roomVals.add(new double[4]);
-                roomVals.getLast()[0] = 0;
-            }
-        else
-        {
-            roomVals.add(new double[4]);
-            roomVals.getLast()[0] = 0;
-        }
+        roomVals.add(new double[4]);
+        roomVals.getLast()[0] = 0;
 
     }
 
@@ -110,10 +137,51 @@ public class MoneyManager {
             for (int j =0; j< roomVals.get(i).length; j++)
             {
                 double[] val = roomVals.get(i);
-                incomeRate += val[j];
+                incomeRate += val[j]*adLevel;
             }
         }
         // if advertising is true, multiply by some value.
     }
 
+    public int getRoomPrice(int floor, int room)
+    {
+        //return room;
+        double price = 30;
+
+        int exp = floor*World.ROOMS_IN_FLOOR + room;
+
+        for (int i = 0; i< exp; i++)
+        {
+          price *= 1.25;
+        }
+        return (int)price;
+
+    }
+
+    public int getFloorPrice(int floor)
+    {
+        if ( floor >0)
+        {
+            double price = (int)(getRoomPrice(World.FLOOR_UNLOCK_ROOMS*World.ROOMS_IN_FLOOR, 0)/10);
+            int exp = floor - World.FLOOR_UNLOCK_ROOMS;
+
+            for (int i = 0; i< exp; i++)
+            {
+                price *= 1.5;
+            }
+            return (int)price;
+        }
+        else
+        {
+            double price = (int)(getRoomPrice(World.BASEMENT_UNLOCK_FLOOR*World.ROOMS_IN_FLOOR, 0)/10);
+            int exp = floor - World.BASEMENT_UNLOCK_FLOOR;
+
+            for (int i = 0; i< exp; i++)
+            {
+                price *= 1.75;
+            }
+            return (int) price;
+        }
+
+    }
 }
