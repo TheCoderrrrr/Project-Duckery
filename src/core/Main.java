@@ -1,5 +1,6 @@
 package core;
 
+import core.messages.MessageManager;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
@@ -19,6 +20,7 @@ public class Main extends StateBasedGame {
 
     public Main(String name) {
         super(name);
+
 
         open = new Opening(OPEN_ID);
         game = new Game(GAME_ID);

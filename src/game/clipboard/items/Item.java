@@ -1,6 +1,7 @@
 package game.clipboard.items;
 
 import core.Main;
+import game.entities.Room;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 
@@ -8,7 +9,9 @@ public class Item {
     protected int value;
     protected int timeToCreate;
     protected String name;
-    protected Image image;
+    protected Image iconImage;
+    protected Image roomImage;
+    protected static int myIndex;
 
     public Item()
     {
@@ -35,5 +38,14 @@ public class Item {
     {
         if(!name.isEmpty()) return name;
         else return "";
+    }
+
+    public Image getRoomImage()
+    {
+        return roomImage;
+    }
+    public Image getIconImage()
+    {
+        return iconImage;
     }
 }

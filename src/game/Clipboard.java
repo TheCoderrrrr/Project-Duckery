@@ -50,10 +50,14 @@ public class Clipboard {
 
     public void mousePressed(int button, int x, int y) {
 
-        for(Menu m: menus)
+        if (!World.getPause())
         {
-            m.click(x, y);
+            for(Menu m: menus)
+            {
+                m.click(x, y);
+            }
         }
+
 
 
     }

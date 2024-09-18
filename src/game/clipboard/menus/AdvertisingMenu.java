@@ -12,8 +12,7 @@ public class AdvertisingMenu extends Menu{
         super(2);
         title = "advertising";
         mySize = 1;
-        myButtons = new BuyingButton[mySize];
-        myButtons[0] = new AdvertisingButton(X_LEFT, myY);
+        myButtons.add(new AdvertisingButton(X_LEFT, myY));
         setButtonX();
 
 

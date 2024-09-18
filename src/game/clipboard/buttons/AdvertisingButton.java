@@ -5,11 +5,12 @@ import org.newdawn.slick.Color;
 
 public class AdvertisingButton extends BuyingButton {
 
+    int seconds;
     public AdvertisingButton(int x, int y) {
         super(x, y);
         color = Color.blue;
-        name = "Ad";
-
+        name = "Ad -  10 second boost";
+        seconds = 10;
         price = 30;
     }
 
@@ -19,7 +20,7 @@ public class AdvertisingButton extends BuyingButton {
         super.onClick();
         if (MoneyManager.getFunds()>price)
         {
-            MoneyManager.advertise(1);
+            MoneyManager.advertise(seconds * 60);
             MoneyManager.withdraw(price);
         }
     }

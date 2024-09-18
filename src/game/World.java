@@ -32,6 +32,9 @@ public class World {
     public static final int ROOMS_IN_FLOOR = 2;
     public static final int FLOOR_UNLOCK_ROOMS = 5;
     public static final int BASEMENT_UNLOCK_FLOOR=7;
+
+
+    public static boolean pause;
     
     
     
@@ -49,6 +52,7 @@ public class World {
         duckLimit = 1;
         currBasement = -1;
         currRoom = 0;
+        pause = false;
 
 
         addRoom();
@@ -57,6 +61,8 @@ public class World {
         wallet.setRooms(rooms);
 
     }
+
+    public static boolean getPause(){ return pause;}
 
     public void render (Graphics g) {
         //makes the sky
@@ -113,30 +119,35 @@ public class World {
     }
 
     public void update() {
-        if (gc.getInput().isKeyDown(Input.KEY_UP)||gc.getInput().isKeyDown(Input.KEY_W))
+
+        if (!pause)
         {
-            yDisplace+=Y_SPEED;
-        }
-        else if (gc.getInput().isKeyDown(Input.KEY_DOWN)||gc.getInput().isKeyDown(Input.KEY_S))
-        {
-            yDisplace-=Y_SPEED;
-        }
-        for (Room[] r :rooms)
-        {
-            for (int i = 0; i<ROOMS_IN_FLOOR; i++)
+            if (gc.getInput().isKeyDown(Input.KEY_UP)||gc.getInput().isKeyDown(Input.KEY_W))
             {
-                if (r[i] != null)
+                yDisplace+=Y_SPEED;
+            }
+            else if (gc.getInput().isKeyDown(Input.KEY_DOWN)||gc.getInput().isKeyDown(Input.KEY_S))
+            {
+                yDisplace-=Y_SPEED;
+            }
+            for (Room[] r :rooms)
+            {
+                for (int i = 0; i<ROOMS_IN_FLOOR; i++)
                 {
-                    r[i].update();
+                    if (r[i] != null)
+                    {
+                        r[i].update();
+                    }
                 }
             }
-        }
-        for (Floor f :floors)
-        {
-            f.update();
+            for (Floor f :floors)
+            {
+                f.update();
+            }
+
+            wallet.update(rooms);
         }
 
-        wallet.update(rooms);
     }
 
     public void keyPressed(int key, char c) {
@@ -188,28 +199,42 @@ public class World {
 
     public void mousePressed(int button, int x, int y) {
 
-        for (Room[] r :rooms)
+        if (!pause)
         {
-            for (int i = 0; i<r.length; i++)
+            for (Room[] r :rooms)
             {
-                if (r[i] != null && r[i].isOver(x, y))
+                for (int i = 0; i<r.length; i++)
                 {
-                    r[i].mousePressed(button, x, y);
-                    wallet.updateRoom(rooms.indexOf(r),i, r[i].getNumDucks());
+                    if (r[i] != null && r[i].isOver(x, y))
+                    {
+                        r[i].mousePressed(button, x, y);
+                        wallet.updateRoom(rooms.indexOf(r),i, r[i].getNumDucks());
+                    }
                 }
             }
-        }
-        for (Floor f :floors)
-        {
-            if (f.isOver(x,y))
+            for (Floor f :floors)
             {
-                f.mousePressed(button, x, y);
-            }
+                if (f.isOver(x,y))
+                {
+                    f.mousePressed(button, x, y);
+                }
 
+            }
         }
+
     }
 
 //mutator
+
+    public static void pause()
+    {
+        pause = true;
+    }
+    public static void unpause()
+    {
+        pause = false;
+    }
+
     public void addRoom(){
 
         //adding a room on the same floor.
@@ -267,4 +292,5 @@ public class World {
             ducks.add(duck);
         }
     }
+
 }

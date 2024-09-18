@@ -1,6 +1,8 @@
 package game;
 
 import core.Main;
+import core.messages.FloatMessage;
+import core.messages.MessageManager;
 import game.entities.Room;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -13,6 +15,8 @@ public class MoneyManager {
     ArrayList<double[]> roomVals;
     static double incomeRate;// amount of money/5 seconds.
     static double adLevel;
+    static int adTimer;
+    static int breadMade;
 
     int timer;
 
@@ -28,12 +32,20 @@ public class MoneyManager {
 
     public void render(Graphics g) {
         g.setColor (Color.black);
-        g.drawString("$" + fund +"\nINCOME:" + incomeRate + " per second", 20,20);
+        g.drawString("$" + fund +"\nINCOME:" + incomeRate + " per second\nBread made: " + breadMade, 20,20);
 
     }
 
     public void update(ArrayList<Room[]> rooms) {
         addFunds(rooms);
+        if (adTimer>0)
+        {
+            adTimer --;
+        }
+        if (adTimer == 0)
+        {
+            adLevel = 1.0;
+        }
     }
     public void addFunds(ArrayList<Room[]> rooms)
     {
@@ -50,6 +62,10 @@ public class MoneyManager {
                         {
                             fund += ((double)room.getValue()*adLevel);//increases ad level.
                             room.resetTimer();
+                            MessageManager.addMessage(new FloatMessage(
+                                    "+ "+(double)room.getValue()*adLevel, room.getX() + Room.WIDTH/2, room.getY(),
+                                    Color.yellow, 70));
+                            breadMade++;
 
                         }
                         if (room.getNumDucks() >0)
@@ -64,11 +80,9 @@ public class MoneyManager {
         incomeRate = ((int) (incomeRate *100))/100.0;
     }
 
-    public static void advertise(int level){
-        if (level == 1)
-        {
-            adLevel = 1.50;
-        }
+    public static void advertise(int length){
+        adLevel  = 1.50;
+        adTimer += length;
     }
 
     public static double getFunds(){ return fund;}

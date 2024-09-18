@@ -1,5 +1,6 @@
 package core;
 
+import core.messages.MessageManager;
 import game.Clipboard;
 import game.News;
 import game.World;
@@ -34,7 +35,10 @@ public class Game extends BasicGameState {
         this.gc = gc;
         this.sbg = sbg;
 
+        MessageManager.init();
+
         Images.loadImages();
+        Fonts.loadFonts();
 
         clipboard = new Clipboard();
         world = new World(gc);
@@ -50,13 +54,16 @@ public class Game extends BasicGameState {
         world.render(g);
         clipboard.render(g);
         news.render(g);
+        MessageManager.render(g);
     }
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
         world.update();
         clipboard.update();
+        MessageManager.update();
         news.update(delta);
+
     }
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException
     {

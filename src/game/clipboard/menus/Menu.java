@@ -5,9 +5,11 @@ import game.clipboard.buttons.ScrollButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
+import java.util.ArrayList;
+
 abstract public class Menu {
 
-    BuyingButton[] myButtons;
+    ArrayList<BuyingButton> myButtons;
     ScrollButton[] scrollers;
     String title;
     final public int X_LEFT = 1270;
@@ -20,8 +22,10 @@ abstract public class Menu {
     public Menu(int order)
     {
         myY = Y_TOP+Y_DISP*order;
+        myButtons = new ArrayList<BuyingButton>();
         setButtonX();
         scrollers = new ScrollButton[]{new ScrollButton(true,myY),new ScrollButton(false,myY)};
+
 
         slide = 0;
 
@@ -34,8 +38,8 @@ abstract public class Menu {
 
         for (int i = slide*3; i< slide*3 +3; i++)
         {
-            if (i>= 0 && i< myButtons.length) {
-                myButtons[i].render(g);
+            if (i>= 0 && i< myButtons.size()) {
+                myButtons.get(i).render(g);
             }
 
         }
@@ -47,10 +51,10 @@ abstract public class Menu {
     }
     public void setButtonX()
     {
-        for (int i=0; i<mySize; i++)
+        for (int i=0; i<myButtons.size(); i++)
         {
             int newX= X_LEFT + (i%3)*(BuyingButton.SIZE+20);
-            myButtons[i].setX(newX);
+            myButtons.get(i).setX(newX);
         }
     }
 
@@ -60,8 +64,8 @@ abstract public class Menu {
         {
             for (int i = slide*3; i< slide*3 +3; i++)
             {
-                if (i>= 0 && i< myButtons.length) {
-                    myButtons[i].mousePressed(x, y);
+                if (i>= 0 && i< myButtons.size()) {
+                    myButtons.get(i).mousePressed(x, y);
                 }
 
             }
@@ -69,7 +73,7 @@ abstract public class Menu {
             {
                 slide --;
             }
-            if (scrollers[1].isMouseOver(x,y) && myButtons.length>=(slide+1)*3)
+            if (scrollers[1].isMouseOver(x,y) && myButtons.size()>=(slide+1)*3)
             {
                 slide ++;
             }

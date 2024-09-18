@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="can probably research" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="added images">
+      <change afterPath="$PROJECT_DIR$/src/core/Fonts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/messages/FloatMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/messages/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/messages/MessageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Images.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Clipboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Clipboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/MoneyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/MoneyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/News.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/AdvertisingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/AdvertisingButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BlandBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BlandBreadButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BrownBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BrownBreadButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/CosmicBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/CosmicBreadButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/DivineBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/DivineBreadButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/HiringMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/HiringMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/ResearchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/ResearchMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Room.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,9 +80,9 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/senmr/Downloads/Project-Duckery",
+    "last_opened_file_path": "F:/Eclipse_Portable_11_8_2021/Eclipse Portable (Nov 2021)/Data/workspace/FarmSim",
     "onboarding.tips.debug.path": "C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -62,6 +92,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\NS254\Downloads\Project-Duckery\src" />
       <recent name="C:\Users\NS254\Downloads\Project-Duckery\libs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\senmr\Downloads\Project-Duckery\res\duck" />
+      <recent name="C:\Users\senmr\Downloads\Project-Duckery\res\animated_duck" />
+      <recent name="C:\Users\senmr\Downloads\Project-Duckery\res\floors" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -164,7 +199,23 @@
       <option name="project" value="LOCAL" />
       <updated>1726543019153</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="can probably research">
+      <option name="closed" value="true" />
+      <created>1726544750063</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1726544750063</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added images">
+      <option name="closed" value="true" />
+      <created>1726544918215</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1726544918215</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,7 +240,8 @@
     <MESSAGE value="can advertise" />
     <MESSAGE value="can advertise/kind of" />
     <MESSAGE value="can probably research" />
-    <option name="LAST_COMMIT_MESSAGE" value="can probably research" />
+    <MESSAGE value="added images" />
+    <option name="LAST_COMMIT_MESSAGE" value="added images" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -206,7 +258,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/game/entities/Room.java</url>
-          <line>117</line>
+          <line>151</line>
           <properties class="game.entities.Room" method="getNumDucks">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

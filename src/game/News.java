@@ -23,11 +23,12 @@ public class News {
         if (elapseTime == 600 || elapseTime == 1200)
         {
             g.setColor(Color.white);
-            g.fillRect(0, 0, Main.getScreenWidth(), Main.getScreenHeight());
+            g.fillRect(100, 100, Main.getScreenWidth()-200, Main.getScreenHeight()-200);
             g.setColor(Color.black);
             g.drawString("NEWS INCOMING!!!", Main.getScreenWidth() / 2, Main.getScreenHeight() / 2);
             System.out.println("News");
             timerRunning = false;
+            World.pause();
         }
     }
 
@@ -50,6 +51,7 @@ public class News {
     public void mouseClicked()
     {
         timerRunning = true;
+        World.unpause();
     }
 
 

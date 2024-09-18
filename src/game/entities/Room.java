@@ -1,12 +1,15 @@
 package game.entities;
 
 
+import core.messages.FloatMessage;
+import core.messages.MessageManager;
 import game.World;
 import game.clipboard.items.Item;
 import game.clipboard.items.bread.BlandBread;
 import game.clipboard.items.bread.CosmicBread;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 
 import java.util.ArrayList;
 
@@ -25,6 +28,7 @@ public class Room {
     protected static ArrayList<Item> products = new ArrayList<>();
     protected int curItem;
     protected int timer;
+    protected Image myImage;
 
     public Room (int floor, int number)
     {
@@ -50,12 +54,18 @@ public class Room {
             myColor = Color.lightGray;
         }
         g.setColor(myColor);
-        g.fillRect(x, World.getYDisplace() + y,WIDTH,HEIGHT); // creates a square room at a given location
+        if (myImage != null)
+        {
+            g.drawImage(myImage, x, World.getYDisplace() + y);
+        }
+        else {
+            g.fillRect(x, World.getYDisplace() + y, WIDTH, HEIGHT);// creates a square room at a given location
+        }
         g.setColor(Color.black);
         if (myFloor >= 0 && myFloor < World.FLOOR_UNLOCK_ROOMS)
         {
             g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
-                    "\nmycolor:"+( getTimeToMake() ) + "\nTime to completion:" + (getTimeToMake() - timer) + "\nValue:" + getValue() + "\nProduct" + getProductName(), x, World.getYDisplace() + y);
+                  "\nProduct" + getProductName(), x, World.getYDisplace() + y);
         }
 
         for (Duck duck : ducks) duck.render(g);
@@ -76,7 +86,13 @@ public class Room {
             System.out.println(i.getName());
 
         }
+        if (products.size() >0)
+        {
+            myImage = products.get(curItem).getRoomImage();
+        }
         System.out.println();
+
+
     }
 
     public void mousePressed(int button, int x, int y) {
@@ -96,12 +112,14 @@ public class Room {
     }
     public boolean completedProduct()
     {
-        return timer == getTimeToMake();
+        return timer == getTimeToMake() && !products.isEmpty();
     }
     public void switchProduct()
     {
         if(curItem < products.size() - 1) curItem++;
         else curItem = 0;
+
+
         resetTimer();
     }
 //mutator

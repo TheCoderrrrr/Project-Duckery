@@ -1,24 +1,41 @@
 package game.clipboard.menus;
 
 import game.clipboard.buttons.*;
+import game.clipboard.buttons.ResearchingButton;
 
-public class ResearchMenu extends Menu{
+public class ResearchMenu extends Menu {
 
-    public ResearchMenu()
-    {
+    public ResearchMenu() {
         super(1);
         mySize = 4;
 
         title = "research";
 
-        myButtons = new BuyingButton[mySize];
-        myButtons[0] = new BlandBreadButton(X_LEFT, myY);
-        myButtons[1] = new BrownBreadButton(X_LEFT, myY);
-        myButtons[2] = new CosmicBreadButton(X_LEFT, myY);
-        myButtons[3] = new DivineBreadButton(X_LEFT, myY);
+        myButtons.add(new BlandBreadButton(X_LEFT, myY, this));
+        myButtons.add(new BrownBreadButton(X_LEFT, myY, this));
+        myButtons.add(new CosmicBreadButton(X_LEFT, myY, this));
+        myButtons.add(new DivineBreadButton(X_LEFT, myY, this));
 
         setButtonX();
 
     }
     //public void makeButtons() {}
+
+    public void click(int x, int y) {
+        if (y > myY && y < myY + BuyingButton.SIZE) {
+            for (int i = slide * 3; i < slide * 3 + 3; i++) {
+                if (i >= 0 && i < myButtons.size()) {
+                    myButtons.get(i).mousePressed(x, y);
+
+                    setButtonX();
+                }
+
+            }
+        }
+    }
+
+    public void removeItem(ResearchingButton r) {
+        myButtons.remove(r);
+    }
 }
+

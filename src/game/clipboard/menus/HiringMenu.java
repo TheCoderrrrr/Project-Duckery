@@ -12,8 +12,8 @@ public class HiringMenu extends Menu{
         super(0);
         mySize = 1;
         title = "hire menu";
-        myButtons = new BuyingButton[mySize];
-        myButtons[0] = new HiringButton(X_LEFT, myY);
+
+        myButtons.add( new HiringButton(X_LEFT, myY));
 
         setButtonX();
 
