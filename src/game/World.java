@@ -73,7 +73,7 @@ public class World {
         else {
             g.setBackground(Color.cyan);
         }
-        wallet.render(g);
+
 
 
 
@@ -145,7 +145,7 @@ public class World {
                 f.update();
             }
 
-            wallet.update(rooms);
+            wallet.update(rooms, floors);
         }
 
     }

@@ -18,6 +18,7 @@ public class News {
 
     public void render(Graphics g)
     {
+        g.setColor(Color.black);
         g.drawString("Time: " + formatTime(elapseTime), 1697, 42);
 
         if (elapseTime == 600 || elapseTime == 1200)

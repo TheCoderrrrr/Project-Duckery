@@ -20,6 +20,7 @@ public class Floor extends Room {
 
 
 
+
     }
 
     public void render (Graphics g)
@@ -35,8 +36,9 @@ public class Floor extends Room {
         g.setColor(myColor);
         g.fillRect(x, World.getYDisplace() + y,WIDTH*2,HEIGHT); // creates a long room at a given location
         g.setColor(Color.black);
+
         g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
-                "\nmycolor:"+( (myFloor+myRoom)%2 == 0 ) + "\nTime to completion:" + (getTimeToMake() - timer) + "\nValue:" + getValue() + "\nProduct" + getProductName(), x, World.getYDisplace() + y);
+                "\nProduct" + getProductName(), x, World.getYDisplace() + y);
         for (Duck duck : ducks) duck.render(g);
     }
 

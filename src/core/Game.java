@@ -1,10 +1,9 @@
 package core;
-
+import game.MoneyManager;
 import core.messages.MessageManager;
 import game.Clipboard;
 import game.News;
 import game.World;
-import game.MoneyManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -55,6 +54,7 @@ public class Game extends BasicGameState {
         clipboard.render(g);
         news.render(g);
         MessageManager.render(g);
+        MoneyManager.render(g);
     }
 
     @Override

@@ -69,6 +69,9 @@ public class Message {
         g.setColor(color);
         g.setFont(font);
         g.drawString(text, x , y+ World.getYDisplace());
+        g.resetFont();
+
+
 
     }
 

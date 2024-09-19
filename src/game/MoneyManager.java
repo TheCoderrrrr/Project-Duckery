@@ -3,6 +3,7 @@ package game;
 import core.Main;
 import core.messages.FloatMessage;
 import core.messages.MessageManager;
+import game.entities.Floor;
 import game.entities.Room;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -13,6 +14,7 @@ public class MoneyManager {
 
     static private double fund;
     ArrayList<double[]> roomVals;
+    ArrayList<Floor> floors;
     static double incomeRate;// amount of money/5 seconds.
     static double adLevel;
     static int adTimer;
@@ -23,21 +25,21 @@ public class MoneyManager {
 
     public MoneyManager()
     {
-        fund = 20000000;
+        fund = 300;
         roomVals = new ArrayList<>();
         incomeRate = 0.0;
         adLevel = 1.0;
     }
 
 
-    public void render(Graphics g) {
+    public static void render(Graphics g) {
         g.setColor (Color.black);
         g.drawString("$" + fund +"\nINCOME:" + incomeRate + " per second\nBread made: " + breadMade, 20,20);
 
     }
 
-    public void update(ArrayList<Room[]> rooms) {
-        addFunds(rooms);
+    public void update(ArrayList<Room[]> rooms, ArrayList<Floor> floors) {
+        addFunds(rooms, floors);
         if (adTimer>0)
         {
             adTimer --;
@@ -47,7 +49,7 @@ public class MoneyManager {
             adLevel = 1.0;
         }
     }
-    public void addFunds(ArrayList<Room[]> rooms)
+    public void addFunds(ArrayList<Room[]> rooms, ArrayList<Floor> floors)
     {
         incomeRate = 0;
         if(!rooms.isEmpty())
@@ -74,6 +76,26 @@ public class MoneyManager {
                         }
 
                     }
+                }
+            }
+        }
+
+        if (!floors.isEmpty())
+        {
+            for(Floor f: floors)
+            {
+                if (f.completedProduct())
+                {
+                    fund += ((double)f.getValue()*adLevel);//increases ad level.
+                    f.resetTimer();
+                    MessageManager.addMessage(new FloatMessage(
+                            "+ "+(double)f.getValue()*adLevel, f.getX() + Room.WIDTH/2, f.getY(),
+                            Color.yellow, 70));
+                    breadMade++;
+                }
+                if (f.getNumDucks() >0)
+                {
+                    incomeRate += ((double)f.getValue()*adLevel)/(f.getTimeToMake())* Main.FRAMES_PER_SECOND;
                 }
             }
         }
