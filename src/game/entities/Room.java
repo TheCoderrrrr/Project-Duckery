@@ -1,6 +1,7 @@
 package game.entities;
 
 
+import core.Images;
 import core.messages.FloatMessage;
 import core.messages.MessageManager;
 import game.World;
@@ -10,13 +11,14 @@ import game.clipboard.items.bread.CosmicBread;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.SpriteSheet;
 
 import java.util.ArrayList;
 
 public class Room {
 
     //final public static int SIZE = 200;
-    final public static int WIDTH = 400;
+    public int width;
     final public static int HEIGHT = 200;
     final int DIST_FROM_LEFT = 125;
     protected int x;
@@ -28,18 +30,24 @@ public class Room {
     protected static ArrayList<Item> products = new ArrayList<>();
     protected int curItem;
     protected int timer;
+    protected SpriteSheet myRoomTypes;
     protected Image myImage;
+    protected int maxDucks;
 
     public Room (int floor, int number)
     {
         //floor must be at least 0, number between 0 and 3.
+        width = 400;
         ducks = new ArrayList<>();
         myFloor = floor;
         myRoom = number;
-        x = DIST_FROM_LEFT + number*WIDTH;
+        x = DIST_FROM_LEFT + number*width;
         y = 4*HEIGHT-floor*HEIGHT;
         curItem = 0;
         timer = 0;
+        maxDucks = 3;
+        myRoomTypes = Images.ROOMS;
+
 
     }
 
@@ -59,14 +67,12 @@ public class Room {
             g.drawImage(myImage, x, World.getYDisplace() + y);
         }
         else {
-            g.fillRect(x, World.getYDisplace() + y, WIDTH, HEIGHT);// creates a square room at a given location
+            g.fillRect(x, World.getYDisplace() + y, width, HEIGHT);// creates a square room at a given location
         }
         g.setColor(Color.black);
-        if (myFloor >= 0 && myFloor < World.FLOOR_UNLOCK_ROOMS)
-        {
-            g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
+
+        g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
                   "\nProduct" + getProductName(), x, World.getYDisplace() + y);
-        }
 
         for (Duck duck : ducks) duck.render(g);
 
@@ -81,14 +87,9 @@ public class Room {
         {
             timer++;
         }
-        for(Item i : products)
-        {
-            System.out.println(i.getName());
-
-        }
         if (products.size() >0)
         {
-            myImage = products.get(curItem).getRoomImage();
+            myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
         }
         System.out.println();
 
@@ -97,7 +98,7 @@ public class Room {
 
     public void mousePressed(int button, int x, int y) {
 
-        if(button == 0 && isOver(x,y) && getNumDucks()<3) addDuck();
+        if(button == 0 && isOver(x,y) && getNumDucks()<maxDucks) addDuck(x);
         else if(button == 2 && isOver(x,y)) switchProduct();
         else if(button == 1)
         {
@@ -123,12 +124,12 @@ public class Room {
         resetTimer();
     }
 //mutator
-    public void addDuck()
+    public void addDuck(int startX)
     {
         // adds to the amount of ducks
         if(World.getTotalDucks() < World.getDuckLimit())
         {
-            Duck duck = new Duck(this);
+            Duck duck = new Duck(this, startX);
             ducks.add(duck);
             World.updateDuckCount(duck, false);
             resetTimer();
@@ -161,7 +162,7 @@ public class Room {
     public boolean isOver(int x, int y)
     {
         //tells you if an x and y value is over the room
-        return (x>=this.x && x<= (this.x + WIDTH)
+        return (x>=this.x && x<= (this.x + width)
                 && y>= (this.y+World.getYDisplace()) && y<= (this.y+World.getYDisplace() + HEIGHT));
     }
     public int getX()
@@ -208,13 +209,17 @@ public class Room {
     {
         timer = 0;
     }
+    public int getWidth()
+    {
+        return width;
+    }
     public int getLeftWall()
     {
         return x;
     }
     public int getRightWall()
     {
-        return x + WIDTH;
+        return x + width;
     }
     public int getFloor()
     {

@@ -1,13 +1,11 @@
 package game;
 
+import core.Images;
 import game.clipboard.items.bread.BlandBread;
 import game.entities.Duck;
 import game.entities.Floor;
 import game.entities.Room;
-import org.newdawn.slick.Color;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Input;
+import org.newdawn.slick.*;
 
 import java.util.ArrayList;
 
@@ -20,7 +18,7 @@ public class World {
     private int currFloor;
     private int currBasement;
     private int currRoom;
-    private GameContainer gc;
+    private static GameContainer gc;
     private static int yDisplace;
     private static int duckLimit;
     //private maxDucks;
@@ -264,9 +262,10 @@ public class World {
     {
         return duckLimit;
     }
-    public static void increaseDuckLimit()
-    {
+    //
+    public static void increaseDuckLimit() throws SlickException {
         duckLimit++;
+        gc.setMouseCursor(Images.DUC1, 40,40);
     }
     public static int getTotalDucks()
     {
@@ -290,7 +289,22 @@ public class World {
         }else
         {
             ducks.add(duck);
+
         }
+        if (duckLimit - getTotalDucks() == 0)
+        {
+            gc.setDefaultMouseCursor();
+        }
+        else {
+            try {
+                gc.setMouseCursor(Images.DUC1, 50,50);
+            } catch (SlickException e) {
+                System.out.println("whoops");
+                throw new RuntimeException(e);
+
+            }
+        }
+
     }
 
 }

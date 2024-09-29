@@ -40,10 +40,13 @@ public class MoneyManager {
 
     public void update(ArrayList<Room[]> rooms, ArrayList<Floor> floors) {
         addFunds(rooms, floors);
+
+        //counts down the timer for ads to reduce
         if (adTimer>0)
         {
             adTimer --;
         }
+        //resets base adLevel (no bonus)
         if (adTimer == 0)
         {
             adLevel = 1.0;
@@ -51,6 +54,7 @@ public class MoneyManager {
     }
     public void addFunds(ArrayList<Room[]> rooms, ArrayList<Floor> floors)
     {
+        //counts the total income of bread
         incomeRate = 0;
         if(!rooms.isEmpty())
         {
@@ -65,7 +69,7 @@ public class MoneyManager {
                             fund += ((double)room.getValue()*adLevel);//increases ad level.
                             room.resetTimer();
                             MessageManager.addMessage(new FloatMessage(
-                                    "+ "+(double)room.getValue()*adLevel, room.getX() + Room.WIDTH/2, room.getY(),
+                                    "+ "+(double)room.getValue()*adLevel, room.getX() + (float)room.getWidth()/2, room.getY(),
                                     Color.yellow, 70));
                             breadMade++;
 
@@ -89,7 +93,7 @@ public class MoneyManager {
                     fund += ((double)f.getValue()*adLevel);//increases ad level.
                     f.resetTimer();
                     MessageManager.addMessage(new FloatMessage(
-                            "+ "+(double)f.getValue()*adLevel, f.getX() + Room.WIDTH/2, f.getY(),
+                            "+ "+(double)f.getValue()*adLevel, f.getX() + (float)f.getWidth()/2, f.getY(),
                             Color.yellow, 70));
                     breadMade++;
                 }
@@ -103,6 +107,7 @@ public class MoneyManager {
     }
 
     public static void advertise(int length){
+        //advertise based on amount of time/
         adLevel  = 1.50;
         adTimer += length;
     }
@@ -181,7 +186,7 @@ public class MoneyManager {
 
     public int getRoomPrice(int floor, int room)
     {
-        //return room;
+        //return room prices
         double price = 30;
 
         int exp = floor*World.ROOMS_IN_FLOOR + room;
@@ -196,6 +201,7 @@ public class MoneyManager {
 
     public int getFloorPrice(int floor)
     {
+        //price of next floor: should be updated
         if ( floor >0)
         {
             double price = (int)(getRoomPrice(World.FLOOR_UNLOCK_ROOMS*World.ROOMS_IN_FLOOR, 0)/10);

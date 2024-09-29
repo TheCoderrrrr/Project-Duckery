@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="added images">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="ducks are able to be picked up and dropped">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Duckery_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Duckery_jar.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Duckery_jar2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/messages/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/messages/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/MoneyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/MoneyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/News.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entities/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +224,8 @@
     <MESSAGE value="can advertise/kind of" />
     <MESSAGE value="can probably research" />
     <MESSAGE value="added images" />
-    <option name="LAST_COMMIT_MESSAGE" value="added images" />
+    <MESSAGE value="ducks are able to be picked up and dropped" />
+    <option name="LAST_COMMIT_MESSAGE" value="ducks are able to be picked up and dropped" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -229,20 +234,6 @@
           <url>file://$PROJECT_DIR$/libs/src/Main.java</url>
           <line>11</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/game/entities/Entity.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/game/entities/Room.java</url>
-          <line>151</line>
-          <properties class="game.entities.Room" method="getNumDucks">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

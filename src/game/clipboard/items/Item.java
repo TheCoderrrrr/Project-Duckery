@@ -44,6 +44,10 @@ public class Item {
     {
         return roomImage;
     }
+    public int getImageIndex()
+    {
+        return myIndex;
+    }
     public Image getIconImage()
     {
         return iconImage;
