@@ -10,7 +10,7 @@ import org.newdawn.slick.Graphics;
 
 import java.util.ArrayList;
 
-public class MoneyManager {
+public class ResourceManager {
 
     static private double fund;
     ArrayList<double[]> roomVals;
@@ -23,7 +23,7 @@ public class MoneyManager {
     int timer;
 
 
-    public MoneyManager()
+    public ResourceManager()
     {
         fund = 300;
         roomVals = new ArrayList<>();
@@ -38,8 +38,10 @@ public class MoneyManager {
 
     }
 
-    public void update(ArrayList<Room[]> rooms, ArrayList<Floor> floors) {
-        addFunds(rooms, floors);
+    public void update(ArrayList<Room[]> rooms, ArrayList<Room[]> floors) {
+        incomeRate = 0;
+        addFunds(rooms);
+        addFunds(floors);
 
         //counts down the timer for ads to reduce
         if (adTimer>0)
@@ -52,10 +54,9 @@ public class MoneyManager {
             adLevel = 1.0;
         }
     }
-    public void addFunds(ArrayList<Room[]> rooms, ArrayList<Floor> floors)
+    public void addFunds(ArrayList<Room[]> rooms)
     {
         //counts the total income of bread
-        incomeRate = 0;
         if(!rooms.isEmpty())
         {
             for (Room[] r :rooms)
@@ -80,26 +81,6 @@ public class MoneyManager {
                         }
 
                     }
-                }
-            }
-        }
-
-        if (!floors.isEmpty())
-        {
-            for(Floor f: floors)
-            {
-                if (f.completedProduct())
-                {
-                    fund += ((double)f.getValue()*adLevel);//increases ad level.
-                    f.resetTimer();
-                    MessageManager.addMessage(new FloatMessage(
-                            "+ "+(double)f.getValue()*adLevel, f.getX() + (float)f.getWidth()/2, f.getY(),
-                            Color.yellow, 70));
-                    breadMade++;
-                }
-                if (f.getNumDucks() >0)
-                {
-                    incomeRate += ((double)f.getValue()*adLevel)/(f.getTimeToMake())* Main.FRAMES_PER_SECOND;
                 }
             }
         }

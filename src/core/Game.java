@@ -1,5 +1,5 @@
 package core;
-import game.MoneyManager;
+import game.ResourceManager;
 import core.messages.MessageManager;
 import game.Clipboard;
 import game.News;
@@ -52,9 +52,9 @@ public class Game extends BasicGameState {
         g.setBackground(Color.darkGray);
         world.render(g);
         clipboard.render(g);
-        news.render(g);
         MessageManager.render(g);
-        MoneyManager.render(g);
+        ResourceManager.render(g);
+        news.render(g);
     }
 
     @Override

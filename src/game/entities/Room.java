@@ -2,12 +2,8 @@ package game.entities;
 
 
 import core.Images;
-import core.messages.FloatMessage;
-import core.messages.MessageManager;
 import game.World;
 import game.clipboard.items.Item;
-import game.clipboard.items.bread.BlandBread;
-import game.clipboard.items.bread.CosmicBread;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -34,6 +30,10 @@ public class Room {
     protected Image myImage;
     protected int maxDucks;
 
+    protected int pauseTimer;
+    protected boolean pause;
+    protected final int TOTAL_BUILD_TIME = 800;
+
     public Room (int floor, int number)
     {
         //floor must be at least 0, number between 0 and 3.
@@ -47,6 +47,9 @@ public class Room {
         timer = 0;
         maxDucks = 3;
         myRoomTypes = Images.ROOMS;
+
+        pause = false;
+        myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
 
 
     }
@@ -62,36 +65,60 @@ public class Room {
             myColor = Color.lightGray;
         }
         g.setColor(myColor);
-        if (myImage != null)
+        if (myImage != null && !pause)
         {
             g.drawImage(myImage, x, World.getYDisplace() + y);
+        }
+        else if (pause)
+        {
+            int i = pauseTimer%20/10;
+            g.drawImage(Images.BUILD_ANIMATION.getSubImage(i,0), x, World.getYDisplace() + y);
         }
         else {
             g.fillRect(x, World.getYDisplace() + y, width, HEIGHT);// creates a square room at a given location
         }
         g.setColor(Color.black);
 
-        g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
-                  "\nProduct" + getProductName(), x, World.getYDisplace() + y);
+        if(!pause)
+        {
+            g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
+                    "\nProduct" + getProductName(), x, World.getYDisplace() + y);
+            for (Duck duck : ducks) duck.render(g);
+        }
+        else {
+            g.drawString("Building "+ getProductName() + " room!\n ETA: "+pauseTimer, x, World.getYDisplace() + y);
+        }
 
-        for (Duck duck : ducks) duck.render(g);
+
+
 
     }
     public void update()
     {
+        if (!pause)
+        {
+            if(timer < getTimeToMake() && !ducks.isEmpty())
+            {
+                timer++;
+            }
+            if (!products.isEmpty())
+            {
+
+            }
+        }
+        else {
+            pauseTimer--;
+            if (pauseTimer<=0)
+            {
+                pause = false;
+            }
+        }
         for(Duck duck : ducks)
         {
             duck.update();
         }
-        if(timer < getTimeToMake() && ducks.size()>0)
-        {
-            timer++;
-        }
-        if (products.size() >0)
-        {
-            myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
-        }
-        System.out.println();
+
+
 
 
     }
@@ -99,8 +126,8 @@ public class Room {
     public void mousePressed(int button, int x, int y) {
 
         if(button == 0 && isOver(x,y) && getNumDucks()<maxDucks) addDuck(x);
-        else if(button == 2 && isOver(x,y)) switchProduct();
-        else if(button == 1)
+        else if(button == 1 && isOver(x,y)) switchProduct();
+        else if(button == 2)
         {
             for (Duck duck : ducks) {
                 if (duck.isOver(x, y)) {
@@ -119,7 +146,9 @@ public class Room {
     {
         if(curItem < products.size() - 1) curItem++;
         else curItem = 0;
-
+        pause = true;
+        pauseTimer = TOTAL_BUILD_TIME;
+        myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
 
         resetTimer();
     }
@@ -175,7 +204,7 @@ public class Room {
     }
     public int getValue()
     {
-        if (products.size()>0)
+        if (!products.isEmpty())
         {
             return products.get(curItem).getValue();
         }
@@ -186,7 +215,7 @@ public class Room {
     }
     public int getTimeToMake()
     {
-        if (products.size()>0)
+        if (!products.isEmpty())
         {
             return (int) ( products.get(curItem).getTimeToCreate() * Math.pow(0.50,ducks.size()) ) ;
         }
@@ -197,7 +226,7 @@ public class Room {
     }
     public String getProductName()
     {
-        if (products.size()>0)
+        if (!products.isEmpty())
         {
             return products.get(curItem).getName();
         }

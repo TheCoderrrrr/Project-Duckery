@@ -1,6 +1,6 @@
 package game.clipboard.buttons;
 
-import game.MoneyManager;
+import game.ResourceManager;
 import org.newdawn.slick.Color;
 
 public class AdvertisingButton extends BuyingButton {
@@ -18,10 +18,10 @@ public class AdvertisingButton extends BuyingButton {
     @Override
     public void onClick() {
         super.onClick();
-        if (MoneyManager.getFunds()>price)
+        if (ResourceManager.getFunds()>price)
         {
-            MoneyManager.advertise(seconds * 60);
-            MoneyManager.withdraw(price);
+            ResourceManager.advertise(seconds * 60);
+            ResourceManager.withdraw(price);
         }
     }
 }

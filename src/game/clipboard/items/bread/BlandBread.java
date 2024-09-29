@@ -7,6 +7,7 @@ public class BlandBread extends Item {
 
     public BlandBread()
     {
+        myIndex = 0;
         value = 5;
         timeToCreate = 3;
         name = "Bland Bread";

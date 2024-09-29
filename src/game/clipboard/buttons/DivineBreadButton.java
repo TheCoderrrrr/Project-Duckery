@@ -1,9 +1,6 @@
 package game.clipboard.buttons;
 
-import game.MoneyManager;
-import game.clipboard.items.bread.BrownBread;
 import game.clipboard.items.bread.DivineBread;
-import game.clipboard.menus.Menu;
 import game.clipboard.menus.ResearchMenu;
 
 public class DivineBreadButton extends ResearchingButton{

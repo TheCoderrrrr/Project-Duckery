@@ -11,7 +11,7 @@ public class Item {
     protected String name;
     protected Image iconImage;
     protected Image roomImage;
-    protected static int myIndex;
+    protected int myIndex;
 
     public Item()
     {

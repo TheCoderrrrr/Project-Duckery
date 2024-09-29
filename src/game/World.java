@@ -1,7 +1,8 @@
 package game;
 
 import core.Images;
-import game.clipboard.items.bread.BlandBread;
+import core.Main;
+import game.clipboard.items.bread.BrownBread;
 import game.entities.Duck;
 import game.entities.Floor;
 import game.entities.Room;
@@ -12,9 +13,9 @@ import java.util.ArrayList;
 public class World {
 
     private ArrayList<Room[]> rooms;
-    private ArrayList<Floor> floors;
+    private ArrayList<Room[]> floors;
     public static ArrayList<Duck> ducks;
-    private MoneyManager wallet;
+    private ResourceManager wallet;
     private int currFloor;
     private int currBasement;
     private int currRoom;
@@ -31,6 +32,11 @@ public class World {
     public static final int FLOOR_UNLOCK_ROOMS = 5;
     public static final int BASEMENT_UNLOCK_FLOOR=7;
 
+    //3 locations for ppl to scroll
+    public static final int BASE_SCROLL =0;
+    private static int BOTTOM_SCROLL;
+    private static int TOP_SCROLL;
+
 
     public static boolean pause;
     
@@ -39,14 +45,14 @@ public class World {
 
     public World(GameContainer gc)
     {
-
+        Room.addProduct(new BrownBread());
         this.gc = gc;
         rooms = new ArrayList<Room[]>();
-        floors = new ArrayList<Floor>();
+        floors = new ArrayList<Room[]>();
         rooms.add(new Room[ROOMS_IN_FLOOR]);
         ducks = new ArrayList<Duck>();
         yDisplace =0;
-        wallet = new MoneyManager();
+        wallet = new ResourceManager();
         duckLimit = 1;
         currBasement = -1;
         currRoom = 0;
@@ -57,6 +63,9 @@ public class World {
 
 
         wallet.setRooms(rooms);
+
+        //for testing
+
 
     }
 
@@ -92,9 +101,9 @@ public class World {
                 }
             }
         }
-        for (Floor f :floors)
+        for (Room[] f :floors)
         {
-            f.render(g);
+            f[0].render(g);
         }
 
         if (currFloor < FLOOR_UNLOCK_ROOMS)
@@ -113,6 +122,7 @@ public class World {
 
         }
         g.drawString("number of ducks not placed:"+ (duckLimit - getTotalDucks() ), 10, 620);
+        g.drawString("[T] for top [B] for bottom [0] for base", 10, 640);
 
     }
 
@@ -138,9 +148,9 @@ public class World {
                     }
                 }
             }
-            for (Floor f :floors)
+            for (Room[] f :floors)
             {
-                f.update();
+                f[0].update();
             }
 
             wallet.update(rooms, floors);
@@ -149,26 +159,37 @@ public class World {
     }
 
     public void keyPressed(int key, char c) {
-        if (c == '1' && MoneyManager.getFunds()>wallet.getRoomPrice(currFloor, currRoom)) {
+        if (c == '1' && ResourceManager.getFunds()>wallet.getRoomPrice(currFloor, currRoom)) {
             addRoom();
-            MoneyManager.withdraw(wallet.getRoomPrice(currFloor, currRoom));
+            ResourceManager.withdraw(wallet.getRoomPrice(currFloor, currRoom));
         }
-        if (c == '2'&& currFloor>=FLOOR_UNLOCK_ROOMS && MoneyManager.getFunds()>=wallet.getFloorPrice(currFloor))
+        if (c == '2'&& currFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=wallet.getFloorPrice(currFloor))
         {
-            floors.add(new Floor (currFloor));
+            floors.add(new Floor[]{new Floor (currFloor)});
             currFloor ++;
-            MoneyManager.withdraw(wallet.getFloorPrice(currFloor));
+            ResourceManager.withdraw(wallet.getFloorPrice(currFloor));
         }
         if (c == '3'&& currFloor>= BASEMENT_UNLOCK_FLOOR
-        && MoneyManager.getFunds()>=wallet.getFloorPrice(currBasement))
+        && ResourceManager.getFunds()>=wallet.getFloorPrice(currBasement))
         {
-            floors.add (new Floor (currBasement));
+            floors.add (new Floor[]{new Floor (currBasement)});
             currBasement --;
-            MoneyManager.withdraw(wallet.getFloorPrice(currBasement));
+            ResourceManager.withdraw(wallet.getFloorPrice(currBasement));
         }
 
-
-
+        //change to buttons later, will "hotkey" to top and bottom (yay!)
+        if (c == '0')
+        {
+            yDisplace = 0;
+        }
+        if (c == 'T' || c == 't')
+        {
+            yDisplace = (currFloor) * Room.HEIGHT - Main.getScreenHeight()/2;
+        }
+        if (c == 'B' || c == 'b')
+        {
+            yDisplace = (currBasement*Room.HEIGHT);
+        }
 
     }
 
@@ -210,11 +231,11 @@ public class World {
                     }
                 }
             }
-            for (Floor f :floors)
+            for (Room[] f :floors)
             {
-                if (f.isOver(x,y))
+                if (f[0].isOver(x,y))
                 {
-                    f.mousePressed(button, x, y);
+                    f[0].mousePressed(button, x, y);
                 }
 
             }
