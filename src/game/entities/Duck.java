@@ -15,6 +15,7 @@ public class Duck extends Entity {
     private int xConst;
     private int i;
     private int timer;
+    private boolean makeWeapons;
 
     public Duck(Room room, int startX)
     {
@@ -24,6 +25,7 @@ public class Duck extends Entity {
         size = image.getWidth();
         xConst = 1;
         x = startX;
+        makeWeapons = true;
 
 
         image = image.getFlippedCopy(true,false);

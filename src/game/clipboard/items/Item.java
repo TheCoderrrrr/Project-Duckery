@@ -12,6 +12,8 @@ public class Item {
     protected Image iconImage;
     protected Image roomImage;
     protected int myIndex;
+    protected boolean isBasement;
+    protected int warEffort;
 
     public Item()
     {
@@ -30,6 +32,10 @@ public class Item {
     {
         return value;
     }
+    public int getWarEffort()
+    {
+        return warEffort;
+    }
     public int getTimeToCreate()
     {
         return timeToCreate * Main.FRAMES_PER_SECOND;
@@ -47,6 +53,10 @@ public class Item {
     public int getImageIndex()
     {
         return myIndex;
+    }
+    public boolean getIsBasement()
+    {
+        return isBasement;
     }
     public Image getIconImage()
     {
