@@ -3,7 +3,7 @@ package game.clipboard.buttons;
 import game.ResourceManager;
 import game.clipboard.items.Item;
 import game.clipboard.menus.ResearchMenu;
-import game.entities.rooms.Room;
+import game.entities.rooms.ProductRoom;
 import org.newdawn.slick.Color;
 
 public class ResearchingButton extends BuyingButton {
@@ -24,7 +24,7 @@ public class ResearchingButton extends BuyingButton {
     public void onClick() {
         if (ResourceManager.getFunds()>price)
         {
-            Room.addProduct(myProduct);
+            ProductRoom.addProduct(myProduct);
             ResourceManager.withdraw(price);
             menu.removeItem(this);
         }

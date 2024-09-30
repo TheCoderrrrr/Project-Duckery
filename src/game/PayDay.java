@@ -11,7 +11,7 @@ import org.newdawn.slick.SlickException;
 public class PayDay {
     public boolean timerRunning;
     public int elapseTime;
-    public static int LENGTH_OF_WEEK = Main.FRAMES_PER_SECOND*5;
+    public static int LENGTH_OF_WEEK = Main.FRAMES_PER_SECOND*30;
     private int numClicks = 0;
     private PaydayButton[] payButtons;
     private boolean updated;

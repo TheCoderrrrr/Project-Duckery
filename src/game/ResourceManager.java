@@ -4,7 +4,7 @@ import core.Main;
 import core.messages.FloatMessage;
 import core.messages.MessageManager;
 import game.entities.rooms.Floor;
-import game.entities.rooms.Room;
+import game.entities.rooms.ProductRoom;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -41,7 +41,7 @@ public class ResourceManager {
 
     }
 
-    public void update(ArrayList<Room[]> rooms, ArrayList<Room[]> floors) {
+    public void update(ArrayList<ProductRoom[]> rooms, ArrayList<ProductRoom[]> floors) {
         incomeRate = 0;
         addFunds(rooms);
         addFunds(floors);
@@ -57,14 +57,14 @@ public class ResourceManager {
             adLevel = 0;
         }
     }
-    public void addFunds(ArrayList<Room[]> rooms)
+    public void addFunds(ArrayList<ProductRoom[]> rooms)
     {
         //counts the total income of bread
         if(!rooms.isEmpty())
         {
-            for (Room[] r :rooms)
+            for (ProductRoom[] r :rooms)
             {
-                for(Room room : r)
+                for(ProductRoom room : r)
                 {
                     if(room != null)
                     {
@@ -112,12 +112,12 @@ public class ResourceManager {
 
     public static double getFunds(){ return fund;}
 
-    public void setRooms(ArrayList<Room[]> rooms)
+    public void setRooms(ArrayList<ProductRoom[]> rooms)
     {
         // update so that it doesn't reset old stuff.
 
         //right now: creates a blank table based on the number of rooms currently there.
-        for (Room[] r :rooms)
+        for (ProductRoom[] r :rooms)
         {
             double[] vals = new double [r.length];
             roomVals.add(vals);

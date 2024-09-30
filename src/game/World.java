@@ -3,7 +3,7 @@ package game;
 import core.Images;
 import core.Main;
 import game.entities.Duck;
-import game.entities.rooms.Room;
+import game.entities.rooms.ProductRoom;
 import org.newdawn.slick.*;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class World {
     //private curDucks;
     
     
-    private final int Y_SPEED = Room.HEIGHT/10;
+    private final int Y_SPEED = ProductRoom.HEIGHT/10;
     private final double GROUND_CHANGE = 0.75;//changes the valyue of y-speed to make background look far
     public static final int ROOMS_IN_FLOOR = 2;
     public static final int FLOOR_UNLOCK_ROOMS = 5;
@@ -111,11 +111,11 @@ public class World {
         }
         if (c == 'T' || c == 't')
         {
-            yDisplace = (roomManager.getCurFloor()) * Room.HEIGHT - Main.getScreenHeight()/2;
+            yDisplace = (roomManager.getCurFloor()) * ProductRoom.HEIGHT - Main.getScreenHeight()/2;
         }
         if (c == 'B' || c == 'b')
         {
-            yDisplace = (currBasement*Room.HEIGHT);
+            yDisplace = (currBasement* ProductRoom.HEIGHT);
         }
 
     }

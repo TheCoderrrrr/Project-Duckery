@@ -1,8 +1,9 @@
 package game.entities;
 
 import game.World;
-import game.entities.rooms.Room;
+import game.entities.rooms.ProductRoom;
 import core.Images;
+import game.entities.rooms.Room;
 
 import static core.Images.DUC2;
 

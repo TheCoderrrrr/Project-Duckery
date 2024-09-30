@@ -3,6 +3,7 @@ package game;
 import game.clipboard.items.bread.BrownBread;
 import game.clipboard.items.weapon.Gun;
 import game.entities.rooms.Floor;
+import game.entities.rooms.ProductRoom;
 import game.entities.rooms.Room;
 import org.newdawn.slick.Graphics;
 import game.entities.rooms.ResearchFloor;
@@ -10,9 +11,9 @@ import game.entities.rooms.ResearchFloor;
 import java.util.ArrayList;
 
 public class RoomManager {
-    private static ArrayList<Room[]> rooms;
-    private static ArrayList<Room[]> floors;
-    private static Room resRoom;
+    private static ArrayList<ProductRoom[]> rooms;
+    private static ArrayList<ProductRoom[]> floors;
+    private static ResearchFloor resRoom;
     private static int curFloor;
     private static int curRoom;
     private static int curBasement;
@@ -22,13 +23,13 @@ public class RoomManager {
     private ResourceManager wallet;
     public RoomManager(ResourceManager resourceManager)
     {
-        Room.addProduct(new BrownBread());
-        Room.addProduct(new Gun());
+        ProductRoom.addProduct(new BrownBread());
+        ProductRoom.addProduct(new Gun());
         wallet = resourceManager;
         rooms = new ArrayList<>();
         floors = new ArrayList<>();
         resRoom = new ResearchFloor();
-        rooms.add(new Room[ROOMS_IN_FLOOR]);
+        rooms.add(new ProductRoom[ROOMS_IN_FLOOR]);
         curRoom =0;
         curFloor = 1;
         curBasement = -1;
@@ -39,7 +40,7 @@ public class RoomManager {
     //Doesn't include ResearchRoom
     public static int getTotalRooms(){
         int ret = floors.size() + (rooms.size()-1)*2;
-        for (Room r: rooms.getLast())
+        for (ProductRoom r: rooms.getLast())
         {
             if (r!= null)
             {
@@ -53,7 +54,7 @@ public class RoomManager {
     }
     public void render(Graphics g)
     {
-        for(Room[] r : rooms)
+        for(ProductRoom[] r : rooms)
         {
             for(int i = 0; i < ROOMS_IN_FLOOR; i++)
             {
@@ -64,7 +65,7 @@ public class RoomManager {
             }
         }
         resRoom.render(g);
-        for (Room[] f : floors)
+        for (ProductRoom[] f : floors)
         {
             f[0].render(g);
         }
@@ -87,7 +88,7 @@ public class RoomManager {
     }
     public void update()
     {
-        for (Room[] r :rooms)
+        for (ProductRoom[] r :rooms)
         {
             for (int i = 0; i<ROOMS_IN_FLOOR; i++)
             {
@@ -98,7 +99,7 @@ public class RoomManager {
             }
         }
         resRoom.update();
-        for (Room[] f :floors)
+        for (ProductRoom[] f :floors)
         {
             f[0].update();
         }
@@ -128,7 +129,7 @@ public class RoomManager {
     }
     public void mousePressed(int button, int mX, int mY)
     {
-        for (Room[] r :rooms)
+        for (ProductRoom[] r :rooms)
         {
             for (int i = 0; i<r.length; i++)
             {
@@ -143,7 +144,7 @@ public class RoomManager {
         {
             resRoom.mousePressed(button, mX, mY);
         }
-        for (Room[] f :floors)
+        for (ProductRoom[] f :floors)
         {
             if (f[0].isOver(mX,mY))
             {
@@ -156,7 +157,7 @@ public class RoomManager {
     {
         if(curFloor < FLOOR_UNLOCK_ROOMS)
         {
-            rooms.getLast()[curRoom] = new Room(curFloor, curRoom);
+            rooms.getLast()[curRoom] = new ProductRoom(curFloor, curRoom);
             if(spaceOnFloor()) {
                 curRoom++;
             }else
@@ -164,7 +165,7 @@ public class RoomManager {
                 curFloor++;
                 curRoom = 0;
 
-                Room[] newFloor = new Room[ROOMS_IN_FLOOR];
+                ProductRoom[] newFloor = new ProductRoom[ROOMS_IN_FLOOR];
                 rooms.add(newFloor);
                 wallet.addFloor(curFloor, curRoom);
             }

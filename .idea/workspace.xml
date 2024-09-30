@@ -4,24 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="paydays kind of work -- one bug">
-      <change afterPath="$PROJECT_DIR$/src/game/entities/rooms/BasementFloor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="troubleshooting - still have to add research room">
+      <change afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/ResearchButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/entities/rooms/ProductRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/PayDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/PayDay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ResourceManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/RoomManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entities/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Duck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entities/StorageRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/StorageRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/RoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/RoomButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PaydayButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PaydayButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727669994170</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="troubleshooting - still have to add research room">
+      <option name="closed" value="true" />
+      <created>1727676928050</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1727676928050</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,7 +300,8 @@
     <MESSAGE value="advertising adds (not multiplies ) yay" />
     <MESSAGE value="hopefully room change button + new ad types (with cooldown)" />
     <MESSAGE value="paydays kind of work -- one bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="paydays kind of work -- one bug" />
+    <MESSAGE value="troubleshooting - still have to add research room" />
+    <option name="LAST_COMMIT_MESSAGE" value="troubleshooting - still have to add research room" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -309,11 +315,6 @@
           <url>file://$PROJECT_DIR$/src/core/Images.java</url>
           <line>14</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/game/entities/rooms/Room.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

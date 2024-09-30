@@ -1,6 +1,7 @@
 package game.entities.roomButtons;
 
 import game.World;
+import game.entities.rooms.ProductRoom;
 import game.entities.rooms.Room;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -14,6 +15,12 @@ abstract public class RoomButton {
     protected Color myColor;
     protected int red;
 
+    public RoomButton(ProductRoom room)
+    {
+        this.room = room;
+        myX = room.getX()+room.getWidth() - SIZE*2;
+        myY = room.getY()+(myIndex+1)*SIZE;
+    }
     public RoomButton(Room room)
     {
         this.room = room;
