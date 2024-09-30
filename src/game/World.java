@@ -2,10 +2,8 @@ package game;
 
 import core.Images;
 import core.Main;
-import game.clipboard.items.bread.BrownBread;
 import game.entities.Duck;
-import game.entities.Floor;
-import game.entities.Room;
+import game.entities.rooms.Room;
 import org.newdawn.slick.*;
 
 import java.util.ArrayList;
@@ -51,6 +49,7 @@ public class World {
 
 
     }
+
 
     public static boolean getPause(){ return pause;}
 

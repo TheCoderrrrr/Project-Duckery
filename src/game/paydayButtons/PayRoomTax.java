@@ -1,5 +1,6 @@
 package game.paydayButtons;
 
+import game.RoomManager;
 import game.World;
 
 public class PayRoomTax extends PaydayButton {
@@ -15,7 +16,7 @@ public class PayRoomTax extends PaydayButton {
     @Override
     public void calculatePrice() {
         super.calculatePrice();
-        price = World.getTotalRooms()*ROOM_TAX;
+        price = RoomManager.getTotalRooms()*ROOM_TAX;
     }
 
 }

@@ -12,11 +12,13 @@ abstract public class PaydayButton {
     protected static int index;
     protected static int myX;
     protected int myY;
-    protected int price;
-    protected boolean paid;
+    int price;
+    boolean paid;
+    Color myColor;
 
     public PaydayButton()
     {
+        myColor = Color.white;
         index = indexCounter;
         indexCounter++;
         myX = 1000;
@@ -27,7 +29,14 @@ abstract public class PaydayButton {
 
     public void render(Graphics g)
     {
-        g.setColor(Color.green);
+        if(paid)
+        {
+            myColor = Color.green;
+        }
+        else {
+            myColor = Color.white;
+        }
+        g.setColor(myColor);
         g.fillRect(myX,myY, WIDTH, HEIGHT);
         g.setColor(Color.black);
         g.drawString("Pay "+name+"\n$ "+price+"\npaid? "+paid, myX, myY);
@@ -37,12 +46,7 @@ abstract public class PaydayButton {
 
     public boolean mouseOver(int x, int y)
     {
-        if (x>myX && x < myX+WIDTH && y>myY && y<myY+HEIGHT)
-        {
-            return true;
-        }
-        return false;
-
+        return (x > myX && x < (myX + WIDTH) && y > (myY) && y < (myY + HEIGHT));
     }
     public boolean isPaid(){return paid;}
     public void calculatePrice()

@@ -1,11 +1,8 @@
 package game.entities;
 
 import game.World;
-import org.lwjgl.input.Mouse;
-import org.newdawn.slick.Color;
-import org.newdawn.slick.Graphics;
+import game.entities.rooms.Room;
 import core.Images;
-import org.newdawn.slick.SpriteSheet;
 
 import static core.Images.DUC2;
 

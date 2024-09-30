@@ -1,7 +1,6 @@
 package game.clipboard.items;
 
 import core.Main;
-import game.entities.Room;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 

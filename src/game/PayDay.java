@@ -26,7 +26,7 @@ public class PayDay {
         g.setColor(Color.black);
         g.drawString("Time: " + formatTime(elapseTime), 1697, 42);
 
-        if (elapseTime%LENGTH_OF_WEEK == 0 && numClicks <1)
+        if (elapseTime%LENGTH_OF_WEEK == 0 && numClicks <= 1)
         {
             g.setColor(Color.red);
             g.fillRect(100, 100, Main.getScreenWidth()-200, Main.getScreenHeight()-200);
@@ -73,7 +73,7 @@ public class PayDay {
         if(!getIsPaid() && elapseTime%LENGTH_OF_WEEK == 0 && numClicks == 0) //checks that is in right state;
         {
             for(int i = 0; i< payButtons.length; i++){
-                if (payButtons[i].mouseOver(x,y)) ;
+                if (payButtons[i].mouseOver(x,y))
                 {
                     payButtons[i].click();
                 }

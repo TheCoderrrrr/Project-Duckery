@@ -3,7 +3,7 @@ package game.clipboard.buttons;
 import game.ResourceManager;
 import game.clipboard.items.Item;
 import game.clipboard.menus.ResearchMenu;
-import game.entities.Room;
+import game.entities.rooms.Room;
 import org.newdawn.slick.Color;
 
 public class ResearchingButton extends BuyingButton {

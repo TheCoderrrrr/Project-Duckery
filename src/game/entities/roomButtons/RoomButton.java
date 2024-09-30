@@ -1,7 +1,7 @@
 package game.entities.roomButtons;
 
 import game.World;
-import game.entities.Room;
+import game.entities.rooms.Room;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 

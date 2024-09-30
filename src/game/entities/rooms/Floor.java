@@ -1,13 +1,13 @@
-package game.entities;
+package game.entities.rooms;
 
 import game.World;
-import org.newdawn.slick.Color;
-import org.newdawn.slick.Graphics;
+import game.RoomManager;
 
 public class Floor extends Room {
 
     //int myFloor;
     Room[] rooms;
+    int index = RoomManager.FLOOR_UNLOCK_ROOMS;
 
     public Floor(int myFloor) {
         super(myFloor, 0);

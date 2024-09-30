@@ -1,6 +1,6 @@
 package game.entities.roomButtons;
 
-import game.entities.Room;
+import game.entities.rooms.Room;
 
 public class ChangeRoomButton extends RoomButton{
     public ChangeRoomButton(Room room)

@@ -4,16 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="hopefully room change button + new ad types (with cooldown)">
-      <change afterPath="$PROJECT_DIR$/src/game/paydayButtons/PayDucks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/paydayButtons/PaydayButton.java" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="paydays kind of work -- one bug">
+      <change afterPath="$PROJECT_DIR$/src/game/entities/rooms/BasementFloor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/PayDay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/PayDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/PayDay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ResourceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/RoomManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/StorageRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/StorageRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/RoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/RoomButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PaydayButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PaydayButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,23 +61,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/senmr/Downloads/Project-Duckery/res/floors",
-    "onboarding.tips.debug.path": "C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/senmr/Downloads/Project-Duckery/res/floors&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\senmr\Downloads\Project-Duckery\res\floors" />
@@ -246,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727663569617</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="paydays kind of work -- one bug">
+      <option name="closed" value="true" />
+      <created>1727669994170</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1727669994170</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,7 +294,8 @@
     <MESSAGE value="added room-specific button system" />
     <MESSAGE value="advertising adds (not multiplies ) yay" />
     <MESSAGE value="hopefully room change button + new ad types (with cooldown)" />
-    <option name="LAST_COMMIT_MESSAGE" value="hopefully room change button + new ad types (with cooldown)" />
+    <MESSAGE value="paydays kind of work -- one bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="paydays kind of work -- one bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -292,6 +309,11 @@
           <url>file://$PROJECT_DIR$/src/core/Images.java</url>
           <line>14</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/game/entities/rooms/Room.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

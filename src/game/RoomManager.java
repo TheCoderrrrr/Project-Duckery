@@ -2,22 +2,22 @@ package game;
 
 import game.clipboard.items.bread.BrownBread;
 import game.clipboard.items.weapon.Gun;
-import game.entities.Floor;
-import game.entities.Room;
-import org.newdawn.slick.Color;
+import game.entities.rooms.Floor;
+import game.entities.rooms.Room;
 import org.newdawn.slick.Graphics;
+import game.entities.rooms.ResearchFloor;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class RoomManager {
-    private ArrayList<Room[]> rooms;
-    private ArrayList<Room[]> floors;
-    private int curFloor;
-    private int curRoom;
-    private int curBasement;
+    private static ArrayList<Room[]> rooms;
+    private static ArrayList<Room[]> floors;
+    private static Room resRoom;
+    private static int curFloor;
+    private static int curRoom;
+    private static int curBasement;
     private static final int ROOMS_IN_FLOOR = 2;
-    private static final int FLOOR_UNLOCK_ROOMS = 5;
+    public static final int FLOOR_UNLOCK_ROOMS = 5;
     private static final int BASEMENT_UNLOCK_FLOOR = 7;
     private ResourceManager wallet;
     public RoomManager(ResourceManager resourceManager)
@@ -27,11 +27,29 @@ public class RoomManager {
         wallet = resourceManager;
         rooms = new ArrayList<>();
         floors = new ArrayList<>();
+        resRoom = new ResearchFloor();
         rooms.add(new Room[ROOMS_IN_FLOOR]);
-        curRoom = 0;
+        curRoom =0;
+        curFloor = 1;
         curBasement = -1;
         addRoom();
         wallet.setRooms(rooms);
+    }
+
+    //Doesn't include ResearchRoom
+    public static int getTotalRooms(){
+        int ret = floors.size() + (rooms.size()-1)*2;
+        for (Room r: rooms.getLast())
+        {
+            if (r!= null)
+            {
+                ret++;
+            }
+        }
+        System.out.println(ret);
+        return ret;
+
+
     }
     public void render(Graphics g)
     {
@@ -45,6 +63,7 @@ public class RoomManager {
                 }
             }
         }
+        resRoom.render(g);
         for (Room[] f : floors)
         {
             f[0].render(g);
@@ -78,6 +97,7 @@ public class RoomManager {
                 }
             }
         }
+        resRoom.update();
         for (Room[] f :floors)
         {
             f[0].update();
@@ -118,6 +138,10 @@ public class RoomManager {
                     wallet.updateRoom(rooms.indexOf(r),i, r[i].getNumDucks());
                 }
             }
+        }
+        if (resRoom.isOver(mX, mY))
+        {
+            resRoom.mousePressed(button, mX, mY);
         }
         for (Room[] f :floors)
         {

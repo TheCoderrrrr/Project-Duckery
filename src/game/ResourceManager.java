@@ -3,8 +3,8 @@ package game;
 import core.Main;
 import core.messages.FloatMessage;
 import core.messages.MessageManager;
-import game.entities.Floor;
-import game.entities.Room;
+import game.entities.rooms.Floor;
+import game.entities.rooms.Room;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
