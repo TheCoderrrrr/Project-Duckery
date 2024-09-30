@@ -4,6 +4,8 @@ package game.entities;
 import core.Images;
 import game.World;
 import game.clipboard.items.Item;
+import game.entities.roomButtons.ChangeRoomButton;
+import game.entities.roomButtons.RoomButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -33,6 +35,7 @@ public class Room {
     protected int pauseTimer;
     protected boolean pause;
     protected final int TOTAL_BUILD_TIME = 800;
+    protected RoomButton[] myButtons;
 
     public Room (int floor, int number)
     {
@@ -51,6 +54,7 @@ public class Room {
         pause = false;
         myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
 
+        myButtons = new RoomButton[]{new ChangeRoomButton(this)};
 
     }
 
@@ -84,6 +88,7 @@ public class Room {
             g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRoom:"+myRoom +
                     "\nProduct" + getProductName(), x, World.getYDisplace() + y);
             for (Duck duck : ducks) duck.render(g);
+            for (int i=0;i<myButtons.length;i++) myButtons[i].render(g);
         }
         else {
             g.drawString("Building "+ getProductName() + " room!\n ETA: "+pauseTimer, x, World.getYDisplace() + y);
@@ -105,6 +110,7 @@ public class Room {
             {
 
             }
+            for (int i=0;i<myButtons.length;i++) myButtons[i].update();
         }
         else {
             pauseTimer--;
@@ -135,6 +141,10 @@ public class Room {
                     break;
                 }
             }
+        }
+        for (int i=0;i<myButtons.length;i++) if (myButtons[i].mouseOver(x,y))
+        {
+            myButtons[i].action();
         }
 
     }

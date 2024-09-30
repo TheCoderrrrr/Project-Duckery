@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="floor and rooms streamlined, pickup and move ducks">
-      <change afterPath="$PROJECT_DIR$/res/floors/buildRoom.png" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="takes time to update rooms!">
+      <change afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Images.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/MoneyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ResourceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/AdvertisingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/AdvertisingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BlandBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BlandBreadButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BrownBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BrownBreadButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/CosmicBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/CosmicBreadButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/DivineBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/DivineBreadButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +40,9 @@
     &quot;associatedIndex&quot;: 6
     }</component>
   <component name="ProjectId" id="2lJTSlTwcR7v67l4fgq0ol7rm4W" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -213,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727639327024</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="takes time to update rooms!">
+      <option name="closed" value="true" />
+      <created>1727652516602</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1727652516602</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,7 +236,8 @@
     <MESSAGE value="added images" />
     <MESSAGE value="ducks are able to be picked up and dropped" />
     <MESSAGE value="floor and rooms streamlined, pickup and move ducks" />
-    <option name="LAST_COMMIT_MESSAGE" value="floor and rooms streamlined, pickup and move ducks" />
+    <MESSAGE value="takes time to update rooms!" />
+    <option name="LAST_COMMIT_MESSAGE" value="takes time to update rooms!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
