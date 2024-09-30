@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="advertising adds (not multiplies ) yay">
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ads/BillboardAd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ads/NewspaperAd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ads/TeleAd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Clipboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Clipboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ResourceManager.java" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="hopefully room change button + new ad types (with cooldown)">
       <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/AdvertisingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ads/AdvertisingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BlandBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/bread/BlandBreadButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BrownBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/bread/BrownBreadButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/CosmicBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/bread/CosmicBreadButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/DivineBreadButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/bread/DivineBreadButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/HiringMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/HiringMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/ResearchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/ResearchMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727660876687</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="hopefully room change button + new ad types (with cooldown)">
+      <option name="closed" value="true" />
+      <created>1727663215522</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1727663215522</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,7 +261,8 @@
     <MESSAGE value="takes time to update rooms!" />
     <MESSAGE value="added room-specific button system" />
     <MESSAGE value="advertising adds (not multiplies ) yay" />
-    <option name="LAST_COMMIT_MESSAGE" value="advertising adds (not multiplies ) yay" />
+    <MESSAGE value="hopefully room change button + new ad types (with cooldown)" />
+    <option name="LAST_COMMIT_MESSAGE" value="hopefully room change button + new ad types (with cooldown)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

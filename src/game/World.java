@@ -105,7 +105,7 @@ public class World {
         {
             f[0].render(g);
         }
-
+        g.setColor(Color.black);
         if (currFloor < FLOOR_UNLOCK_ROOMS)
         {
             //g.drawString("PRESS [1] to add room| Price:" + wallet.getRoomPrice(currFloor, currBasement), 10,580);
