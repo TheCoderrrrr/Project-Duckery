@@ -2,7 +2,7 @@ package core;
 import game.ResourceManager;
 import core.messages.MessageManager;
 import game.Clipboard;
-import game.News;
+import game.PayDay;
 import game.World;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -18,7 +18,7 @@ public class Game extends BasicGameState {
 
     private World world;
     private Clipboard clipboard;
-    private News news;
+    private PayDay news;
 
     public Game(int id)
     {
@@ -41,7 +41,7 @@ public class Game extends BasicGameState {
 
         clipboard = new Clipboard();
         world = new World(gc);
-        news = new News();
+        news = new PayDay();
 
 
         gc.setShowFPS(true);
@@ -82,7 +82,7 @@ public class Game extends BasicGameState {
     {
         world.mousePressed(button, x, y);
         clipboard.mousePressed(button, x, y);
-        news.mouseClicked();
+        news.mouseClicked(x, y);
     }
 
     @Override

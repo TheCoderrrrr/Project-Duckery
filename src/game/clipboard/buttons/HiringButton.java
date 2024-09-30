@@ -4,13 +4,14 @@ import game.World;
 import org.newdawn.slick.Color;
 import game.ResourceManager;
 import org.newdawn.slick.SlickException;
+import game.paydayButtons.PayDucks;
 
 public class HiringButton extends BuyingButton {
 
     public HiringButton(int x, int y) {
         super(x, y);
         color = Color.magenta;
-        name = "hire";
+        name = "hire\ncosts "+PayDucks.DUCK_WAGE+"/day";
         price = 10;
 
     }

@@ -37,8 +37,6 @@ public class ResourceManager {
 
 
     public static void render(Graphics g) {
-        g.setColor (Color.black);
-        g.drawString("$" + fund +"\nINCOME:" + incomeRate + " per second\nBread made: " + breadMade, 20,20);
 
     }
 
@@ -151,7 +149,12 @@ public class ResourceManager {
         if (value<=fund){
             fund -= value;
         }
+    }
 
+    //doesn't check if there's enough money
+    public static void tax(int value)
+    {
+        fund -= value;
     }
 
     private void calculateIncomeRate()

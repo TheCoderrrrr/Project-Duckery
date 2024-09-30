@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 public class World {
 
-    private ArrayList<Room[]> rooms;
-    private ArrayList<Room[]> floors;
+    private static ArrayList<Room[]> rooms;
+    private static ArrayList<Room[]> floors;
     public static ArrayList<Duck> ducks;
     private ResourceManager wallet;
     private int currFloor;
@@ -256,6 +256,22 @@ public class World {
     public static void unpause()
     {
         pause = false;
+    }
+
+    public static int getTotalRooms()
+    {
+        int numRoom;
+        numRoom = (rooms.size()-1)*2 + floors.size();
+
+        //accounts for null rooms in upper rooms.
+        for(Room r: rooms.getLast())
+        {
+            if (r!= null)
+            {
+                numRoom++;
+            }
+        }
+        return numRoom;
     }
 
     public void addRoom(){
