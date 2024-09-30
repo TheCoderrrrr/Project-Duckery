@@ -2,6 +2,7 @@ package game;
 
 import game.clipboard.buttons.BuyingButton;
 import game.clipboard.MiniManager;
+import game.clipboard.buttons.ads.AdvertisingButton;
 import game.clipboard.menus.AdvertisingMenu;
 import game.clipboard.menus.HiringMenu;
 import game.clipboard.menus.Menu;
@@ -41,6 +42,7 @@ public class Clipboard {
     }
 
     public void update() {
+        AdvertisingButton.update();
     }
 
     public void keyPressed(int key, char c) {

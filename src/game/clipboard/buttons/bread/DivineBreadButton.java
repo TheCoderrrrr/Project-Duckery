@@ -1,9 +1,10 @@
-package game.clipboard.buttons;
+package game.clipboard.buttons.bread;
 
+import game.clipboard.buttons.ResearchingButton;
 import game.clipboard.items.bread.DivineBread;
 import game.clipboard.menus.ResearchMenu;
 
-public class DivineBreadButton extends ResearchingButton{
+public class DivineBreadButton extends ResearchingButton {
 
 
     public DivineBreadButton(int x, int y , ResearchMenu menu) {

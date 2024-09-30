@@ -22,6 +22,10 @@ public class ResourceManager {
 
     int timer;
 
+    public double getIncomeRate(){return incomeRate;}
+    public double getFund(){return fund;}
+    public double getBreadMade(){return breadMade;}
+
 
     public ResourceManager()
     {
@@ -87,9 +91,9 @@ public class ResourceManager {
         incomeRate = ((int) (incomeRate *100))/100;
     }
 
-    public static void advertise(int length){
+    public static void advertise(int length, int boost){
         //advertise based on amount of time/
-        adLevel  = 10;
+        adLevel  += boost;
         adTimer += length;
     }
 

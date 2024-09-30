@@ -1,9 +1,10 @@
-package game.clipboard.buttons;
+package game.clipboard.buttons.bread;
 
+import game.clipboard.buttons.ResearchingButton;
 import game.clipboard.items.bread.CosmicBread;
 import game.clipboard.menus.ResearchMenu;
 
-public class CosmicBreadButton extends ResearchingButton{
+public class CosmicBreadButton extends ResearchingButton {
 
 
     public CosmicBreadButton(int x, int y , ResearchMenu menu) {

@@ -17,8 +17,6 @@ public class HiringButton extends BuyingButton {
 
     @Override
     public void onClick() {
-        super.onClick();
-
         if (ResourceManager.getFunds()>= price)
         {
             try {

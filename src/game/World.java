@@ -124,6 +124,10 @@ public class World {
         g.drawString("number of ducks not placed:"+ (duckLimit - getTotalDucks() ), 10, 620);
         g.drawString("[T] for top [B] for bottom [0] for base", 10, 640);
 
+        g.setColor (Color.black);
+        g.drawString("$" + wallet.getFund() +"\nINCOME:" + wallet.getIncomeRate() +
+                " per second\nBread made: " + wallet.getBreadMade() + "\nDucksTotal: "+getTotalDucks(), 20,20);
+
     }
 
     public void update() {

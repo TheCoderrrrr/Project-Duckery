@@ -58,8 +58,6 @@ public abstract class BuyingButton {
         }
     }
 
-    protected void onClick()
-    {
-    }
+    protected abstract void onClick();
 
 }

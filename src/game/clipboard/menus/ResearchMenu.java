@@ -2,6 +2,10 @@ package game.clipboard.menus;
 
 import game.clipboard.buttons.*;
 import game.clipboard.buttons.ResearchingButton;
+import game.clipboard.buttons.bread.BlandBreadButton;
+import game.clipboard.buttons.bread.BrownBreadButton;
+import game.clipboard.buttons.bread.CosmicBreadButton;
+import game.clipboard.buttons.bread.DivineBreadButton;
 
 public class ResearchMenu extends Menu {
 

@@ -22,7 +22,6 @@ public class ResearchingButton extends BuyingButton {
 
     @Override
     public void onClick() {
-        super.onClick();
         if (ResourceManager.getFunds()>price)
         {
             Room.addProduct(myProduct);

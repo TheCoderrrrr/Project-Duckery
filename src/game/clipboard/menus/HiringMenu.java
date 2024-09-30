@@ -1,9 +1,6 @@
 package game.clipboard.menus;
 
-import game.clipboard.buttons.AdvertisingButton;
-import game.clipboard.buttons.BuyingButton;
 import game.clipboard.buttons.HiringButton;
-import game.clipboard.buttons.ResearchingButton;
 
 public class HiringMenu extends Menu{
 

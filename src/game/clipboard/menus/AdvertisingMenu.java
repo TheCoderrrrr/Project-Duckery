@@ -1,6 +1,9 @@
 package game.clipboard.menus;
 
-import game.clipboard.buttons.AdvertisingButton;
+import game.clipboard.buttons.ads.AdvertisingButton;
+import game.clipboard.buttons.ads.BillboardAd;
+import game.clipboard.buttons.ads.NewspaperAd;
+import game.clipboard.buttons.ads.TeleAd;
 
 public class AdvertisingMenu extends Menu{
 
@@ -8,8 +11,10 @@ public class AdvertisingMenu extends Menu{
     {
         super(2);
         title = "advertising";
-        mySize = 1;
-        myButtons.add(new AdvertisingButton(X_LEFT, myY));
+        mySize = 3;
+        myButtons.add(new NewspaperAd(X_LEFT, myY));
+        myButtons.add(new BillboardAd(X_LEFT, myY));
+        myButtons.add(new TeleAd(X_LEFT, myY));
         setButtonX();
 
 
