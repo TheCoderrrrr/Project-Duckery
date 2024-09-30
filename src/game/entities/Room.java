@@ -26,6 +26,7 @@ public class Room {
     int myRoom;
     protected Color myColor;
     protected static ArrayList<Item> products = new ArrayList<>();
+    protected static ArrayList<Item> productsUG = new ArrayList<>();
     protected int curItem;
     protected int timer;
     protected SpriteSheet myRoomTypes;
@@ -36,6 +37,7 @@ public class Room {
     protected boolean pause;
     protected final int TOTAL_BUILD_TIME = 800;
     protected RoomButton[] myButtons;
+    private boolean isBasement;
 
     public Room (int floor, int number)
     {
@@ -50,9 +52,13 @@ public class Room {
         timer = 0;
         maxDucks = 3;
         myRoomTypes = Images.ROOMS;
+        isBasement = floor < 0;
 
         pause = false;
-        myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
+        if(isBasement)myImage = myRoomTypes.getSubImage(productsUG.get(curItem).getImageIndex(),0);
+        else myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
+
+
 
         myButtons = new RoomButton[]{new ChangeRoomButton(this)};
 
@@ -102,6 +108,7 @@ public class Room {
     {
         if (!pause)
         {
+
             if(timer < getTimeToMake() && !ducks.isEmpty())
             {
                 timer++;
@@ -154,13 +161,25 @@ public class Room {
     }
     public void switchProduct()
     {
-        if(curItem < products.size() - 1) curItem++;
-        else curItem = 0;
-        pause = true;
-        pauseTimer = TOTAL_BUILD_TIME;
-        myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
+        if(isBasement)
+        {
+            if(curItem < productsUG.size() - 1) curItem++;
+            else curItem = 0;
+            pause = true;
+            pauseTimer = TOTAL_BUILD_TIME;
+            myImage = myRoomTypes.getSubImage(productsUG.get(curItem).getImageIndex(),0);
 
-        resetTimer();
+            resetTimer();
+        }
+        else{
+            if(curItem < products.size() - 1) curItem++;
+            else curItem = 0;
+            pause = true;
+            pauseTimer = TOTAL_BUILD_TIME;
+            myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
+
+            resetTimer();
+        }
     }
 //mutator
     public void addDuck(int startX)
@@ -182,11 +201,9 @@ public class Room {
     }
     public static void addProduct(Item product)
     {
-        products.add(product);
-    }
-    public static ArrayList<Item> getProducts()
-    {
-        return products;
+        if(product.getIsBasement()) productsUG.add(product);
+        else products.add(product);
+
     }
 
     // accessor
@@ -223,6 +240,20 @@ public class Room {
         }
 
     }
+    public boolean isBasement()
+    {
+        return isBasement;
+    }
+    public int getWarEffort()
+    {
+        if (!productsUG.isEmpty())
+        {
+            return productsUG.get(curItem).getWarEffort();
+        }
+        else {
+            return 0;
+        }
+    }
     public int getTimeToMake()
     {
         if (!products.isEmpty())
@@ -236,13 +267,27 @@ public class Room {
     }
     public String getProductName()
     {
-        if (!products.isEmpty())
+        if(isBasement)
         {
-            return products.get(curItem).getName();
+            if (!productsUG.isEmpty())
+            {
+                return productsUG.get(curItem).getName();
+            }
+            else {
+                return "none-purchase to add";
+            }
         }
-        else {
-            return "none-purchase to add";
+        else
+        {
+            if (!products.isEmpty())
+            {
+                return products.get(curItem).getName();
+            }
+            else {
+                return "none-purchase to add";
+            }
         }
+
     }
     public void resetTimer()
     {

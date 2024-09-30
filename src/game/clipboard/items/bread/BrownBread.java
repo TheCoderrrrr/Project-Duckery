@@ -11,6 +11,7 @@ public class BrownBread extends Item {
         name = "Brown Bread";
         myIndex = 1;
         roomImage = Images.ROOMS.getSubImage(1,0);
+        isBasement = false;
     }
 
 }

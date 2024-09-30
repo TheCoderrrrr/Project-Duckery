@@ -12,5 +12,6 @@ public class BlandBread extends Item {
         timeToCreate = 3;
         name = "Bland Bread";
         roomImage = Images.ROOMS.getSubImage(0,0);
+        isBasement = false;
     }
 }

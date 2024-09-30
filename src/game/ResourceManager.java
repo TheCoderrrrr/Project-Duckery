@@ -13,14 +13,15 @@ import java.util.ArrayList;
 public class ResourceManager {
 
     static private double fund;
-    ArrayList<double[]> roomVals;
-    ArrayList<Floor> floors;
-    static double incomeRate;// amount of money/5 seconds.
-    static int adLevel;
-    static int adTimer;
-    static int breadMade;
+    private ArrayList<double[]> roomVals;
+    private ArrayList<Floor> floors;
+    private static double incomeRate;// amount of money/5 seconds.
+    private static int adLevel;
+    private static int adTimer;
+    private static int breadMade;
+    private static int warEffort;
 
-    int timer;
+    private int timer;
 
     public double getIncomeRate(){return incomeRate;}
     public double getFund(){return fund;}
@@ -69,13 +70,23 @@ public class ResourceManager {
                     {
                         if(room.completedProduct())
                         {
-                            fund += ((double)room.getValue()+adLevel);//increases ad level.
-                            room.resetTimer();
-                            MessageManager.addMessage(new FloatMessage(
-                                    "+ "+(room.getValue()+adLevel), room.getX() + (float)room.getWidth()/2, room.getY(),
-                                    Color.yellow, 70));
-                            breadMade++;
-
+                            if(!room.isBasement())
+                            {
+                                fund += ((double)room.getValue()+adLevel);//increases ad level.
+                                room.resetTimer();
+                                MessageManager.addMessage(new FloatMessage(
+                                        "+ "+(room.getValue()+adLevel), room.getX() + (float)room.getWidth()/2, room.getY(),
+                                        Color.yellow, 70));
+                                breadMade++;
+                            }
+                            else
+                            {
+                                warEffort++;
+                                room.resetTimer();
+                                MessageManager.addMessage(new FloatMessage(
+                                        "+ "+(room.getWarEffort()+adLevel), room.getX() + (float)room.getWidth()/2, room.getY(),
+                                        Color.white, 70));
+                            }
                         }
                         if (room.getNumDucks() >0)
                         {
@@ -87,6 +98,10 @@ public class ResourceManager {
             }
         }
         incomeRate = ((int) (incomeRate *100))/100;
+    }
+    public void addWarEffort()
+    {
+
     }
 
     public static void advertise(int length, int boost){
@@ -105,7 +120,7 @@ public class ResourceManager {
         for (Room[] r :rooms)
         {
             double[] vals = new double [r.length];
-            roomVals.add( vals);
+            roomVals.add(vals);
         }
 
     }
