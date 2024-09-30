@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="takes time to update rooms!">
-      <change afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomButton.java" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="added room-specific button system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ResourceManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727652516602</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added room-specific button system">
+      <option name="closed" value="true" />
+      <created>1727660172729</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1727660172729</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,7 +244,8 @@
     <MESSAGE value="ducks are able to be picked up and dropped" />
     <MESSAGE value="floor and rooms streamlined, pickup and move ducks" />
     <MESSAGE value="takes time to update rooms!" />
-    <option name="LAST_COMMIT_MESSAGE" value="takes time to update rooms!" />
+    <MESSAGE value="added room-specific button system" />
+    <option name="LAST_COMMIT_MESSAGE" value="added room-specific button system" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

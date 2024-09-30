@@ -16,7 +16,7 @@ public class ResourceManager {
     ArrayList<double[]> roomVals;
     ArrayList<Floor> floors;
     static double incomeRate;// amount of money/5 seconds.
-    static double adLevel;
+    static int adLevel;
     static int adTimer;
     static int breadMade;
 
@@ -27,8 +27,8 @@ public class ResourceManager {
     {
         fund = 300;
         roomVals = new ArrayList<>();
-        incomeRate = 0.0;
-        adLevel = 1.0;
+        incomeRate = 0;
+        adLevel = 0;
     }
 
 
@@ -51,7 +51,7 @@ public class ResourceManager {
         //resets base adLevel (no bonus)
         if (adTimer == 0)
         {
-            adLevel = 1.0;
+            adLevel = 0;
         }
     }
     public void addFunds(ArrayList<Room[]> rooms)
@@ -67,29 +67,29 @@ public class ResourceManager {
                     {
                         if(room.completedProduct())
                         {
-                            fund += ((double)room.getValue()*adLevel);//increases ad level.
+                            fund += ((double)room.getValue()+adLevel);//increases ad level.
                             room.resetTimer();
                             MessageManager.addMessage(new FloatMessage(
-                                    "+ "+(double)room.getValue()*adLevel, room.getX() + (float)room.getWidth()/2, room.getY(),
+                                    "+ "+(room.getValue()+adLevel), room.getX() + (float)room.getWidth()/2, room.getY(),
                                     Color.yellow, 70));
                             breadMade++;
 
                         }
                         if (room.getNumDucks() >0)
                         {
-                            incomeRate += ((double)room.getValue()*adLevel)/(room.getTimeToMake())* Main.FRAMES_PER_SECOND;
+                            incomeRate += (room.getValue()+adLevel)/(room.getTimeToMake())* Main.FRAMES_PER_SECOND;
                         }
 
                     }
                 }
             }
         }
-        incomeRate = ((int) (incomeRate *100))/100.0;
+        incomeRate = ((int) (incomeRate *100))/100;
     }
 
     public static void advertise(int length){
         //advertise based on amount of time/
-        adLevel  = 1.50;
+        adLevel  = 10;
         adTimer += length;
     }
 
@@ -159,7 +159,7 @@ public class ResourceManager {
             for (int j =0; j< roomVals.get(i).length; j++)
             {
                 double[] val = roomVals.get(i);
-                incomeRate += val[j]*adLevel;
+                incomeRate += val[j]+adLevel;
             }
         }
         // if advertising is true, multiply by some value.
