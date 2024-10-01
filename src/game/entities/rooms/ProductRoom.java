@@ -15,13 +15,13 @@ import org.newdawn.slick.SpriteSheet;
 import java.util.ArrayList;
 
 public class ProductRoom  extends Room{
+    static int lastCurItem;
 
     public ProductRoom(int floor, int number)
     {
         //floor must be at least 0, number between 0 and 3.
        super(floor, number);
-
-        myButtons.add(new ChangeRoomButton(this));
+       curItem = lastCurItem;
 
     }
 
@@ -47,6 +47,14 @@ public class ProductRoom  extends Room{
         super.update();
         if (!pause)
         {
+            if (myButtons.size()!= products.size())
+            {
+                myButtons = new ArrayList<>();
+                for (Item p: products)
+                {
+                    myButtons.add(new ChangeRoomButton(this, p, myButtons.size()));
+                }
+            }
 
             if(timer < getTimeToMake() && !ducks.isEmpty())
             {
@@ -100,6 +108,19 @@ public class ProductRoom  extends Room{
             myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
 
             resetTimer();
+        }
+    }
+    public void switchProduct(Item i)
+    {
+        if (!isBasement())
+        {
+            curItem = products.indexOf(i);
+            pause = true;
+            pauseTimer = TOTAL_BUILD_TIME;
+            myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
+
+            resetTimer();
+            lastCurItem = curItem;
         }
     }
 //mutator

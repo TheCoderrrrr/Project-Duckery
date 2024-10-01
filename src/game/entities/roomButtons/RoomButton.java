@@ -5,33 +5,44 @@ import game.entities.rooms.ProductRoom;
 import game.entities.rooms.Room;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 
 abstract public class RoomButton {
     protected Room room;
-    protected int SIZE = 20;
+    protected int SIZE = 24;
     protected int myX;
     protected int myY;
     protected int myIndex;
     protected Color myColor;
     protected int red;
+    protected Image myImage;
 
-    public RoomButton(ProductRoom room)
+    public RoomButton(ProductRoom room, int i )
     {
         this.room = room;
+        myIndex = i;
         myX = room.getX()+room.getWidth() - SIZE*2;
-        myY = room.getY()+(myIndex+1)*SIZE;
+        myY = room.getY()+SIZE + (int)((myIndex)*1.5*SIZE);
     }
-    public RoomButton(Room room)
+    public RoomButton(Room room, int i)
     {
         this.room = room;
+        myIndex = i;
         myX = room.getX()+room.getWidth() - SIZE*2;
-        myY = room.getY()+(myIndex+1)*SIZE;
+        myY = room.getY()+SIZE + (int)((myIndex)*1.5*SIZE);
     }
 
     public void render(Graphics g)
     {
-        g.setColor(myColor);
-        g.fillRect(myX, myY+ World.getYDisplace(), SIZE, SIZE);
+        if(myImage == null)
+        {
+            g.setColor(myColor);
+            g.fillRect(myX, myY+ World.getYDisplace(), SIZE, SIZE);
+        }
+        else {
+            g.drawImage(myImage.getScaledCopy(SIZE,SIZE), myX, myY);
+        }
+
     }
     public void update()
     {

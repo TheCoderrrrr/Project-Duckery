@@ -5,8 +5,8 @@ import org.newdawn.slick.Color;
 
 public class ResearchButton extends RoomButton{
     ResearchFloor f;
-    public ResearchButton(ResearchFloor researchFloor) {
-        super(researchFloor);
+    public ResearchButton(ResearchFloor researchFloor, int height) {
+        super(researchFloor, height);
         f = researchFloor;
         myColor = Color.pink;
     }
