@@ -80,20 +80,35 @@ abstract public class Room {
     }
     public void mousePressed(int button, int x, int y) {
 
-        if (button == 0 && isOver(x, y) && getNumDucks() < maxDucks) addDuck(x);
-
-        else if (button == 2) {
-            for (Duck duck : ducks) {
-                if (duck.isOver(x, y)) {
-                    duck.mousePressed(button, x, y);
-                    break;
+        boolean onButton = false;
+        if (button == 0 && isOver(x, y) && getNumDucks() < maxDucks) {
+            for (int i = 0; i < myButtons.size(); i++){
+                if (myButtons.get(i).mouseOver(x, y)) {
+                    myButtons.get(i).action();
+                    onButton = true;
                 }
             }
-        }
-        for (int i = 0; i < myButtons.size(); i++)
-            if (myButtons.get(i).mouseOver(x, y)) {
-                myButtons.get(i).action();
+            if(!onButton)
+            {
+                addDuck(x);
             }
+
+        }
+
+        else if (button == 2) {
+
+            if(!onButton) {
+                for (Duck duck : ducks) {
+                    if (duck.isOver(x, y) && ducks.size() < maxDucks) {
+                        duck.mousePressed(button, x, y);
+                        break;
+                    }
+                }
+            }
+
+        }
+
+
     }
     private void addDuck(int startX)
     {

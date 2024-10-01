@@ -112,7 +112,7 @@ public class ProductRoom  extends Room{
     }
     public void switchProduct(Item i)
     {
-        if (!isBasement())
+        if (!isBasement() && i != products.get(curItem))
         {
             curItem = products.indexOf(i);
             pause = true;

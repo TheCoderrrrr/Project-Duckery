@@ -26,6 +26,7 @@ public class ResourceManager {
     public double getIncomeRate(){return incomeRate;}
     public double getFund(){return fund;}
     public double getBreadMade(){return breadMade;}
+    public double getWarEffort(){return warEffort;}
 
 
     public ResourceManager()
@@ -81,7 +82,8 @@ public class ResourceManager {
                             }
                             else
                             {
-                                warEffort++;
+                                warEffort+=room.getWarEffort();
+                                fund += room.getValue();//costs money to build weapons
                                 room.resetTimer();
                                 MessageManager.addMessage(new FloatMessage(
                                         "+ "+(room.getWarEffort()+adLevel), room.getX() + (float)room.getWidth()/2, room.getY(),

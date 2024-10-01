@@ -80,7 +80,7 @@ public class World {
 
         g.setColor (Color.black);
         g.drawString("$" + wallet.getFund() +"\nINCOME:" + wallet.getIncomeRate() +
-                " per second\nBread made: " + wallet.getBreadMade() + "\nDucksTotal: "+getTotalDucks(), 20,20);
+                " per second\nBread made: " + wallet.getBreadMade() + "\nDucksTotal: "+getTotalDucks()+"\nWAR EFFORT:"+ wallet.getWarEffort(), 20,20);
 
     }
 

@@ -9,7 +9,7 @@ import org.newdawn.slick.Image;
 
 abstract public class RoomButton {
     protected Room room;
-    protected int SIZE = 24;
+    public final static int SIZE = 24;
     protected int myX;
     protected int myY;
     protected int myIndex;
@@ -40,7 +40,7 @@ abstract public class RoomButton {
             g.fillRect(myX, myY+ World.getYDisplace(), SIZE, SIZE);
         }
         else {
-            g.drawImage(myImage.getScaledCopy(SIZE,SIZE), myX, myY);
+            g.drawImage(myImage.getScaledCopy(SIZE,SIZE), myX, myY + World.getYDisplace());
         }
 
     }
