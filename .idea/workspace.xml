@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="should have main features? mostly UI stuff left">
-      <change afterPath="$PROJECT_DIR$/res/Duckery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/clipboard/add_duck.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/clipboard/clipboard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/clipboard/fire_duck.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/floors/floors.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Images.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Opening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Opening.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Clipboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Clipboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ResourceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/RoomManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/weapon/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/weapon/Gun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/RoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/RoomButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/ProductRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/ProductRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/open/TitleScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/open/TitleScreen.java" afterDir="false" />
-    </list>
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="more things working, images" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -303,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727763239004</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="more things working, images">
+      <option name="closed" value="true" />
+      <created>1727999251267</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1727999251267</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,7 +324,8 @@
     <MESSAGE value="rudimentary research room and added abstract room" />
     <MESSAGE value="research room kinda works (press pink floating thing to add new product)" />
     <MESSAGE value="should have main features? mostly UI stuff left" />
-    <option name="LAST_COMMIT_MESSAGE" value="should have main features? mostly UI stuff left" />
+    <MESSAGE value="more things working, images" />
+    <option name="LAST_COMMIT_MESSAGE" value="more things working, images" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

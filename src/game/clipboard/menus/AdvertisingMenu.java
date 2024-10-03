@@ -9,7 +9,7 @@ public class AdvertisingMenu extends Menu{
 
     public AdvertisingMenu()
     {
-        super(2);
+        super(1);
         title = "advertising";
         mySize = 3;
         myButtons.add(new NewspaperAd(X_LEFT, myY));
