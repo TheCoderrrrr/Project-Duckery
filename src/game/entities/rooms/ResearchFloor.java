@@ -29,12 +29,16 @@ public class ResearchFloor extends Room{
         resTimer = -1;
         myButtons.add(new ResearchButton(this, myButtons.size()));
         productLine = new ArrayList<>();
+        productLine.add(new Gun());
+
+
         productLine.add(new BlandBread());
-        productLine.add(new BrownBread());
+        //productLine.add(new BrownBread());
         productLine.add(new CosmicBread());
         productLine.add(new DivineBread());
-        productLine.add(new Gun());
+
         productsAvailable = true;
+        myImage = myFloorTypes.getSubImage(5,0);
     }
 
     public void render(Graphics g)
@@ -72,10 +76,20 @@ public class ResearchFloor extends Room{
     }
 
     public void beginResearch() {
-        if (!ducks.isEmpty())
+        if (!ducks.isEmpty() )
         {
+            System.out.println("researching "+productLine.getFirst().getName());
             resTimer = resTotalTime;
             research = true;
+        }
+    }
+
+    public void removeDucks( Duck duck)
+    {
+        super.removeDucks(duck);
+        if (resTimer != 0 )
+        {
+            research = false;
         }
     }
 }

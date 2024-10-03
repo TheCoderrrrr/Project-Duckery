@@ -20,7 +20,6 @@ public abstract class Entity {
 
     public void render(Graphics g) {
         if (isOver(Mouse.getX(), Mouse.getY())) {
-            System.out.println("OVERRR");
         }
         g.drawImage(image, x, y + World.getYDisplace());
     }

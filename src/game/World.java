@@ -33,6 +33,7 @@ public class World {
 
 
     public static boolean pause;
+    private static boolean war;
     
     
     
@@ -62,9 +63,6 @@ public class World {
         else {
             g.setBackground(Color.cyan);
         }
-
-
-
 
         g.setColor(Color.black);
 
@@ -136,6 +134,7 @@ public class World {
 
     }
 
+    public static boolean getWar(){ return war;}
 //mutator
 
     public static void pause()
@@ -146,6 +145,8 @@ public class World {
     {
         pause = false;
     }
+
+    public static void declareWar(){ war = true;}
 
 
 

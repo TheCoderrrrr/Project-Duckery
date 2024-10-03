@@ -26,7 +26,7 @@ public class Clipboard {
 
         menus.add(new HiringMenu());
         menus.add(new AdvertisingMenu());
-        menus.add(new ResearchMenu());
+        //menus.add(new ResearchMenu());
 
     }
 

@@ -1,5 +1,6 @@
 package core;
 
+import open.TitleScreen;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -11,6 +12,8 @@ public class Opening extends BasicGameState {
     private int id;
     private static GameContainer gc;
     private static StateBasedGame sbg;
+
+    private static TitleScreen title;
 
     public Opening(int id)
     {
@@ -25,15 +28,18 @@ public class Opening extends BasicGameState {
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         this.gc = gc;
         this.sbg = sbg;
+
+        title = new TitleScreen();
     }
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-        g.setBackground(Color.yellow);
+        title.render(g);
     }
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
+        title.update();
 
     }
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException

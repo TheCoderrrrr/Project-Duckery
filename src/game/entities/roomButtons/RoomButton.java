@@ -50,9 +50,8 @@ abstract public class RoomButton {
     }
     public boolean mouseOver(int x, int y)
     {
-        if (x>myX && x < (myX+SIZE) && y>myY && y< (myY+SIZE) )
+        if (x>myX && x < (myX+SIZE) && y>myY+World.getYDisplace() && y< (myY+World.getYDisplace()+SIZE) )
         {
-            red = 255;
             return true;
         }
         return false;

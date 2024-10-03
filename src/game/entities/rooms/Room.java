@@ -28,6 +28,7 @@ abstract public class Room {
     protected int curItem;
     protected int timer;
     protected SpriteSheet myRoomTypes;
+    protected SpriteSheet myFloorTypes;
     protected Image myImage;
     protected int maxDucks;
 
@@ -52,12 +53,13 @@ abstract public class Room {
         timer = 0;
         maxDucks = 3;
         myRoomTypes = Images.ROOMS;
+        myFloorTypes = Images.FLOORS;
         isBasement = floor < 0;
 
 
 
         pause = false;
-        if(isBasement)myImage = myRoomTypes.getSubImage(productsUG.get(curItem).getImageIndex(),0);
+        if(isBasement)myImage = myFloorTypes.getSubImage(productsUG.get(0).getImageIndex(),0);
         else myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
 
     }
@@ -82,9 +84,9 @@ abstract public class Room {
 
         boolean onButton = false;
         if (button == 0 && isOver(x, y) && getNumDucks() < maxDucks) {
-            for (int i = 0; i < myButtons.size(); i++){
-                if (myButtons.get(i).mouseOver(x, y)) {
-                    myButtons.get(i).action();
+            for (RoomButton myButton : myButtons) {
+                if (myButton.mouseOver(x, y)) {
+                    myButton.action();
                     onButton = true;
                 }
             }
@@ -140,6 +142,10 @@ abstract public class Room {
         for(Duck duck : ducks)
         {
             duck.update();
+        }
+        if (!productsUG.isEmpty())
+        {
+            World.declareWar();
         }
     }
     public int getNumDucks() {

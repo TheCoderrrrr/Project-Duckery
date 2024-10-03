@@ -2,6 +2,7 @@ package game.clipboard.buttons;
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 
 public abstract class BuyingButton {
     protected int x;
@@ -12,6 +13,7 @@ public abstract class BuyingButton {
     public static final int SIZE= 100;
     protected String name;
     protected int price;
+    protected Image image;
 
     public BuyingButton(int x, int y){
         this.x = x;
@@ -39,8 +41,15 @@ public abstract class BuyingButton {
 
     public void render(Graphics g)
     {
-        g.setColor(color);
-        g.fillRect(x, y, w, h);
+        if (image == null)
+        {
+            g.setColor(color);
+            g.fillRect(x, y, w, h);
+
+        }
+        else {
+            g.drawImage(image.getScaledCopy(w,h), x,y);
+        }
 
         g.setColor(Color.black);
         g.drawString("Item: "+name+"\nPrice: "+price, x, y);

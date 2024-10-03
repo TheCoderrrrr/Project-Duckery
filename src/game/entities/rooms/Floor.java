@@ -18,6 +18,15 @@ public class Floor extends ProductRoom {
         }
         maxDucks = 6;
         width = 800;
+       myRoomTypes = myFloorTypes;
+       if (myFloor>0)
+       {
+           myImage = myFloorTypes.getSubImage(products.get(curItem).getImageIndex(),0);
+       }
+       else {
+           myImage = myFloorTypes.getSubImage(productsUG.getFirst().getImageIndex(),0);
+       }
+
 
     }
 }

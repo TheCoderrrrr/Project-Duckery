@@ -1,5 +1,6 @@
 package game.clipboard.buttons;
 
+import core.Images;
 import game.World;
 import org.newdawn.slick.Color;
 import game.ResourceManager;
@@ -13,6 +14,7 @@ public class HiringButton extends BuyingButton {
         color = Color.magenta;
         name = "hire\ncosts "+PayDucks.DUCK_WAGE+"/day";
         price = 10;
+        image = Images.ADD_DUCK;
 
     }
 

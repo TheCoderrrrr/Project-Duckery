@@ -10,6 +10,8 @@ import game.entities.rooms.ResearchFloor;
 
 import java.util.ArrayList;
 
+import static game.World.getWar;
+
 public class RoomManager {
     private static ArrayList<ProductRoom[]> rooms;
     private static ArrayList<ProductRoom[]> floors;
@@ -24,7 +26,7 @@ public class RoomManager {
     public RoomManager(ResourceManager resourceManager)
     {
         ProductRoom.addProduct(new BrownBread());
-        ProductRoom.addProduct(new Gun());
+        //ProductRoom.addProduct(new Gun());
         wallet = resourceManager;
         rooms = new ArrayList<>();
         floors = new ArrayList<>();
@@ -75,7 +77,7 @@ public class RoomManager {
             //g.drawString("PRESS [1] to add room| Price:" + wallet.getRoomPrice(currFloor, currBasement), 10,580);
             g.drawString("PRESS [1] to add room| Price: " + wallet.getRoomPrice(curFloor, curRoom), 10,580);
         }
-        else if (curFloor < BASEMENT_UNLOCK_FLOOR)
+        else if (curFloor < BASEMENT_UNLOCK_FLOOR || !getWar())
         {
             g.drawString("PRESS [2] to add FLOOR!!!" + wallet.getFloorPrice(curFloor), 10,580);
         }
@@ -118,7 +120,7 @@ public class RoomManager {
             curFloor ++;
             ResourceManager.withdraw(wallet.getFloorPrice(curFloor));
         }
-        if (c == '3'&& curFloor>= BASEMENT_UNLOCK_FLOOR
+        if (c == '3'&& curFloor>= BASEMENT_UNLOCK_FLOOR && World.getWar()
                 && ResourceManager.getFunds()>=wallet.getFloorPrice(curBasement))
         {
             floors.add (new Floor[]{new Floor (curBasement)});
