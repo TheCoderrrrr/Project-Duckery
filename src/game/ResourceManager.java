@@ -102,6 +102,7 @@ public class ResourceManager {
                             else
                             {
                                 warEffort+=room.getWarEffort();
+                                enemyEffort -= room.getWarEffort();
                                 //enemyEffort-=room.getWarEffort();
                                 fund += room.getValue();//costs money to build weapons
                                 room.resetTimer();
