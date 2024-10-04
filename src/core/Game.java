@@ -39,6 +39,7 @@ public class Game extends BasicGameState {
 
         Images.loadImages();
         Fonts.loadFonts();
+        Sounds.loadSounds();
 
         clipboard = new Clipboard();
         world = new World(gc);

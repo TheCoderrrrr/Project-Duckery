@@ -1,5 +1,6 @@
 package game.entities;
 
+import core.Sounds;
 import game.World;
 import game.entities.rooms.ProductRoom;
 import core.Images;
@@ -13,6 +14,7 @@ public class Duck extends Entity {
     private int xConst;
     private int i;
     private int timer;
+    private int timer2;
     private boolean makeWeapons;
 
     public Duck(Room room, int startX)
@@ -40,7 +42,7 @@ public class Duck extends Entity {
             x += xConst * X_SPEED;
         }
         timer ++;
-
+        timer2++;
         if (timer == 2)
         {
             if (i<6)
@@ -66,6 +68,21 @@ public class Duck extends Entity {
             image = DUC2.getSubImage(i,0);
         }
 
+        if(timer2 % 600 == 0)
+        {
+            quack();
+        }
+    }
+    public void quack()
+    {
+        int quack = (int) (Math.random() * 2);
+        switch(quack){
+            case 0: Sounds.rossQuack.play(1.1f - (float)(Math.random() * 0.2f), 0.7f);
+                    break;
+            case 1: Sounds.mrMalQuack.play(1.1f - (float)(Math.random() * 0.2f), 0.57f);
+                    break;
+
+        }
 
     }
     public void mousePressed(int button, int x, int y)

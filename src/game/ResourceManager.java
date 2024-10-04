@@ -1,6 +1,7 @@
 package game;
 
 import core.Main;
+import core.Sounds;
 import core.messages.FloatMessage;
 import core.messages.MessageManager;
 import game.entities.rooms.Floor;
@@ -98,6 +99,7 @@ public class ResourceManager {
                                         "+ "+(room.getValue()+adLevel), room.getX() + (float)room.getWidth()/2, room.getY(),
                                         Color.yellow, 70));
                                 breadMade++;
+//                                Sounds.divineSound.play();
                             }
                             else
                             {
