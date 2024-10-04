@@ -10,7 +10,7 @@ public class PayRoomTax extends PaydayButton {
     public PayRoomTax()
     {
         super();
-        name = "rooms";
+        name = "Property Tax";
     }
 
     @Override

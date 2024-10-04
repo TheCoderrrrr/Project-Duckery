@@ -19,6 +19,7 @@ public class Game extends BasicGameState {
     private World world;
     private Clipboard clipboard;
     private PayDay news;
+    private boolean end;
 
     public Game(int id)
     {
@@ -43,7 +44,7 @@ public class Game extends BasicGameState {
         world = new World(gc);
         news = new PayDay();
 
-
+        end = false;
         gc.setShowFPS(true);
     }
 
@@ -63,6 +64,12 @@ public class Game extends BasicGameState {
         clipboard.update();
         MessageManager.update();
         news.update(delta);
+
+        if (World.getWar() && (ResourceManager.getPercentConquered() >=1 || ResourceManager.getPercentConquered()<0))
+        {
+            end = true;
+            sbg.enterState(Main.END_ID);
+        }
 
     }
     public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException

@@ -19,6 +19,11 @@ public class Images {
     public static Image FIRE_DUCK;
     public static Image CLIPBOARD;
 
+    public static Image NEWS1;
+    public static Image NEWS2;
+    public static Image NEWS3;
+    public static SpriteSheet BUTTONS;
+
 
 
     public static void loadImages()
@@ -35,6 +40,14 @@ public class Images {
 
             TITLE_SCREEN = new SpriteSheet(new Image("res/Duckery.png"),1920, 1080);
             ADD_DUCK = new Image("res/clipboard/add_duck.png");
+            CLIPBOARD = new Image("res/clipboard/clipboard.png");
+
+            NEWS1 = new Image("res/news/news_one.png");
+            NEWS2 = new Image("res/news/news_two.png");
+            NEWS3 = new Image("res/news/news_three.png");
+
+            BUTTONS = new SpriteSheet(new Image("res/clipboard/buttons.png"),96,96);
+
 
 
         }

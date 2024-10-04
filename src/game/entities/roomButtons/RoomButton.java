@@ -16,6 +16,7 @@ abstract public class RoomButton {
     protected Color myColor;
     protected int red;
     protected Image myImage;
+    protected String info;
 
     public RoomButton(ProductRoom room, int i )
     {
@@ -55,6 +56,11 @@ abstract public class RoomButton {
             return true;
         }
         return false;
+    }
+
+    public String getInfo()
+    {
+        return info;
     }
     abstract public void action();
 

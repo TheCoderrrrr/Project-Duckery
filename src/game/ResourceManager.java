@@ -13,20 +13,24 @@ import java.util.ArrayList;
 public class ResourceManager {
 
     static private double fund;
-    private ArrayList<double[]> roomVals;
+    private static ArrayList<double[]> roomVals;
     private ArrayList<Floor> floors;
     private static double incomeRate;// amount of money/5 seconds.
     private static int adLevel;
     private static int adTimer;
     private static int breadMade;
     private static int warEffort;
+    private static int enemyEffort;
 
     private int timer;
 
-    public double getIncomeRate(){return incomeRate;}
-    public double getFund(){return fund;}
-    public double getBreadMade(){return breadMade;}
-    public double getWarEffort(){return warEffort;}
+    public static double getIncomeRate(){return incomeRate;}
+    public static double getFund(){return fund;}
+    public static double getBreadMade(){return breadMade;}
+    public static double getWarEffort(){return warEffort;}
+    public static double getPercentConquered(){
+        return (double)warEffort/(double)(enemyEffort +warEffort);
+        }
 
 
     public ResourceManager()
@@ -35,6 +39,8 @@ public class ResourceManager {
         roomVals = new ArrayList<>();
         incomeRate = 0;
         adLevel = 0;
+        enemyEffort = 300;
+        warEffort = 300;
     }
 
 
@@ -42,10 +48,23 @@ public class ResourceManager {
 
     }
 
-    public void update(ArrayList<ProductRoom[]> rooms, ArrayList<ProductRoom[]> floors) {
+    public static void update(ArrayList<ProductRoom[]> rooms, ArrayList<ProductRoom[]> floors) {
         incomeRate = 0;
         addFunds(rooms);
         addFunds(floors);
+
+        if ((int)(Math.random()*100)>=99 && RoomManager.getCurBasement()<-1)
+        {
+            enemyEffort +=2;
+            warEffort -=2;
+        }
+        if ((int)(Math.random()*1000)>=999 && RoomManager.getCurBasement()<-1)
+        {
+            enemyEffort +=80;
+            warEffort -=80;
+        }
+//        enemyEffort += (int)(Math.random()*10)-5;
+//        warEffort += (int)(Math.random()*10)-5;
 
         //counts down the timer for ads to reduce
         if (adTimer>0)
@@ -58,7 +77,7 @@ public class ResourceManager {
             adLevel = 0;
         }
     }
-    public void addFunds(ArrayList<ProductRoom[]> rooms)
+    public static void addFunds(ArrayList<ProductRoom[]> rooms)
     {
         //counts the total income of bread
         if(!rooms.isEmpty())
@@ -83,6 +102,7 @@ public class ResourceManager {
                             else
                             {
                                 warEffort+=room.getWarEffort();
+                                //enemyEffort-=room.getWarEffort();
                                 fund += room.getValue();//costs money to build weapons
                                 room.resetTimer();
                                 MessageManager.addMessage(new FloatMessage(
@@ -101,10 +121,7 @@ public class ResourceManager {
         }
         incomeRate = ((int) (incomeRate *100))/100;
     }
-    public void addWarEffort()
-    {
 
-    }
 
     public static void advertise(int length, int boost){
         //advertise based on amount of time/
@@ -114,7 +131,7 @@ public class ResourceManager {
 
     public static double getFunds(){ return fund;}
 
-    public void setRooms(ArrayList<ProductRoom[]> rooms)
+    public static void setRooms(ArrayList<ProductRoom[]> rooms)
     {
         // update so that it doesn't reset old stuff.
 
@@ -126,14 +143,14 @@ public class ResourceManager {
         }
 
     }
-    public void addFloor(int currFloor, int currRoom)
+    public static void addFloor(int currFloor, int currRoom)
     {
         roomVals.add(new double[4]);
         roomVals.getLast()[0] = 0;
 
     }
 
-    public void updateRoom(int floor, int room, int numDucks) {
+    public static  void updateRoom(int floor, int room, int numDucks) {
         //will be updated later to keep track of type of product as well.
 
         // for each room, updates the value it adds to the overall income (per day)
@@ -174,7 +191,7 @@ public class ResourceManager {
         fund -= value;
     }
 
-    private void calculateIncomeRate()
+    private static void calculateIncomeRate()
     {
         // calculates the income rate by adding up values in each room
         incomeRate = 0.0;
@@ -189,7 +206,7 @@ public class ResourceManager {
         // if advertising is true, multiply by some value.
     }
 
-    public int getRoomPrice(int floor, int room)
+    public static int getRoomPrice(int floor, int room)
     {
         //return room prices
         double price = 30;
@@ -204,7 +221,7 @@ public class ResourceManager {
 
     }
 
-    public int getFloorPrice(int floor)
+    public static int getFloorPrice(int floor)
     {
         //price of next floor: should be updated
         if ( floor >0)

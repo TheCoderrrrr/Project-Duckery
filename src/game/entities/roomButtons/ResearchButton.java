@@ -1,5 +1,6 @@
 package game.entities.roomButtons;
 
+import game.entities.rooms.ProductRoom;
 import game.entities.rooms.ResearchFloor;
 import org.newdawn.slick.Color;
 
@@ -9,6 +10,7 @@ public class ResearchButton extends RoomButton{
         super(researchFloor, height);
         f = researchFloor;
         myColor = Color.pink;
+        info = "CLICK to research mystery produckt!";
     }
 
     @Override

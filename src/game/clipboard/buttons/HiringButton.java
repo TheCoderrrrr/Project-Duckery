@@ -12,7 +12,8 @@ public class HiringButton extends BuyingButton {
     public HiringButton(int x, int y) {
         super(x, y);
         color = Color.magenta;
-        name = "hire\ncosts "+PayDucks.DUCK_WAGE+"/day";
+        name = "hire duck";
+        info = "costs "+PayDucks.DUCK_WAGE+"/day";
         price = 10;
         image = Images.ADD_DUCK;
 

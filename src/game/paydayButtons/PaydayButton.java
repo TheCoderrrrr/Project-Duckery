@@ -39,7 +39,7 @@ abstract public class PaydayButton {
         g.setColor(myColor);
         g.fillRect(myX,myY, WIDTH, HEIGHT);
         g.setColor(Color.black);
-        g.drawString("Pay "+name+"\n$ "+price+"\npaid? "+paid, myX, myY);
+        g.drawString(""+name+"\n$ "+price+"\npaid? "+paid, myX, myY);
 
 
     }

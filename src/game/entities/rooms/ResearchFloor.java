@@ -9,6 +9,7 @@ import game.clipboard.items.bread.DivineBread;
 import game.clipboard.items.weapon.Gun;
 import game.entities.Duck;
 import game.entities.roomButtons.ResearchButton;
+import game.entities.roomButtons.RoomButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -44,10 +45,10 @@ public class ResearchFloor extends Room{
     public void render(Graphics g)
     {
         super.render(g);// creates a square room at a given location
-        g.setColor(Color.black);
-
-        g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRESEARCHING?"+research+
-                "\nProducts Available? "+productLine.size()+"\nETA:"+resTimer, x, World.getYDisplace() + y);
+//        g.setColor(Color.black);
+//
+//        g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRESEARCHING?"+research+
+//                "\nProducts Available? "+productLine.size()+"\nETA:"+resTimer, x, World.getYDisplace() + y);
         for (Duck duck : ducks) duck.render(g);
         for (int i=0;i<myButtons.size();i++) myButtons.get(i).render(g);
 
@@ -82,6 +83,35 @@ public class ResearchFloor extends Room{
             resTimer = resTotalTime;
             research = true;
         }
+    }
+
+    public String getInfo(int x, int y)
+    {
+        String ret = "";
+        boolean overButton = false;
+        for (RoomButton b: myButtons)
+        {
+            if (b.mouseOver(x,y))
+            {
+                ret = b.getInfo();
+                overButton = true;
+            }
+        }
+        if (!overButton)
+        {
+            if(research)
+            {
+                ret = "Currently Researching "+productLine.getFirst();
+            }
+            else if (getNumDucks() >0){
+                ret = "Not researching. \nGive us work by clicking the button!";
+            }
+            else {
+                ret = "hire a duck to research new produckts!";
+            }
+        }
+
+        return ret;
     }
 
     public void removeDucks( Duck duck)

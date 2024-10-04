@@ -7,6 +7,7 @@ import game.entities.rooms.ProductRoom;
 import game.entities.rooms.Room;
 import org.newdawn.slick.Graphics;
 import game.entities.rooms.ResearchFloor;
+import game.clipboard.menus.HiringMenu;
 
 import java.util.ArrayList;
 
@@ -22,12 +23,10 @@ public class RoomManager {
     private static final int ROOMS_IN_FLOOR = 2;
     public static final int FLOOR_UNLOCK_ROOMS = 5;
     private static final int BASEMENT_UNLOCK_FLOOR = 7;
-    private ResourceManager wallet;
     public RoomManager(ResourceManager resourceManager)
     {
         ProductRoom.addProduct(new BrownBread());
         //ProductRoom.addProduct(new Gun());
-        wallet = resourceManager;
         rooms = new ArrayList<>();
         floors = new ArrayList<>();
         resRoom = new ResearchFloor();
@@ -36,7 +35,7 @@ public class RoomManager {
         curFloor = 1;
         curBasement = -1;
         addRoom();
-        wallet.setRooms(rooms);
+        ResourceManager.setRooms(rooms);
     }
 
     //Doesn't include ResearchRoom
@@ -72,21 +71,7 @@ public class RoomManager {
             f[0].render(g);
         }
         g.setColor(org.newdawn.slick.Color.black);
-        if (curFloor < FLOOR_UNLOCK_ROOMS)
-        {
-            //g.drawString("PRESS [1] to add room| Price:" + wallet.getRoomPrice(currFloor, currBasement), 10,580);
-            g.drawString("PRESS [1] to add room| Price: " + wallet.getRoomPrice(curFloor, curRoom), 10,580);
-        }
-        else if (curFloor < BASEMENT_UNLOCK_FLOOR || !getWar())
-        {
-            g.drawString("PRESS [2] to add FLOOR!!!" + wallet.getFloorPrice(curFloor), 10,580);
-        }
-        else {
 
-            g.drawString("PRESS [2] to add FLOOR!!!"+ wallet.getFloorPrice(curFloor), 10,580);
-            g.drawString("PRESS [3] to add BASEMENT!!!"+ wallet.getFloorPrice(curBasement), 10,600);
-
-        }
     }
     public void update()
     {
@@ -106,28 +91,107 @@ public class RoomManager {
             f[0].update();
         }
 
-        wallet.update(rooms, floors);
-    }
-    public void keyPressed(int key, char c)
-    {
-        if (c == '1' && ResourceManager.getFunds()>wallet.getRoomPrice(curFloor, curRoom)) {
-            addRoom();
-            ResourceManager.withdraw(wallet.getRoomPrice(curFloor, curRoom));
+        ResourceManager.update(rooms, floors);
+
+        if (curFloor < FLOOR_UNLOCK_ROOMS)
+        {
+
+
         }
-        if (c == '2'&& curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=wallet.getFloorPrice(curFloor))
+        else if (curFloor < BASEMENT_UNLOCK_FLOOR || !getWar())
+        {
+            //g.drawString("PRESS [2] to add FLOOR!!!" + ResourceManager.getFloorPrice(curFloor), 10,580);
+            Clipboard.getHireMenu().addFloorButton();
+        }
+        else if (getWar()) {
+
+//            g.drawString("PRESS [2] to add FLOOR!!!"+ ResourceManager.getFloorPrice(curFloor), 10,580);
+//            g.drawString("PRESS [3] to add BASEMENT!!!"+ ResourceManager.getFloorPrice(curBasement), 10,600);
+            Clipboard.getHireMenu().addBasement();
+
+        }
+    }
+    public static void keyPressed(int key, char c)
+    {
+        if (c == '1' && ResourceManager.getFunds()>ResourceManager.getRoomPrice(curFloor, curRoom)) {
+            addRoom();
+            ResourceManager.withdraw(ResourceManager.getRoomPrice(curFloor, curRoom));
+        }
+        if (c == '2'&& curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
         {
             floors.add(new Floor[]{new Floor (curFloor)});
             curFloor ++;
-            ResourceManager.withdraw(wallet.getFloorPrice(curFloor));
+            ResourceManager.withdraw(ResourceManager.getFloorPrice(curFloor));
         }
         if (c == '3'&& curFloor>= BASEMENT_UNLOCK_FLOOR && World.getWar()
-                && ResourceManager.getFunds()>=wallet.getFloorPrice(curBasement))
+                && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curBasement))
         {
-            floors.add (new Floor[]{new Floor (curBasement)});
+            floors.add(0,new Floor[]{new Floor (curBasement)});
             curBasement --;
-            ResourceManager.withdraw(wallet.getFloorPrice(curBasement));
+            ResourceManager.withdraw(ResourceManager.getFloorPrice(curBasement));
         }
+    }
 
+    public String getRoomInfo(int x, int y)
+    {
+        String ret = "";
+        for (Room[] r: rooms)
+        {
+            for (Room room: r)
+            {
+                if (room != null && room.mouseOver(x,y))
+                {
+                    ret = room.getInfo(x, y);
+                }
+            }
+        }
+        for (Room[] r: floors)
+        {
+            for (Room room: r)
+            {
+                if (room != null && room.mouseOver(x,y))
+                {
+                    ret = room.getInfo(x, y);
+                }
+            }
+        }
+        if (resRoom.mouseOver(x,y))
+        {
+            ret = resRoom.getInfo(x,y);
+        }
+        return ret;
+    }
+
+    public static void addFloor() {
+        if (curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+        {
+            floors.add(new Floor[]{new Floor (curFloor)});
+            ResourceManager.withdraw(ResourceManager.getFloorPrice(curFloor));
+            curFloor ++;
+        }
+    }
+
+    public static void addBasement() {
+        if (curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+        {
+            floors.add(new Floor[]{new Floor (curBasement)});
+            ResourceManager.withdraw(ResourceManager.getFloorPrice(curBasement));
+            curBasement --;
+        }
+    }
+
+    public static int getCurBasement() { return curBasement;}
+    public static int getCurRoomPrice()
+    {
+        return ResourceManager.getRoomPrice(curFloor, curRoom);
+    }
+    public static int getCurFloorPrice()
+    {
+        return ResourceManager.getFloorPrice(curFloor);
+    }
+    public static int getCurBasementPrice()
+    {
+        return ResourceManager.getFloorPrice(curFloor);
     }
     public void mousePressed(int button, int mX, int mY)
     {
@@ -138,7 +202,7 @@ public class RoomManager {
                 if (r[i] != null && r[i].isOver(mX, mY))
                 {
                     r[i].mousePressed(button, mX, mY);
-                    wallet.updateRoom(rooms.indexOf(r),i, r[i].getNumDucks());
+                    ResourceManager.updateRoom(rooms.indexOf(r),i, r[i].getNumDucks());
                 }
             }
         }
@@ -155,7 +219,7 @@ public class RoomManager {
 
         }
     }
-    public void addRoom()
+    public static void addRoom()
     {
         if(curFloor < FLOOR_UNLOCK_ROOMS)
         {
@@ -169,13 +233,13 @@ public class RoomManager {
 
                 ProductRoom[] newFloor = new ProductRoom[ROOMS_IN_FLOOR];
                 rooms.add(newFloor);
-                wallet.addFloor(curFloor, curRoom);
+                ResourceManager.addFloor(curFloor, curRoom);
             }
         }
     }
     //checks if there are 2 to a floor.
 
-    public boolean spaceOnFloor()
+    public static boolean spaceOnFloor()
     {
         int count = 0;
         for(int i = 0; i < rooms.getLast().length; i++)

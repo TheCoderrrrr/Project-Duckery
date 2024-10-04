@@ -16,6 +16,7 @@ public class ChangeRoomButton extends RoomButton{
         r = room;
         i = item;
         myImage = Images.BREAD_BUTTONS.getSubImage(i.getImageIndex(),0);
+        info = "change room product to "+ item.getName() +"?\n"+"Will take "+ProductRoom.TOTAL_BUILD_TIME/60+"seconds";
 
     }
     @Override

@@ -39,13 +39,13 @@ public class ProductRoom  extends Room{
 
         if(!pause)
         {
-            g.drawString("Num Ducks: "+getTimeToMake()+"\nFloor:"+myFloor+"\nRoom:"+timer +
-                    "\nProduct" + getProductName(), x, World.getYDisplace() + y);
+//            g.drawString("Num Ducks: "+getTimeToMake()+"\nFloor:"+myFloor+"\nRoom:"+timer +
+//                    "\nProduct" + getProductName(), x, World.getYDisplace() + y);
             for (Duck duck : ducks) duck.render(g);
             for (int i=0;i<myButtons.size();i++) myButtons.get(i).render(g);
         }
         else {
-            g.drawString("Building "+ getProductName() + " room!\n ETA: "+pauseTimer, x, World.getYDisplace() + y);
+            //g.drawString("Building "+ getProductName() + " room!\n ETA: "+pauseTimer, x, World.getYDisplace() + y);
         }
 
     }
@@ -182,6 +182,46 @@ public class ProductRoom  extends Room{
         }
 
     }
+    public String getInfo(int x, int y)
+    {
+        String ret = "Floor: "+myFloor+"\nNumber of Ducks: "+getNumDucks();
+
+
+        //checks if is over any of myButtons
+        boolean overButton = false;
+        for (RoomButton b: myButtons)
+        {
+            if (b.mouseOver(x,y))
+            {
+                ret = b.getInfo();
+                overButton = true;
+            }
+        }
+
+        if(!overButton)
+        {
+            if (pause)
+            {
+               ret =  "Building "+ getProductName() + " room!";
+            }
+            else if(getNumDucks() == 0)
+            {
+                ret ="\nIt's so cold without the \n" +
+                        "feathered flaps of working ducks!";
+            }
+            else if (!isBasement){
+                ret = ret +"\nProduct: "+products.get(curItem).getName();
+            }
+            else{
+                ret = ret +"\nProduct: "+productsUG.get(0).getName();
+            }
+        }
+
+
+
+        return ret;
+    }
+
     public String getProductName()
     {
         if(isBasement)

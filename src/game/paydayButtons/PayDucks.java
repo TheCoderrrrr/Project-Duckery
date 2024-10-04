@@ -9,7 +9,7 @@ public class PayDucks extends PaydayButton{
     public PayDucks()
     {
         super();
-        name = "ducks";
+        name = "Duck Wages";
     }
 
     @Override

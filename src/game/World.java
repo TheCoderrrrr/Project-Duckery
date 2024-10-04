@@ -5,14 +5,17 @@ import core.Main;
 import game.entities.Duck;
 import game.entities.rooms.ProductRoom;
 import org.newdawn.slick.*;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.Graphics;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class World {
     public static ArrayList<Duck> ducks;
     private ResourceManager wallet;
-    private RoomManager roomManager;
-    private int currBasement;
+    private static RoomManager roomManager;
+    private static int currBasement;
     private static GameContainer gc;
     private static int yDisplace;
     private static int duckLimit;
@@ -73,12 +76,8 @@ public class World {
         //draws the building
         roomManager.render(g);
 
-        g.drawString("number of ducks not placed:"+ (duckLimit - getTotalDucks() ), 10, 620);
-        g.drawString("[T] for top [B] for bottom [0] for base", 10, 640);
-
         g.setColor (Color.black);
-        g.drawString("$" + wallet.getFund() +"\nINCOME:" + wallet.getIncomeRate() +
-                " per second\nBread made: " + wallet.getBreadMade() + "\nDucksTotal: "+getTotalDucks()+"\nWAR EFFORT:"+ wallet.getWarEffort(), 20,20);
+
 
     }
 
@@ -95,6 +94,11 @@ public class World {
                 yDisplace-=Y_SPEED;
             }
             roomManager.update();
+            int mouseX = (int)MouseInfo.getPointerInfo().getLocation().getX();
+            int mouseY = (int) MouseInfo.getPointerInfo().getLocation().getY();
+            Clipboard.updateInfo(""+mouseX+", "+mouseY+
+                    "\nINFO: \n"+roomManager.getRoomInfo(mouseX, mouseY)+ "\n"+
+                    Clipboard.getButtonInfo(mouseX, mouseY));
         }
 
     }
@@ -103,7 +107,12 @@ public class World {
         roomManager.keyPressed(key, c);
 
         //change to buttons later, will "hotkey" to top and bottom (yay!)
-        if (c == '0')
+
+    }
+
+    public static void quickScroll(char c)
+    {
+        if (c == 'R')
         {
             yDisplace = 0;
         }
@@ -115,7 +124,6 @@ public class World {
         {
             yDisplace = (currBasement* ProductRoom.HEIGHT);
         }
-
     }
 
     //ACCESSOR

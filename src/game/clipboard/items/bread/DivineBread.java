@@ -6,8 +6,8 @@ import game.clipboard.items.Item;
 public class DivineBread extends Item {
     public DivineBread()
     {
-        value = 54;
-        timeToCreate = 100;
+        value = 1000;
+        timeToCreate = 130;
         name = "Divine Bread";
         myIndex = 3;
         roomImage = Images.ROOMS.getSubImage(3,0);

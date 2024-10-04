@@ -6,7 +6,7 @@ import game.clipboard.items.Item;
 public class BrownBread extends Item {
     public BrownBread()
     {
-        value = 100;
+        value = 30;
         timeToCreate = 5;
         name = "Brown Bread";
         myIndex = 1;

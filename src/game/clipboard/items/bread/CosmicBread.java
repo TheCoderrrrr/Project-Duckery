@@ -6,7 +6,7 @@ import game.clipboard.items.Item;
 public class CosmicBread extends Item {
     public CosmicBread()
     {
-        value = 25;
+        value = 100;
         timeToCreate = 15;
         name = "Cosmic Bread";
         myIndex = 2;

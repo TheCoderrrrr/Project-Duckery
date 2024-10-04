@@ -14,6 +14,7 @@ public abstract class BuyingButton {
     protected String name;
     protected int price;
     protected Image image;
+    protected String info;
 
     public BuyingButton(int x, int y){
         this.x = x;
@@ -50,12 +51,9 @@ public abstract class BuyingButton {
         else {
             g.drawImage(image.getScaledCopy(w,h), x,y);
         }
-
-        g.setColor(Color.black);
-        g.drawString("Item: "+name+"\nPrice: "+price, x, y);
     }
 
-    protected boolean isMouseOver(int mX, int mY)
+    public boolean isMouseOver(int mX, int mY)
     {
         return (mX > x && mX < x + w && mY > y && mY < y + h);
     }
@@ -65,6 +63,11 @@ public abstract class BuyingButton {
         {
             onClick();
         }
+    }
+    public String getInfo()
+    {
+        String ret = name+"\nPrice: "+price+"\n"+info;
+        return ret;
     }
 
     protected abstract void onClick();

@@ -1,12 +1,11 @@
 package game;
 
+import core.Images;
 import game.clipboard.buttons.BuyingButton;
 import game.clipboard.MiniManager;
 import game.clipboard.buttons.ads.AdvertisingButton;
-import game.clipboard.menus.AdvertisingMenu;
-import game.clipboard.menus.HiringMenu;
-import game.clipboard.menus.Menu;
-import game.clipboard.menus.ResearchMenu;
+import game.clipboard.menus.*;
+import game.progressBar.ProgressBar;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -14,35 +13,74 @@ import java.util.ArrayList;
 
 public class Clipboard {
 
-    MiniManager hire;
-    ArrayList<BuyingButton> buttons = new ArrayList<>();
-    ArrayList<Menu> menus = new ArrayList<Menu>();
+    static MiniManager hire;
+    static ArrayList<BuyingButton> buttons = new ArrayList<>();
+    static ArrayList<Menu> menus = new ArrayList<Menu>();
+    static HiringMenu h;
+    static String info;
+    static ProgressBar warBar;
 
     public Clipboard()
     {
-//        buttons.add(new HiringButton(1150, 100));
-//        buttons.add(new AdvertisingButton(1150, 450));
-//        buttons.add(new ResearchingButton(1150, 800));
+        h = new HiringMenu();
 
-        menus.add(new HiringMenu());
+        menus.add(h);
         menus.add(new AdvertisingMenu());
+        menus.add(new HotkeyMenu());
+        info = "tester";
+
+        warBar = new ProgressBar(1550,200,200,175, "WAR PROGRESS!!");
         //menus.add(new ResearchMenu());
 
     }
 
+    public static HiringMenu getHireMenu()
+    {
+        return h;
+    }
+
 
     public void render(Graphics g) {
-        g.setColor(Color.orange);
-        g.fillRect(1100,70,700,900);
+        g.drawImage(Images.CLIPBOARD.getScaledCopy(700,900),1100,70);
+
+        g.drawString(info, 1150,120);
 
         for(Menu m: menus)
         {
             m.render(g);
         }
+        if(World.getWar())
+        {
+            warBar.render(g);
+        }
+
+        g.drawString("$" + ResourceManager.getFund() +"\nINCOME:" + ResourceManager.getIncomeRate() +
+                " per second\nBread made: " + ResourceManager.getBreadMade() +
+                "\nEmployees: "+World.getTotalDucks(), 1600,120);
     }
 
     public void update() {
         AdvertisingButton.update();
+        if(World.getWar())
+        {
+            warBar.update(ResourceManager.getPercentConquered());
+        }
+
+    }
+
+    public static String getButtonInfo(int x, int y)
+    {
+        String ret = "";
+        for(Menu m: menus)
+        {
+            ret = ret + m.mouseOver(x, y);
+        }
+        return ret;
+    }
+
+    public static void updateInfo(String newInfo)
+    {
+        info = newInfo;
     }
 
     public void keyPressed(int key, char c) {

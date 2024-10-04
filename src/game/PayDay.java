@@ -1,12 +1,16 @@
 package game;
 
+import core.Images;
 import core.Main;
 import game.paydayButtons.PayDucks;
 import game.paydayButtons.PayRoomTax;
 import game.paydayButtons.PaydayButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+
+import java.util.ArrayList;
 
 public class PayDay {
     public boolean timerRunning;
@@ -15,10 +19,17 @@ public class PayDay {
     private int numClicks = 0;
     private PaydayButton[] payButtons;
     private boolean updated;
+    private int numNews;
+    private ArrayList<Image> news;
 
     public PayDay() {
         timerRunning = true;
         payButtons = new PaydayButton[]{new PayDucks(), new PayRoomTax()};
+        numNews = 0;
+        news = new ArrayList<>();
+        news.add(Images.NEWS1);
+        news.add(Images.NEWS2);
+        news.add(Images.NEWS3);
     }
 
     public void render(Graphics g)
@@ -28,10 +39,8 @@ public class PayDay {
 
         if (elapseTime%LENGTH_OF_WEEK == 0 && numClicks <= 1)
         {
-            g.setColor(Color.red);
-            g.fillRect(100, 100, Main.getScreenWidth()-200, Main.getScreenHeight()-200);
             g.setColor(Color.black);
-            g.drawString("Payday\n"+getIsPaid(), Main.getScreenWidth() / 2, Main.getScreenHeight() / 2);
+            g.fillRect(100, 100, Main.getScreenWidth()-200, Main.getScreenHeight()-200);
             timerRunning = false;
             World.pause();
             for(int i = 0; i< payButtons.length; i++){payButtons[i].render(g);}
@@ -42,6 +51,11 @@ public class PayDay {
             g.fillRect(100, 100, Main.getScreenWidth()-200, Main.getScreenHeight()-200);
             g.setColor(Color.black);
             g.drawString("NEWS!!!!", Main.getScreenWidth() / 2, Main.getScreenHeight() / 2);
+            if (numNews < news.size())
+            {
+                g.drawImage(news.get(numNews).getScaledCopy(Main.getScreenWidth()-200,Main.getScreenHeight()-200),
+                        100,100);
+            }
         }
     }
 
@@ -89,6 +103,7 @@ public class PayDay {
             World.unpause();
             numClicks = 0;
             updated = false;
+            numNews++;
         }
 
 

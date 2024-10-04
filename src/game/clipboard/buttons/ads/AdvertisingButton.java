@@ -36,11 +36,20 @@ public class AdvertisingButton extends BuyingButton {
     }
     public void render(Graphics g)
     {
-        g.setColor(adColor);
-        g.fillRect(x, y, w, h);
 
-        g.setColor(Color.black);
-        g.drawString("Item: "+name+"\nPrice: "+price, x, y);
+        if (image == null)
+        {
+            g.setColor(adColor);
+            g.fillRect(x, y, w, h);
+
+        }
+        else {
+
+            g.drawImage(image.getScaledCopy(w,h), x,y);
+            g.setColor(new Color(255,255,255, 255-(int)((float)(COOLDOWN_TIME - timer)/COOLDOWN_TIME * 255)));
+            g.fillRect(x,y,w,h);
+
+        }
     }
 
 

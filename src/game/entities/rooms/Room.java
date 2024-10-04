@@ -34,7 +34,7 @@ abstract public class Room {
 
     protected int pauseTimer;
     protected boolean pause;
-    protected final int TOTAL_BUILD_TIME = 800;
+    public static final int TOTAL_BUILD_TIME = 960;
     protected ArrayList<RoomButton> myButtons;
     protected boolean isBasement;
 
@@ -148,6 +148,15 @@ abstract public class Room {
             World.declareWar();
         }
     }
+
+    public boolean mouseOver(int x, int y)
+    {
+        return (x>getX() && x<getX()+width && y>curYPosition() && y< curYPosition()+HEIGHT);
+    }
+
+    abstract public String getInfo(int x, int y);
+
+
     public int getNumDucks() {
         return ducks.size();
     }

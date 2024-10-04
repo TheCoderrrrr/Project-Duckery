@@ -12,12 +12,14 @@ public class Main extends StateBasedGame {
     public final static int FRAMES_PER_SECOND = 60;
     private static AppGameContainer appgc;
 
-    private static final int OPEN_ID = 0;
-    private static final int GAME_ID = 1;
+    public static final int OPEN_ID = 0;
+    public static final int GAME_ID = 1;
+    public static final int END_ID = 2;
 
     private BasicGameState game;
 
     private BasicGameState open;
+    private BasicGameState end;
 
     public Main(String name) {
         super(name);
@@ -25,6 +27,7 @@ public class Main extends StateBasedGame {
 
         open = new Opening(OPEN_ID);
         game = new Game(GAME_ID);
+        end = new End(END_ID);
     }
 
     public static int getScreenWidth() {
@@ -38,6 +41,7 @@ public class Main extends StateBasedGame {
     public void initStatesList(GameContainer gc) throws SlickException {
         addState(open);
         addState(game);
+        addState(end);
     }
 
     public static void main(String[] args) {
