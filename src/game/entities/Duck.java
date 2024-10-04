@@ -95,13 +95,16 @@ public class Duck extends Entity {
     }
     public void quack()
     {
-        int quack = (int) (Math.random() * 2);
+        int quack = (int) (Math.random() * 4);
         switch(quack){
             case 0: Sounds.rossQuack.play(1.1f - (float)(Math.random() * 0.2f), 0.7f);
                     break;
             case 1: Sounds.mrMalQuack.play(1.1f - (float)(Math.random() * 0.2f), 0.57f);
                     break;
-
+            case 2: Sounds.vedikaQuack.play(1.1f - (float)(Math.random() * 0.2f), 0.57f);
+                    break;
+            case 3: Sounds.gunnarQuack.play(1.1f - (float)(Math.random() * 0.2f), 0.57f);
+                    break;
         }
 
     }
