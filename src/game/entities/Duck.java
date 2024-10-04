@@ -7,6 +7,7 @@ import core.Images;
 import game.entities.rooms.Room;
 
 import static core.Images.DUC2;
+import static game.World.getYDisplace;
 
 public class Duck extends Entity {
     private Room room;
@@ -17,7 +18,7 @@ public class Duck extends Entity {
     private int timer2;
     private boolean makeWeapons;
 
-    public Duck(Room room, int startX)
+    public Duck(Room room, int startX, int startY)
     {
         super(room.getX(), room.getY());
         this.room = room;
@@ -25,6 +26,14 @@ public class Duck extends Entity {
         size = image.getWidth();
         xConst = 1;
         x = startX;
+        if ( y - size < room.getFloor()- 40)
+        {
+            y = startY;
+        }
+        else {
+            y = room.getFloor() -getYDisplace()- 40 - size;
+        }
+
         makeWeapons = true;
 
 
@@ -92,7 +101,7 @@ public class Duck extends Entity {
 
     public boolean inRoomBounds()
     {
-        return (x >= room.getLeftWall() && x + size < room.getRightWall() && y + World.getYDisplace() + size + 40 < room.getFloor());
+        return (x >= room.getLeftWall() && x + size < room.getRightWall() && y + getYDisplace() + size + 40 < room.getFloor());
 
     }
 }

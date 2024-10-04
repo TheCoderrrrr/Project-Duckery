@@ -54,6 +54,7 @@ public class Clipboard {
             warBar.render(g);
         }
 
+        g.setColor(Color.black);
         g.drawString("$" + ResourceManager.getFund() +"\nINCOME:" + ResourceManager.getIncomeRate() +
                 " per second\nBread made: " + ResourceManager.getBreadMade() +
                 "\nEmployees: "+World.getTotalDucks(), 1600,120);

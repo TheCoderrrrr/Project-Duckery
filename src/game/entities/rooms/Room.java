@@ -83,7 +83,7 @@ abstract public class Room {
     public void mousePressed(int button, int x, int y) {
 
         boolean onButton = false;
-        if (button == 0 && isOver(x, y) && getNumDucks() < maxDucks) {
+        if (button == 0 && isOver(x, y) && getNumDucks() <= maxDucks) {
             for (RoomButton myButton : myButtons) {
                 if (myButton.mouseOver(x, y)) {
                     myButton.action();
@@ -92,7 +92,7 @@ abstract public class Room {
             }
             if(!onButton)
             {
-                addDuck(x);
+                addDuck(x,y);
             }
 
         }
@@ -101,7 +101,7 @@ abstract public class Room {
 
             if(!onButton) {
                 for (Duck duck : ducks) {
-                    if (duck.isOver(x, y) && ducks.size() < maxDucks) {
+                    if (duck.isOver(x, y) && ducks.size() <= maxDucks) {
                         duck.mousePressed(button, x, y);
                         break;
                     }
@@ -112,12 +112,12 @@ abstract public class Room {
 
 
     }
-    private void addDuck(int startX)
+    private void addDuck(int startX, int startY)
     {
         // adds to the amount of ducks
         if(World.getTotalDucks() < World.getDuckLimit())
         {
-            Duck duck = new Duck(this, startX);
+            Duck duck = new Duck(this, startX, startY);
             ducks.add(duck);
             World.updateDuckCount(duck, false);
             resetTimer();

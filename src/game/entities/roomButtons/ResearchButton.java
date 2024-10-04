@@ -16,5 +16,6 @@ public class ResearchButton extends RoomButton{
     @Override
     public void action() {
         f.beginResearch();
+        System.out.println("researching");
     }
 }
