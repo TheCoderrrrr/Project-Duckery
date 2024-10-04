@@ -17,6 +17,7 @@ public class Duck extends Entity {
     private int timer;
     private int timer2;
     private boolean makeWeapons;
+    private double mySpeed;
 
     public Duck(Room room, int startX, int startY)
     {
@@ -26,7 +27,7 @@ public class Duck extends Entity {
         size = image.getWidth();
         xConst = 1;
         x = startX;
-        if ( y - size < room.getFloor()- 40)
+        if ( startY - size < room.getFloor()- 40)
         {
             y = startY;
         }
@@ -35,6 +36,7 @@ public class Duck extends Entity {
         }
 
         makeWeapons = true;
+        mySpeed = Math.random()*2+1;
 
 
         image = image.getFlippedCopy(true,false);
@@ -48,7 +50,7 @@ public class Duck extends Entity {
             y++;
         }
         else {
-            x += xConst * X_SPEED;
+            x += xConst * X_SPEED * mySpeed;
         }
         timer ++;
         timer2++;
@@ -69,11 +71,20 @@ public class Duck extends Entity {
         if (x < room.getX())
         {
             xConst = 1;
-            image = DUC2.getSubImage(i,0).getFlippedCopy(true, false);
+
         }
+
         if (x > (room.getX()+room.getWidth() - size))
         {
             xConst = -1;
+
+        }
+        if (xConst == 1)
+        {
+            image = DUC2.getSubImage(i,0).getFlippedCopy(true, false);
+        }
+        if (xConst == -1)
+        {
             image = DUC2.getSubImage(i,0);
         }
 
