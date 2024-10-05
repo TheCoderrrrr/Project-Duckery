@@ -13,7 +13,7 @@ import org.newdawn.slick.SlickException;
 import java.util.ArrayList;
 
 public class PayDay {
-    public boolean timerRunning;
+    public static boolean timerRunning;
     public int elapseTime;
     public static int LENGTH_OF_WEEK = Main.FRAMES_PER_SECOND*30;
     private int numClicks = 0;
@@ -21,9 +21,11 @@ public class PayDay {
     private boolean updated;
     private int numNews;
     private ArrayList<Image> news;
+    private static boolean begin;
 
     public PayDay() {
         timerRunning = true;
+        begin = true;
         payButtons = new PaydayButton[]{new PayDucks(), new PayRoomTax()};
         numNews = 0;
         news = new ArrayList<>();
@@ -32,31 +34,37 @@ public class PayDay {
         news.add(Images.NEWS3);
     }
 
+    public static void setBegin(){ begin = true;}
     public void render(Graphics g)
     {
-        g.setColor(Color.black);
-        g.drawString("Time: " + formatTime(elapseTime), 1697, 42);
+        if (begin)
+        {
 
-        if (elapseTime%LENGTH_OF_WEEK == 0 && numClicks <= 1)
-        {
             g.setColor(Color.black);
-            g.fillRect(100, 100, Main.getScreenWidth()-200, Main.getScreenHeight()-200);
-            timerRunning = false;
-            World.pause();
-            for(int i = 0; i< payButtons.length; i++){payButtons[i].render(g);}
-        }
-        if (elapseTime%LENGTH_OF_WEEK == 0 && numClicks == 2)
-        {
-            g.setColor(Color.white);
-            g.fillRect(100, 100, Main.getScreenWidth()-200, Main.getScreenHeight()-200);
-            g.setColor(Color.black);
-            g.drawString("NEWS!!!!", Main.getScreenWidth() / 2, Main.getScreenHeight() / 2);
-            if (numNews < news.size())
+            g.drawString("Time: " + formatTime(elapseTime), 1697, 42);
+
+            if (elapseTime%LENGTH_OF_WEEK == 0 && numClicks <= 1)
             {
-                g.drawImage(news.get(numNews).getScaledCopy(Main.getScreenWidth()-200,Main.getScreenHeight()-200),
-                        100,100);
+                g.setColor(Color.black);
+                g.fillRect(100, 100, Main.getScreenWidth()-200, Main.getScreenHeight()-200);
+                timerRunning = false;
+                World.pause();
+                for(int i = 0; i< payButtons.length; i++){payButtons[i].render(g);}
+            }
+            if (elapseTime%LENGTH_OF_WEEK == 0 && numClicks == 2)
+            {
+                g.setColor(Color.white);
+                g.fillRect(100, 100, Main.getScreenWidth()-200, Main.getScreenHeight()-200);
+                g.setColor(Color.black);
+                g.drawString("NEWS!!!!", Main.getScreenWidth() / 2, Main.getScreenHeight() / 2);
+                if (numNews < news.size())
+                {
+                    g.drawImage(news.get(numNews).getScaledCopy(Main.getScreenWidth()-200,Main.getScreenHeight()-200),
+                            100,100);
+                }
             }
         }
+
     }
 
     public void update(int delta) throws SlickException {

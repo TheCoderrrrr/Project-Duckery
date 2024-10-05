@@ -1,5 +1,6 @@
 package core;
 
+import open.IntroAnimation;
 import open.TitleScreen;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -14,6 +15,9 @@ public class Opening extends BasicGameState {
     private static StateBasedGame sbg;
 
     private static TitleScreen title;
+    private static IntroAnimation anim;
+
+    private static boolean titOn;
 
     public Opening(int id)
     {
@@ -28,13 +32,25 @@ public class Opening extends BasicGameState {
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         this.gc = gc;
         this.sbg = sbg;
+        Images.loadImages();
+        titOn = true;
 
         title = new TitleScreen();
+        anim = new IntroAnimation();
     }
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-        title.render(g);
+
+        if (titOn)
+        {
+            title.render(g);
+        }
+
+        if (!titOn && !anim.getDone())
+        {
+            anim.render(g);
+        }
     }
 
     @Override
@@ -52,7 +68,18 @@ public class Opening extends BasicGameState {
     }
     public void keyPressed(int key, char c)
     {
-        sbg.enterState(Main.GAME_ID);
+        if (titOn)
+        {
+            titOn = false;
+        }
+        else if(!titOn && !anim.getDone())
+        {
+            anim.changeSlide();
+        }
+        if (anim.getDone()){
+            sbg.enterState(Main.GAME_ID);
+        }
+
     }
     public void mousePressed(int button , int x, int y)
     {

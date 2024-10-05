@@ -27,9 +27,9 @@ public class Duck extends Entity {
         size = image.getWidth();
         xConst = 1;
         x = startX;
-        if ( startY - size < room.getFloor()- 40)
+        if ( startY - size +y< room.getFloor()- 40)
         {
-            y = startY;
+            y = startY ;
         }
         else {
             y = room.getFloor() -getYDisplace()- 40 - size;

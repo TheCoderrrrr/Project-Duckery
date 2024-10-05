@@ -14,6 +14,7 @@ public class Images {
 
 
     public static SpriteSheet TITLE_SCREEN;
+    public static SpriteSheet TITLE_ANIM;
 
     public static Image ADD_DUCK;
     public static Image FIRE_DUCK;
@@ -38,7 +39,8 @@ public class Images {
             BUILD_ANIMATION = new SpriteSheet(new Image("res/floors/build_room.png").getScaledCopy(800,200),400,200);
             BREAD_BUTTONS = new SpriteSheet(new Image("res/floors/bread_buttons.png"), 48,48);
 
-            TITLE_SCREEN = new SpriteSheet(new Image("res/Duckery.png"),1920, 1080);
+            TITLE_SCREEN = new SpriteSheet(new Image("res/duckery.png"),1920, 1080);
+            TITLE_ANIM = new SpriteSheet (new Image("res/animation.png").getScaledCopy(1920,1080*4),1920, 1080);
             ADD_DUCK = new Image("res/clipboard/add_duck.png");
             CLIPBOARD = new Image("res/clipboard/clipboard.png");
 

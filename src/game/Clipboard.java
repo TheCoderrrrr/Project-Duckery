@@ -55,9 +55,8 @@ public class Clipboard {
         }
 
         g.setColor(Color.black);
-        g.drawString("$" + ResourceManager.getFund() +"\nINCOME:" + ResourceManager.getIncomeRate() +
-                " per second\nBread made: " + ResourceManager.getBreadMade() +
-                "\nEmployees: "+World.getTotalDucks(), 1600,120);
+        g.drawString("$" + ResourceManager.getFund() +"\nBread made: " + ResourceManager.getBreadMade() +
+                "\nEmployees: "+World.getTotalDucks(), 1600,110);
     }
 
     public void update() {
