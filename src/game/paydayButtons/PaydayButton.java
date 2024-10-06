@@ -42,7 +42,7 @@ abstract public class PaydayButton {
 
         if(!paid)
         {
-            g.drawString(name+"\nClick to pay", myX, myY);
+            g.drawString(name+"\n$"+price+"\nClick to pay", myX, myY);
         }
         else
         {
