@@ -1,5 +1,6 @@
 package game;
 
+import game.clipboard.items.bread.BlandBread;
 import game.clipboard.items.bread.BrownBread;
 import game.clipboard.items.weapon.Gun;
 import game.entities.rooms.Floor;
@@ -22,10 +23,10 @@ public class RoomManager {
     private static int curBasement;
     private static final int ROOMS_IN_FLOOR = 2;
     public static final int FLOOR_UNLOCK_ROOMS = 5;
-    private static final int BASEMENT_UNLOCK_FLOOR = 7;
     public RoomManager(ResourceManager resourceManager)
     {
-        ProductRoom.addProduct(new BrownBread());
+
+        ProductRoom.addProduct(new BlandBread());
         //ProductRoom.addProduct(new Gun());
         rooms = new ArrayList<>();
         floors = new ArrayList<>();
@@ -98,7 +99,7 @@ public class RoomManager {
 
 
         }
-        else if (curFloor < BASEMENT_UNLOCK_FLOOR || !getWar())
+        else if ( !getWar())
         {
             //g.drawString("PRESS [2] to add FLOOR!!!" + ResourceManager.getFloorPrice(curFloor), 10,580);
             Clipboard.getHireMenu().addFloorButton();
@@ -123,7 +124,7 @@ public class RoomManager {
             curFloor ++;
             ResourceManager.withdraw(ResourceManager.getFloorPrice(curFloor));
         }
-        if (c == '3'&& curFloor>= BASEMENT_UNLOCK_FLOOR && World.getWar()
+        if (c == '3' && World.getWar()
                 && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curBasement))
         {
             floors.add(0,new Floor[]{new Floor (curBasement)});

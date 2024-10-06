@@ -184,7 +184,7 @@ public class ProductRoom  extends Room{
     }
     public String getInfo(int x, int y)
     {
-        String ret = "Floor: "+myFloor+"\nNumber of Ducks: "+getNumDucks();
+        String ret = "Floor: "+myFloor+"\nNumber of Ducks: "+getNumDucks() + "\n";
 
 
         //checks if is over any of myButtons
@@ -193,28 +193,29 @@ public class ProductRoom  extends Room{
         {
             if (b.mouseOver(x,y))
             {
-                ret = b.getInfo();
+                ret = ret + b.getInfo();
                 overButton = true;
             }
         }
 
         if(!overButton)
         {
+            if (!isBasement){
+                ret =ret + "Product: "+products.get(curItem).getName();
+            }
+            else if (!pause){
+                ret = ret +"Product: "+productsUG.get(0).getName();
+            }
             if (pause)
             {
-               ret =  "Building "+ getProductName() + " room!";
+               ret = ret + "\nBuilding "+ getProductName() + " room!";
             }
             else if(getNumDucks() == 0)
             {
-                ret ="\nIt's so cold without the \n" +
+                ret = ret + "\nIt's so cold without the \n" +
                         "feathered flaps of working ducks!";
             }
-            else if (!isBasement){
-                ret = ret +"\nProduct: "+products.get(curItem).getName();
-            }
-            else{
-                ret = ret +"\nProduct: "+productsUG.get(0).getName();
-            }
+
         }
 
 

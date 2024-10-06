@@ -17,6 +17,7 @@ abstract public class RoomButton {
     protected int red;
     protected Image myImage;
     protected String info;
+    protected int price;
 
     public RoomButton(ProductRoom room, int i )
     {

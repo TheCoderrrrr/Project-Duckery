@@ -77,7 +77,7 @@ abstract public class Room {
             int i = pauseTimer % 20 / 10;
             g.drawImage(Images.BUILD_ANIMATION.getSubImage(i, 0), x, World.getYDisplace() + y);
         } else {
-            g.fillRect(x, World.getYDisplace() + y, width, HEIGHT);// creates a square room at a given location
+            g.fillRect(x, curYPosition(), width, HEIGHT);// creates a square room at a given location
         }
     }
     public void mousePressed(int button, int x, int y) {

@@ -7,10 +7,11 @@ public class CosmicBread extends Item {
     public CosmicBread()
     {
         value = 100;
-        timeToCreate = 15;
+        timeToCreate = 30;
         name = "Cosmic Bread";
         myIndex = 2;
         roomImage = Images.ROOMS.getSubImage(2,0);
         isBasement = false;
+        price = 200;
     }
 }

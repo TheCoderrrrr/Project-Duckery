@@ -6,6 +6,7 @@ import game.entities.rooms.ProductRoom;
 import core.Images;
 import game.entities.rooms.Room;
 
+import static core.Images.ADD_DUCK;
 import static core.Images.DUC2;
 import static game.World.getYDisplace;
 
@@ -27,13 +28,12 @@ public class Duck extends Entity {
         size = image.getWidth();
         xConst = 1;
         x = startX;
-        if ( startY - size +y< room.getFloor()- 40)
-        {
-            y = startY ;
-        }
-        else {
-            y = room.getFloor() -getYDisplace()- 40 - size;
-        }
+        y = startY;
+//        if (!isAboveFloor()) {
+//            y = room.getFloor() - 40 - size;
+//        }
+
+        y = room.getY();
 
         makeWeapons = true;
         mySpeed = Math.random()*2+1;
@@ -45,7 +45,7 @@ public class Duck extends Entity {
 
 
     public void update() {
-        if(inRoomBounds())
+        if(isAboveFloor())
         {
             y++;
         }
@@ -117,5 +117,10 @@ public class Duck extends Entity {
     {
         return (x >= room.getLeftWall() && x + size < room.getRightWall() && y + getYDisplace() + size + 40 < room.getFloor());
 
+    }
+
+    public boolean isAboveFloor()
+    {
+        return (y + size  + 40 < room.getY()+ room.HEIGHT);
     }
 }

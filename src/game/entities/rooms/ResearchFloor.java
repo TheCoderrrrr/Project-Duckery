@@ -28,18 +28,16 @@ public class ResearchFloor extends Room{
         maxDucks = 6;
         resTotalTime = 800;
         resTimer = -1;
-        myButtons.add(new ResearchButton(this, myButtons.size()));
+
         productLine = new ArrayList<>();
-        productLine.add(new Gun());
-
-
-        productLine.add(new BlandBread());
-        //productLine.add(new BrownBread());
+        productLine.add(new BrownBread());
         productLine.add(new CosmicBread());
         productLine.add(new DivineBread());
+        productLine.add(new Gun());
 
         productsAvailable = true;
         myImage = myFloorTypes.getSubImage(5,0);
+        myButtons.add(new ResearchButton(this, myButtons.size()));
     }
 
     public void render(Graphics g)
@@ -76,6 +74,17 @@ public class ResearchFloor extends Room{
         }
     }
 
+    public Item getFirstProuduct() {
+        if (productLine.isEmpty()) {
+            return new BlandBread();
+        }
+        else
+        {
+            return productLine.getFirst();
+        }
+
+    }
+
     public void beginResearch() {
         if (!ducks.isEmpty() )
         {
@@ -101,10 +110,10 @@ public class ResearchFloor extends Room{
         {
             if(research)
             {
-                ret = "Currently Researching "+productLine.getFirst();
+                ret = "Currently Researching "+productLine.getFirst().getName();
             }
             else if (getNumDucks() >0){
-                ret = "Not researching. \nGive us work by clicking the button!";
+                ret = "Not researching. \nGive us work by clicking the \"R\" button!";
             }
             else {
                 ret = "hire a duck to research new produckts!";

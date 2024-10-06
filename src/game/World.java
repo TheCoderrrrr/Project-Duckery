@@ -23,7 +23,7 @@ public class World {
     //private curDucks;
     
     
-    private final int Y_SPEED = ProductRoom.HEIGHT/10;
+    private final int Y_SPEED = ProductRoom.HEIGHT/6;
     private final double GROUND_CHANGE = 0.75;//changes the valyue of y-speed to make background look far
     public static final int ROOMS_IN_FLOOR = 2;
     public static final int FLOOR_UNLOCK_ROOMS = 5;

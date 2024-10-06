@@ -1,6 +1,7 @@
 package game.entities.roomButtons;
 
 import core.Images;
+import game.ResourceManager;
 import game.clipboard.items.Item;
 import game.entities.rooms.ProductRoom;
 import game.entities.rooms.Room;
@@ -16,11 +17,19 @@ public class ChangeRoomButton extends RoomButton{
         r = room;
         i = item;
         myImage = Images.BREAD_BUTTONS.getSubImage(i.getImageIndex(),0);
-        info = "change room product to "+ item.getName() +"?\n"+"Will take "+ProductRoom.TOTAL_BUILD_TIME/60+"seconds";
+        info = "change room product to "+ item.getName() +"?\n"+"Will take "+ProductRoom.TOTAL_BUILD_TIME/60+"seconds"+
+                "\nprice: $"+price;
+        price = 20;
+
 
     }
     @Override
     public void action() {
-        r.switchProduct(i);
+        if (ResourceManager.getFunds()>=price)
+        {
+            ResourceManager.withdraw(20);
+            r.switchProduct(i);
+        }
+
     }
 }

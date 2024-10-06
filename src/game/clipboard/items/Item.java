@@ -13,6 +13,7 @@ public class Item {
     protected int myIndex;
     protected boolean isBasement;
     protected int warEffort;
+    protected int price;
 
     public Item()
     {
@@ -26,6 +27,10 @@ public class Item {
     public void update()
     {
 
+    }
+    public int getPrice()
+    {
+        return price;
     }
     public int getValue()
     {

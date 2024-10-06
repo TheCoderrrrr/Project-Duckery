@@ -6,6 +6,7 @@ import game.clipboard.items.Item;
 import game.clipboard.menus.ResearchMenu;
 import game.entities.rooms.ProductRoom;
 import org.newdawn.slick.Color;
+import org.newdawn.slick.Graphics;
 
 public class ResearchingButton extends BuyingButton {
 
@@ -16,10 +17,16 @@ public class ResearchingButton extends BuyingButton {
         super(x, y);
         color = Color.white;
         name = "research";
-        price = 20;
         this.menu = menu;
     }
 
+    public void render(Graphics g)
+    {
+        super.render(g);
+
+        g.setColor(Color.black);
+        g.drawString("R", x,y);
+    }
 
     @Override
     public void onClick() {

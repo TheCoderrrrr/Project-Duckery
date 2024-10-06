@@ -9,9 +9,10 @@ public class BlandBread extends Item {
     {
         myIndex = 0;
         value = 5;
-        timeToCreate = 3;
+        timeToCreate = 10;
         name = "Bland Bread";
         roomImage = Images.ROOMS.getSubImage(0,0);
         isBasement = false;
+        price = 20;
     }
 }

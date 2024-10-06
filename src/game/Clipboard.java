@@ -29,7 +29,7 @@ public class Clipboard {
         menus.add(new HotkeyMenu());
         info = "tester";
 
-        warBar = new ProgressBar(1550,200,200,175, "WAR PROGRESS!!");
+        warBar = new ProgressBar(1550,230,200,175, "WAR PROGRESS!!");
         //menus.add(new ResearchMenu());
 
     }
