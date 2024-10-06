@@ -5,7 +5,7 @@ import game.World;
 
 public class PayRoomTax extends PaydayButton {
 
-    final static public int ROOM_TAX = 70;
+    final static public int ROOM_TAX = 5;
 
     public PayRoomTax()
     {
