@@ -83,14 +83,15 @@ abstract public class Room {
     public void mousePressed(int button, int x, int y) {
 
         boolean onButton = false;
-        if (button == 0 && isOver(x, y) && getNumDucks() <= maxDucks) {
+        if (button == 0 && isOver(x, y)) {
             for (RoomButton myButton : myButtons) {
+                System.out.println("can switch");
                 if (myButton.mouseOver(x, y)) {
                     myButton.action();
                     onButton = true;
                 }
             }
-            if(!onButton)
+            if(!onButton && getNumDucks()<maxDucks)
             {
                 addDuck(x,y);
             }

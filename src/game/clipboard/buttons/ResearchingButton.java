@@ -2,6 +2,7 @@ package game.clipboard.buttons;
 
 import game.PayDay;
 import game.ResourceManager;
+import game.World;
 import game.clipboard.items.Item;
 import game.clipboard.menus.ResearchMenu;
 import game.entities.rooms.ProductRoom;
@@ -25,7 +26,7 @@ public class ResearchingButton extends BuyingButton {
         super.render(g);
 
         g.setColor(Color.black);
-        g.drawString("R", x,y);
+
     }
 
     @Override

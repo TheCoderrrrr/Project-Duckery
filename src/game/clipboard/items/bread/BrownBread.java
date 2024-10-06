@@ -7,7 +7,7 @@ public class BrownBread extends Item {
     public BrownBread()
     {
         value = 30;
-        timeToCreate = 20;
+        timeToCreate = 50;
         name = "Brown Bread";
         myIndex = 1;
         roomImage = Images.ROOMS.getSubImage(1,0);

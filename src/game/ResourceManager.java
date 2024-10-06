@@ -36,7 +36,7 @@ public class ResourceManager {
 
     public ResourceManager()
     {
-        fund = 400;
+        fund = 300;
         roomVals = new ArrayList<>();
         incomeRate = 0;
         adLevel = 0;

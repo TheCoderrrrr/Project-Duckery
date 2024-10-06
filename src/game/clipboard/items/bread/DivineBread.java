@@ -7,7 +7,7 @@ public class DivineBread extends Item {
     public DivineBread()
     {
         value = 1000;
-        timeToCreate = 150;
+        timeToCreate = 60;
         name = "Divine Bread";
         myIndex = 3;
         roomImage = Images.ROOMS.getSubImage(3,0);

@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="added bad animation and fixed ducks">
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="quick fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Clipboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Clipboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ResourceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/RoomManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/ResearchingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/weapon/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/weapon/Gun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/Duck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/ResearchButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/ResearchButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/RoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/RoomButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/ProductRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/ProductRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PaydayButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PaydayButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,7 +323,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728096283181</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="ALL SET">
+      <option name="closed" value="true" />
+      <created>1728256060509</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1728256060509</updated>
+    </task>
+    <task id="LOCAL-00030" summary="quick fix">
+      <option name="closed" value="true" />
+      <created>1728256178120</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1728256178120</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -351,8 +354,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added a room/floor-adding system" />
-    <MESSAGE value="expanded menu system-- can withdraw money and more items" />
     <MESSAGE value="quick fix -- added room limits" />
     <MESSAGE value="fixed number of rooms per floor" />
     <MESSAGE value="can buy rooms now!" />
@@ -376,7 +377,9 @@
     <MESSAGE value="more things working, images" />
     <MESSAGE value="fix button" />
     <MESSAGE value="added bad animation and fixed ducks" />
-    <option name="LAST_COMMIT_MESSAGE" value="added bad animation and fixed ducks" />
+    <MESSAGE value="ALL SET" />
+    <MESSAGE value="quick fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="quick fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
