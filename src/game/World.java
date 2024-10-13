@@ -12,6 +12,10 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class World {
+
+    //manages total # of ducks and screen position
+    //contains the room manager
+
     public static ArrayList<Duck> ducks;
     private ResourceManager wallet;
     private static RoomManager roomManager;
@@ -38,7 +42,8 @@ public class World {
     public static boolean pause;
     private static boolean war;
     
-    
+
+    //manages the number of ducks.
     
 
     public World(GameContainer gc)
@@ -53,9 +58,6 @@ public class World {
 
 
     }
-
-
-    public static boolean getPause(){ return pause;}
 
     public void render (Graphics g) {
         //makes the sky
@@ -103,6 +105,45 @@ public class World {
 
     }
 
+
+
+//ACCESSOR
+    //war + pause
+    public static boolean getWar(){ return war;}
+    public static boolean getPause(){ return pause;}
+
+    //world position
+    public static int getYDisplace()
+    {
+        return yDisplace;
+    }
+
+    //ducks
+    public static int getDuckLimit()
+    {
+        return duckLimit;
+    }
+    public static int getTotalDucks()
+    {
+        return ducks.size();
+    }
+
+
+
+
+//MUTATOR
+
+    //declaring war + pausing game
+    public static void pause()
+    {
+        pause = true;
+    }
+    public static void unpause()
+    {
+        pause = false;
+    }
+    public static void declareWar(){ war = true;}
+
     public void keyPressed(int key, char c) {
         roomManager.keyPressed(key, c);
 
@@ -110,6 +151,7 @@ public class World {
 
     }
 
+    // for shortcuts
     public static void quickScroll(char c)
     {
         if (c == 'R')
@@ -125,12 +167,16 @@ public class World {
             yDisplace = (currBasement* ProductRoom.HEIGHT);
         }
     }
-
-    //ACCESSOR
-
-    public static int getYDisplace()
-    {
-        return yDisplace;
+    //moves the screen + displaces.
+    public void mouseWheelMoved(int newValue) {
+        if (newValue> 0)
+        {
+            yDisplace+=Y_SPEED;
+        }
+        if (newValue< 0)
+        {
+            yDisplace-=Y_SPEED;
+        }
     }
 
     public void mousePressed(int button, int x, int y) {
@@ -142,45 +188,14 @@ public class World {
 
     }
 
-    public static boolean getWar(){ return war;}
-//mutator
 
-    public static void pause()
-    {
-        pause = true;
-    }
-    public static void unpause()
-    {
-        pause = false;
-    }
-
-    public static void declareWar(){ war = true;}
-
-
-
-    public static int getDuckLimit()
-    {
-        return duckLimit;
-    }
-    //
+    // increases the number of placeable ducks
     public static void increaseDuckLimit() throws SlickException {
         duckLimit++;
         gc.setMouseCursor(Images.DUC1, 40,40);
     }
-    public static int getTotalDucks()
-    {
-        return ducks.size();
-    }
-    public void mouseWheelMoved(int newValue) {
-        if (newValue> 0)
-        {
-            yDisplace+=Y_SPEED;
-        }
-        if (newValue< 0)
-        {
-            yDisplace-=Y_SPEED;
-        }
-    }
+
+    //removes a duck or adds if needed (used to move around ducks)
     public static void updateDuckCount(Duck duck, boolean remove)
     {
         if(remove)
@@ -206,5 +221,8 @@ public class World {
         }
 
     }
+
+
+
 
 }

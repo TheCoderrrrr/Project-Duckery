@@ -1,13 +1,10 @@
 package game.entities;
 
 import core.Sounds;
-import game.World;
-import game.entities.rooms.ProductRoom;
 import core.Images;
 import game.entities.rooms.Room;
 
-import static core.Images.ADD_DUCK;
-import static core.Images.DUC2;
+import static core.Images.DUCKSHEET;
 import static game.World.getYDisplace;
 
 public class Duck extends Entity {
@@ -81,11 +78,11 @@ public class Duck extends Entity {
         }
         if (xConst == 1)
         {
-            image = DUC2.getSubImage(i,0).getFlippedCopy(true, false);
+            image = DUCKSHEET.getSubImage(i,0).getFlippedCopy(true, false);
         }
         if (xConst == -1)
         {
-            image = DUC2.getSubImage(i,0);
+            image = DUCKSHEET.getSubImage(i,0);
         }
 
         if(timer2 % 600 == 0)

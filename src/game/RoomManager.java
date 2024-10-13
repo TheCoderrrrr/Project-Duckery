@@ -39,23 +39,9 @@ public class RoomManager {
         ResourceManager.setRooms(rooms);
     }
 
-    //Doesn't include ResearchRoom
-    public static int getTotalRooms(){
-        int ret = floors.size() + (rooms.size()-1)*2;
-        for (ProductRoom r: rooms.getLast())
-        {
-            if (r!= null)
-            {
-                ret++;
-            }
-        }
-        System.out.println(ret);
-        return ret;
-
-
-    }
     public void render(Graphics g)
     {
+        //draws all rooms
         for(ProductRoom[] r : rooms)
         {
             for(int i = 0; i < ROOMS_IN_FLOOR; i++)
@@ -71,11 +57,11 @@ public class RoomManager {
         {
             f[0].render(g);
         }
-        g.setColor(org.newdawn.slick.Color.black);
 
     }
     public void update()
     {
+        //update all rooms
         for (ProductRoom[] r :rooms)
         {
             for (int i = 0; i<ROOMS_IN_FLOOR; i++)
@@ -92,47 +78,37 @@ public class RoomManager {
             f[0].update();
         }
 
+        //update all of the funds
         ResourceManager.update(rooms, floors);
 
-        if (curFloor < FLOOR_UNLOCK_ROOMS)
+        //tells clipboard whether to allow users toa dd floors/basement
+        if ( !getWar())
         {
-
-
-        }
-        else if ( !getWar())
-        {
-            //g.drawString("PRESS [2] to add FLOOR!!!" + ResourceManager.getFloorPrice(curFloor), 10,580);
             Clipboard.getHireMenu().addFloorButton();
         }
-        else if (getWar()) {
-
-//            g.drawString("PRESS [2] to add FLOOR!!!"+ ResourceManager.getFloorPrice(curFloor), 10,580);
-//            g.drawString("PRESS [3] to add BASEMENT!!!"+ ResourceManager.getFloorPrice(curBasement), 10,600);
+        else {
             Clipboard.getHireMenu().addBasement();
 
         }
     }
-    public static void keyPressed(int key, char c)
-    {
-        if (c == '1' && ResourceManager.getFunds()>ResourceManager.getRoomPrice(curFloor, curRoom)) {
-            addRoom();
-            ResourceManager.withdraw(ResourceManager.getRoomPrice(curFloor, curRoom));
-        }
-        if (c == '2'&& curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+
+
+//ACCESSOR
+    //Counts total number of rooms  (used to calculate property taxes
+    public static int getTotalRooms(){
+        int ret = floors.size() + (rooms.size()-1)*2 +1;
+        for (ProductRoom r: rooms.getLast())
         {
-            floors.add(new Floor[]{new Floor (curFloor)});
-            curFloor ++;
-            ResourceManager.withdraw(ResourceManager.getFloorPrice(curFloor));
+            if (r!= null)
+            {
+                ret++;
+            }
         }
-        if (c == '3' && World.getWar()
-                && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curBasement))
-        {
-            floors.add(0,new Floor[]{new Floor (curBasement)});
-            curBasement --;
-            ResourceManager.withdraw(ResourceManager.getFloorPrice(curBasement));
-        }
+        System.out.println(ret);
+        return ret;
     }
 
+    //used to display information about the room
     public String getRoomInfo(int x, int y)
     {
         String ret = "";
@@ -163,25 +139,15 @@ public class RoomManager {
         return ret;
     }
 
-    public static void addFloor() {
-        if (curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
-        {
-            floors.add(new Floor[]{new Floor (curFloor)});
-            ResourceManager.withdraw(ResourceManager.getFloorPrice(curFloor));
-            curFloor ++;
-        }
-    }
-
-    public static void addBasement() {
-        if (curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
-        {
-            floors.add(new Floor[]{new Floor (curBasement)});
-            ResourceManager.withdraw(ResourceManager.getFloorPrice(curBasement));
-            curBasement --;
-        }
-    }
-
+    //returns what "floor" was the last placed
     public static int getCurBasement() { return curBasement;}
+    public int getCurFloor()
+    {
+        return curFloor;
+    }
+
+
+    //calls the resource manager to get the price
     public static int getCurRoomPrice()
     {
         return ResourceManager.getRoomPrice(curFloor, curRoom);
@@ -192,8 +158,27 @@ public class RoomManager {
     }
     public static int getCurBasementPrice()
     {
-        return ResourceManager.getFloorPrice(curFloor);
+        return ResourceManager.getFloorPrice(-curBasement);
     }
+
+    //checks if there are 2 to a floor.
+    public static boolean spaceOnFloor()
+    {
+        int count = 0;
+        for(int i = 0; i < rooms.getLast().length; i++)
+        {
+            if(rooms.getLast()[i] != null)
+            {
+                count++;
+            }
+        }
+        return (count < ROOMS_IN_FLOOR);
+    }
+
+
+//MUTATOR
+
+    //tells each room its clicked.
     public void mousePressed(int button, int mX, int mY)
     {
         for (ProductRoom[] r :rooms)
@@ -220,6 +205,51 @@ public class RoomManager {
 
         }
     }
+
+    //add room for hotkeys!
+    public static void keyPressed(int key, char c)
+    {
+        if (c == '1' && ResourceManager.getFunds()>ResourceManager.getRoomPrice(curFloor, curRoom)) {
+            addRoom();
+            ResourceManager.withdraw(ResourceManager.getRoomPrice(curFloor, curRoom));
+        }
+        if (c == '2'&& curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+        {
+            addFloor();
+//            floors.add(new Floor[]{new Floor (curFloor)});
+//            curFloor ++;
+//            ResourceManager.withdraw(ResourceManager.getFloorPrice(curFloor));
+        }
+        if (c == '3' && World.getWar()
+                && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curBasement))
+        {
+            addBasement();
+//            floors.add(0,new Floor[]{new Floor (curBasement)});
+//            curBasement --;
+//            ResourceManager.withdraw(ResourceManager.getFloorPrice(curBasement));
+        }
+    }
+
+
+    //adds respective type of room.
+    public static void addFloor() {
+        if (curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+        {
+            floors.add(new Floor[]{new Floor (curFloor)});
+            ResourceManager.withdraw(ResourceManager.getFloorPrice(curFloor));
+            curFloor ++;
+        }
+    }
+
+    public static void addBasement() {
+        if (curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+        {
+            floors.add(0, new Floor[]{new Floor (curBasement)});
+            ResourceManager.withdraw(ResourceManager.getFloorPrice(curBasement));
+            curBasement --;
+        }
+    }
+
     public static void addRoom()
     {
         if(curFloor < FLOOR_UNLOCK_ROOMS)
@@ -238,22 +268,5 @@ public class RoomManager {
             }
         }
     }
-    //checks if there are 2 to a floor.
 
-    public static boolean spaceOnFloor()
-    {
-        int count = 0;
-        for(int i = 0; i < rooms.getLast().length; i++)
-        {
-            if(rooms.getLast()[i] != null)
-            {
-                count++;
-            }
-        }
-        return (count < ROOMS_IN_FLOOR);
-    }
-    public int getCurFloor()
-    {
-        return curFloor;
-    }
 }

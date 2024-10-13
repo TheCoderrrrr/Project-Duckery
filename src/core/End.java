@@ -9,6 +9,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+//displays either a win or loss at the end fo the game.
 public class End extends BasicGameState {
     private int id;
     private static GameContainer gc;

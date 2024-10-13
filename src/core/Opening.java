@@ -9,6 +9,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+//plays through the animation and the title screen
 public class Opening extends BasicGameState {
     private int id;
     private static GameContainer gc;
