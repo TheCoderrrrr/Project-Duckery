@@ -5,17 +5,13 @@ import game.RoomManager;
 
 public class Floor extends ProductRoom {
 
-    //int myFloor;
-    ProductRoom[] rooms;
+
     int index = RoomManager.FLOOR_UNLOCK_ROOMS;
 
+    //a floor is a  longer room
     public Floor(int myFloor) {
         super(myFloor, 0);
         this.myFloor = myFloor;
-        rooms = new ProductRoom[World.ROOMS_IN_FLOOR];
-        for (int i = 0; i < rooms.length; i++) {
-            rooms[i] = new ProductRoom(myFloor, i);
-        }
         maxDucks = 6;
         width = 800;
        myRoomTypes = myFloorTypes;

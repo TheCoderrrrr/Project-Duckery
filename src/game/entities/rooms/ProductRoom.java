@@ -101,6 +101,8 @@ public class ProductRoom  extends Room{
         super.mousePressed(button,x,y);
 
     }
+
+    //checks if product is completed;
     public boolean completedProduct()
     {
         return timer == getTimeToMake() && (!products.isEmpty() || !productsUG.isEmpty());
@@ -167,15 +169,17 @@ public class ProductRoom  extends Room{
             return 0;
         }
     }
+
+    //returns total time to make
     public int getTimeToMake()
     {
         if (!isBasement() && !products.isEmpty())
         {
-            return (int) ( products.get(curItem).getTimeToCreate() * Math.pow(0.50,ducks.size()) ) ;
+            return (int) ( products.get(curItem).getTimeToCreate() * Math.pow(0.80,ducks.size()) ) ;
         }
         else if (isBasement() && !productsUG.isEmpty())
         {
-            return (int) ( productsUG.get(0).getTimeToCreate() * Math.pow(0.50,ducks.size()) ) ;
+            return (int) ( productsUG.get(0).getTimeToCreate() * Math.pow(0.80,ducks.size()) ) ;
         }
         else {
             return 1;

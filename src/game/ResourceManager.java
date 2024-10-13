@@ -12,6 +12,13 @@ import org.newdawn.slick.Graphics;
 import java.util.ArrayList;
 
 public class ResourceManager {
+    //this class is super hefty
+    // ----.        .----
+    // <o>    ||     <0>
+    //       /  \
+    //
+    //       < v >
+    //         V
 
     static private double fund;
     private static ArrayList<double[]> roomVals;
@@ -24,15 +31,6 @@ public class ResourceManager {
     private static int enemyEffort;
 
     private int timer;
-
-    public static double getIncomeRate(){return incomeRate;}
-    public static double getFund(){return fund;}
-    public static double getBreadMade(){return breadMade;}
-    public static double getWarEffort(){return warEffort;}
-    public static double getPercentConquered(){
-        return (double)warEffort/(double)(enemyEffort +warEffort);
-        }
-
 
     public ResourceManager()
     {
@@ -78,6 +76,35 @@ public class ResourceManager {
             adLevel = 0;
         }
     }
+
+    //ACCESSORS
+    public static double getIncomeRate(){return incomeRate;}
+    public static double getFund(){return fund;}
+    public static double getBreadMade(){return breadMade;}
+    public static double getWarEffort(){return warEffort;}
+    public static double getPercentConquered(){
+        return (double)warEffort/(double)(enemyEffort +warEffort);
+    }
+    public static double getFunds(){ return fund;}
+
+    public static int getRoomPrice(int floor, int room)
+    {
+        //return room prices
+        double price = 30;
+
+        int exp = floor*World.ROOMS_IN_FLOOR + room;
+
+        for (int i = 0; i< exp; i++)
+        {
+            price *= 1.25;
+        }
+        return (int)price;
+
+    }
+
+
+
+    //MUTATORS
     public static void addFunds(ArrayList<ProductRoom[]> rooms)
     {
         //counts the total income of bread
@@ -132,7 +159,7 @@ public class ResourceManager {
         adTimer += length;
     }
 
-    public static double getFunds(){ return fund;}
+
 
     public static void setRooms(ArrayList<ProductRoom[]> rooms)
     {
@@ -209,20 +236,7 @@ public class ResourceManager {
         // if advertising is true, multiply by some value.
     }
 
-    public static int getRoomPrice(int floor, int room)
-    {
-        //return room prices
-        double price = 30;
 
-        int exp = floor*World.ROOMS_IN_FLOOR + room;
-
-        for (int i = 0; i< exp; i++)
-        {
-          price *= 1.25;
-        }
-        return (int)price;
-
-    }
 
     public static int getFloorPrice(int floor)
     {

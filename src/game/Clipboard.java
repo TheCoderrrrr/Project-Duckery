@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 public class Clipboard {
 
+    //manages all of the buttons and lets them get clicked;
     static MiniManager hire;
     static ArrayList<BuyingButton> buttons = new ArrayList<>();
     static ArrayList<Menu> menus = new ArrayList<Menu>();
@@ -30,13 +31,7 @@ public class Clipboard {
         info = "tester";
 
         warBar = new ProgressBar(1550,230,200,175, "WAR PROGRESS!!");
-        //menus.add(new ResearchMenu());
 
-    }
-
-    public static HiringMenu getHireMenu()
-    {
-        return h;
     }
 
 
@@ -68,6 +63,11 @@ public class Clipboard {
 
     }
 
+//ACCESSOR
+    public static HiringMenu getHireMenu()
+    {
+        return h;
+    }
     public static String getButtonInfo(int x, int y)
     {
         String ret = "";
@@ -78,15 +78,9 @@ public class Clipboard {
         return ret;
     }
 
-    public static void updateInfo(String newInfo)
-    {
-        info = newInfo;
-    }
+//MUTATOR
 
-    public void keyPressed(int key, char c) {
-
-
-    }
+    public void keyPressed(int key, char c) {}
 
     public void mousePressed(int button, int x, int y) {
 
@@ -97,8 +91,10 @@ public class Clipboard {
                 m.click(x, y);
             }
         }
+    }
 
-
-
+    public static void updateInfo(String newInfo)
+    {
+        info = newInfo;
     }
 }

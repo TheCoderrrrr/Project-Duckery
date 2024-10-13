@@ -65,23 +65,90 @@ abstract public class Room {
     }
 
     public void render(Graphics g) {
+
+        //draws this if no image
         if ((myFloor + myRoom) % 2 == 0) {
             myColor = (Color.white);
         } else {
             myColor = Color.lightGray;
         }
         g.setColor(myColor);
+
+        //draws this if YES image
         if (myImage != null && !pause) {
             g.drawImage(myImage, x, World.getYDisplace() + y);
         } else if (pause) {
             int i = pauseTimer % 20 / 10;
-            g.drawImage(Images.BUILD_ANIMATION.getSubImage(i, 0), x, World.getYDisplace() + y);
+            g.drawImage(Images.BUILD_ANIMATION.getSubImage(i, 0).getScaledCopy(width,HEIGHT), x, World.getYDisplace() + y);
         } else {
             g.fillRect(x, curYPosition(), width, HEIGHT);// creates a square room at a given location
         }
+
+        g.setColor(Color.black);
+        g.drawString("Ducks: " +ducks.size()+"/"+maxDucks, x, y + World.getYDisplace() );
     }
+
+    //ACCESSOR
+        //IS THE mouse over?
+        public boolean mouseOver(int x, int y)
+        {
+            return (x>getX() && x<getX()+width && y>curYPosition() && y< curYPosition()+HEIGHT);
+        }
+
+        //info for the information on the tip
+        abstract public String getInfo(int x, int y);
+
+    //duck stuff!
+        public int getNumDucks() {
+            return ducks.size();
+        }
+         public ArrayList<Duck> getDucks()
+    {
+        return ducks;
+    }
+
+        //gets the current y position (displaced by world)
+        public int curYPosition()
+        {
+            return y + World.getYDisplace();
+        }
+
+        //returns the UNCHANGED x and y;
+        public int getX()
+        {
+            return x;
+        }
+        public int getY()
+        {
+            return y;
+        }
+
+        // gets the parameters of the world.
+        public int getWidth()
+        {
+            return width;
+        }
+        public int getLeftWall()
+        {
+            return x;
+        }
+        public int getRightWall()
+        {
+            return x + width;
+        }
+        public int getFloor()
+        {
+            return curYPosition() + HEIGHT;
+        }
+
+
+    //MUTATOR
+
+
+    // needs to be changed, but basically either clicks a button or adds/removes a duck
     public void mousePressed(int button, int x, int y) {
 
+            //turn on the buttons
         boolean onButton = false;
         if (button == 0 && isOver(x, y)) {
             for (RoomButton myButton : myButtons) {
@@ -111,8 +178,9 @@ abstract public class Room {
 
         }
 
-
     }
+
+    //add a new duck to the room and update world!
     private void addDuck(int startX, int startY)
     {
         // adds to the amount of ducks
@@ -125,12 +193,15 @@ abstract public class Room {
         }
         System.out.println((World.getTotalDucks() < World.getDuckLimit()) + "");
     }
+
+    //removes a duck :(
     public void removeDucks(Duck duck)
     {
         ducks.remove(duck);
         World.updateDuckCount(duck, true);
     }
 
+    //checks if it is over.
     public boolean isOver(int x, int y)
     {
         //tells you if an x and y value is over the room
@@ -139,6 +210,7 @@ abstract public class Room {
     }
 
 
+    //updates the ducks
     public void update() {
         for(Duck duck : ducks)
         {
@@ -150,53 +222,9 @@ abstract public class Room {
         }
     }
 
-    public boolean mouseOver(int x, int y)
-    {
-        return (x>getX() && x<getX()+width && y>curYPosition() && y< curYPosition()+HEIGHT);
-    }
-
-    abstract public String getInfo(int x, int y);
-
-
-    public int getNumDucks() {
-        return ducks.size();
-    }
-
-    public int curYPosition()
-    {
-        return y + World.getYDisplace();
-    }
-
-    public int getX()
-    {
-        return x;
-    }
-    public int getY()
-    {
-        return y;
-    }
+    //resets the timer used to make new bread
     public void resetTimer()
     {
         timer = 0;
-    }
-    public int getWidth()
-    {
-        return width;
-    }
-    public int getLeftWall()
-    {
-        return x;
-    }
-    public int getRightWall()
-    {
-        return x + width;
-    }
-    public int getFloor()
-    {
-        return curYPosition() + HEIGHT;
-    }
-    public ArrayList<Duck> getDucks()
-    {
-        return ducks;
     }
 }

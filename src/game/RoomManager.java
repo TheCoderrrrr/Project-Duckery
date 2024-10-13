@@ -82,11 +82,11 @@ public class RoomManager {
         ResourceManager.update(rooms, floors);
 
         //tells clipboard whether to allow users toa dd floors/basement
-        if ( !getWar())
+        if ( !getWar() && curFloor> FLOOR_UNLOCK_ROOMS)
         {
             Clipboard.getHireMenu().addFloorButton();
         }
-        else {
+        else if (curFloor > FLOOR_UNLOCK_ROOMS){
             Clipboard.getHireMenu().addBasement();
 
         }

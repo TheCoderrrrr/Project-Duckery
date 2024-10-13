@@ -57,9 +57,9 @@ public class AdvertisingButton extends BuyingButton {
     public void onClick() {
         if (timer <= 0)
         {
-            timer = COOLDOWN_TIME;
             if (ResourceManager.getFunds()>price)
             {
+                timer = COOLDOWN_TIME;
                 ResourceManager.advertise(seconds * 60, boost);
                 ResourceManager.withdraw(price);
             }
