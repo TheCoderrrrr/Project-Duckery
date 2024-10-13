@@ -1,5 +1,6 @@
 package game.entities.rooms;
 
+import game.PayDay;
 import game.World;
 import game.clipboard.items.Item;
 import game.clipboard.items.bread.BlandBread;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 public class ResearchFloor extends Room{
     int resTotalTime;
     int resTimer;
-    boolean research;
+    private boolean research; // tells if a product is being researched
     boolean productsAvailable;
     ArrayList<Item> productLine;
 
@@ -26,7 +27,7 @@ public class ResearchFloor extends Room{
         super(0,0);
         width = 800;
         maxDucks = 6;
-        resTotalTime = 800;
+        resTotalTime = 60*90;
         resTimer = -1;
 
         productLine = new ArrayList<>();
@@ -37,16 +38,24 @@ public class ResearchFloor extends Room{
 
         productsAvailable = true;
         myImage = myFloorTypes.getSubImage(5,0);
-        myButtons.add(new ResearchButton(this, myButtons.size()));
+        //myButtons.add(new ResearchButton(this, myButtons.size()));
     }
 
     public void render(Graphics g)
     {
         super.render(g);// creates a square room at a given location
-//        g.setColor(Color.black);
-//
-//        g.drawString("Num Ducks: "+getNumDucks()+"\nFloor:"+myFloor+"\nRESEARCHING?"+research+
-//                "\nProducts Available? "+productLine.size()+"\nETA:"+resTimer, x, World.getYDisplace() + y);
+        g.setColor(Color.black);
+        if (ducks.isEmpty())
+        {
+            g.drawString("add a duck to research an improved product", x, World.getYDisplace() + y + 20);
+        }
+        else if (research)
+        {
+            g.drawString("currently researching" + productLine.getFirst().getName()
+                    +"\nTime to comletion: "+(resTimer)
+                    , x, World.getYDisplace() + y+ 20);
+        }
+
         for (Duck duck : ducks) duck.render(g);
         for (int i=0;i<myButtons.size();i++) myButtons.get(i).render(g);
 
@@ -55,18 +64,23 @@ public class ResearchFloor extends Room{
     public void update()
     {
         super.update();
-        if (research & resTimer>0)
+
+        if (!ducks.isEmpty() && !productLine.isEmpty() &&!research)
+        {
+            beginResearch();
+            PayDay.setBegin();
+        }
+        if (research && resTimer>0)
         {
             resTimer--;
         }
-        if (resTimer ==0 && !productLine.isEmpty())
+        else if (resTimer ==0 && !productLine.isEmpty())
         {
             //to add: add to product list
             ProductRoom.addProduct(productLine.getFirst());
             productLine.remove(productLine.getFirst());
             research = false;
             resTimer = -1;
-            resTotalTime *= 2;
         }
         else if (resTimer == 0 && productLine.isEmpty())
         {

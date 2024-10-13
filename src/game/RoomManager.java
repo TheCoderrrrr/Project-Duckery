@@ -3,11 +3,8 @@ package game;
 import game.clipboard.items.bread.BlandBread;
 import game.clipboard.items.bread.BrownBread;
 import game.clipboard.items.weapon.Gun;
-import game.entities.rooms.Floor;
-import game.entities.rooms.ProductRoom;
-import game.entities.rooms.Room;
+import game.entities.rooms.*;
 import org.newdawn.slick.Graphics;
-import game.entities.rooms.ResearchFloor;
 import game.clipboard.menus.HiringMenu;
 
 import java.util.ArrayList;
@@ -18,6 +15,7 @@ public class RoomManager {
     private static ArrayList<ProductRoom[]> rooms;
     private static ArrayList<ProductRoom[]> floors;
     private static ResearchFloor resRoom;
+    private static AdRoom adRoom;
     private static int curFloor;
     private static int curRoom;
     private static int curBasement;
@@ -27,13 +25,14 @@ public class RoomManager {
     {
 
         ProductRoom.addProduct(new BlandBread());
-        //ProductRoom.addProduct(new Gun());
         rooms = new ArrayList<>();
         floors = new ArrayList<>();
         resRoom = new ResearchFloor();
+        adRoom = new AdRoom();
+
         rooms.add(new ProductRoom[ROOMS_IN_FLOOR]);
         curRoom =0;
-        curFloor = 1;
+        curFloor = 2;
         curBasement = -1;
         addRoom();
         ResourceManager.setRooms(rooms);
@@ -53,6 +52,7 @@ public class RoomManager {
             }
         }
         resRoom.render(g);
+        adRoom.render(g);
         for (ProductRoom[] f : floors)
         {
             f[0].render(g);
@@ -73,6 +73,7 @@ public class RoomManager {
             }
         }
         resRoom.update();
+        adRoom.update();
         for (ProductRoom[] f :floors)
         {
             f[0].update();
@@ -136,6 +137,10 @@ public class RoomManager {
         {
             ret = resRoom.getInfo(x,y);
         }
+        if (adRoom.mouseOver(x,y))
+        {
+            ret = adRoom.getInfo(x,y);
+        }
         return ret;
     }
 
@@ -195,6 +200,10 @@ public class RoomManager {
         if (resRoom.isOver(mX, mY))
         {
             resRoom.mousePressed(button, mX, mY);
+        }
+        if (adRoom.isOver(mX, mY))
+        {
+            adRoom.mousePressed(button, mX, mY);
         }
         for (ProductRoom[] f :floors)
         {
