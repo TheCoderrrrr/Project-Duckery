@@ -4,7 +4,7 @@ import game.World;
 
 public class PayDucks extends PaydayButton{
 
-    final static public int DUCK_WAGE = 10;
+    final static public int DUCK_WAGE = 5;
 
     public PayDucks()
     {

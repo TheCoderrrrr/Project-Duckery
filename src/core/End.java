@@ -17,8 +17,7 @@ public class End extends BasicGameState {
 
     private static TitleScreen title;
 
-    public End(int id)
-    {
+    public End(int id) {
         this.id = id;
     }
 
@@ -35,15 +34,12 @@ public class End extends BasicGameState {
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-        if (ResourceManager.getWarEffort() >=1)
-        {
+        if (ResourceManager.getWarEffort() >= 1) {
             g.setBackground(Color.green);
-            g.drawString("you win!", Main.getScreenWidth()/2, Main.getScreenHeight()/2);
-        }
-        else if(ResourceManager.getWarEffort()<0)
-        {
+            g.drawString("you win!", Main.getScreenWidth() / 2, Main.getScreenHeight() / 2);
+        } else if (ResourceManager.getWarEffort() < 0) {
             g.setBackground(Color.red);
-            g.drawString("you win!", Main.getScreenWidth()/2, Main.getScreenHeight()/2);
+            g.drawString("you lose!", Main.getScreenWidth() / 2, Main.getScreenHeight() / 2);
         }
     }
 
@@ -51,20 +47,20 @@ public class End extends BasicGameState {
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
 
     }
-    public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException
-    {
+
+    public void enter(GameContainer gc, StateBasedGame sbg) throws SlickException {
 
     }
-    public void leave(GameContainer gc, StateBasedGame sbg)
-    {
+
+    public void leave(GameContainer gc, StateBasedGame sbg) {
 
     }
-    public void keyPressed(int key, char c)
-    {
+
+    public void keyPressed(int key, char c) {
         sbg.enterState(1);
     }
-    public void mousePressed(int button , int x, int y)
-    {
+
+    public void mousePressed(int button, int x, int y) {
 
     }
 }

@@ -6,8 +6,8 @@ import game.clipboard.items.Item;
 public class CosmicBread extends Item {
     public CosmicBread()
     {
-        value = 100;
-        timeToCreate = 30;
+        value = 14;
+        timeToCreate = 20;
         name = "Cosmic Bread";
         myIndex = 2;
         roomImage = Images.ROOMS.getSubImage(2,0);

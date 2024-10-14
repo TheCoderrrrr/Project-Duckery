@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class PayDay {
     public static boolean timerRunning;
     public int elapseTime;
-    public static int LENGTH_OF_WEEK = Main.FRAMES_PER_SECOND*30;
+    public static int LENGTH_OF_WEEK = Main.FRAMES_PER_SECOND*60;
     private int numClicks = 0;
     private PaydayButton[] payButtons;
     private boolean updated;

@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="adding comments and reorganizing (part 2!)">
-      <change afterPath="$PROJECT_DIR$/src/game/entities/rooms/AdRoom.java" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="alright its done">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ibxm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/RoomManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Duckery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Duckery.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/End.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/End.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PayDucks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PayDucks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,23 +57,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/senmr/Downloads/Duckery/Duckery Code/Project-Duckery",
-    "onboarding.tips.debug.path": "C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/senmr/Downloads/Project-Duckery/res&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\senmr\Downloads\Project-Duckery\res" />
@@ -344,31 +353,7 @@
       <option name="project" value="LOCAL" />
       <updated>1728257522524</updated>
     </task>
-    <task id="LOCAL-00032" summary="better taxing i think">
-      <option name="closed" value="true" />
-      <created>1728257934724</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1728257934724</updated>
-    </task>
-    <task id="LOCAL-00033" summary="adding comments and reorganizing (part 1!)">
-      <option name="closed" value="true" />
-      <created>1728828527828</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1728828527828</updated>
-    </task>
-    <task id="LOCAL-00034" summary="adding comments and reorganizing (part 2!)">
-      <option name="closed" value="true" />
-      <created>1728833493488</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1728833493488</updated>
-    </task>
-    <option name="localTasksCounter" value="35" />
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,6 +368,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed number of rooms per floor" />
+    <MESSAGE value="can buy rooms now!" />
+    <MESSAGE value="scrollable menu" />
     <MESSAGE value="can advertise" />
     <MESSAGE value="can advertise/kind of" />
     <MESSAGE value="can probably research" />
@@ -405,10 +393,7 @@
     <MESSAGE value="ALL SET" />
     <MESSAGE value="quick fix" />
     <MESSAGE value="alright its done" />
-    <MESSAGE value="better taxing i think" />
-    <MESSAGE value="adding comments and reorganizing (part 1!)" />
-    <MESSAGE value="adding comments and reorganizing (part 2!)" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding comments and reorganizing (part 2!)" />
+    <option name="LAST_COMMIT_MESSAGE" value="alright its done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
