@@ -17,7 +17,6 @@ public class Main extends StateBasedGame {
     public static final int END_ID = 2;
 
     private BasicGameState game;
-
     private BasicGameState open;
     private BasicGameState end;
 

@@ -4,7 +4,6 @@ import core.Images;
 import game.World;
 import game.clipboard.items.Item;
 import game.entities.Duck;
-import game.entities.roomButtons.ChangeRoomButton;
 import game.entities.roomButtons.RoomButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -221,10 +220,15 @@ abstract public class Room {
             World.declareWar();
         }
     }
+    public int getRoomSize()
+    {
+        return maxDucks;
+    }
 
     //resets the timer used to make new bread
     public void resetTimer()
     {
         timer = 0;
     }
+
 }

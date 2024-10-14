@@ -21,6 +21,7 @@ public class RoomManager {
     private static int curBasement;
     private static final int ROOMS_IN_FLOOR = 2;
     public static final int FLOOR_UNLOCK_ROOMS = 5;
+    public static int roomAvailability;
     public RoomManager(ResourceManager resourceManager)
     {
 
@@ -89,10 +90,30 @@ public class RoomManager {
         }
         else if (curFloor > FLOOR_UNLOCK_ROOMS){
             Clipboard.getHireMenu().addBasement();
-
         }
     }
+    public static int getRoomAvailability()
+    {
+        roomAvailability = 0;
+        for(Room[] r : rooms)
+        {
+            for(Room room : r)
+            {
+                if(room != null) roomAvailability += room.getRoomSize();
+            }
+        }
+        for(Room[] f : floors)
+        {
+            for(Room floor : f)
+            {
+                if(floor != null) roomAvailability += floor.getRoomSize();
+            }
+        }
+        if(resRoom != null) roomAvailability += resRoom.getRoomSize();
+        if(adRoom != null) roomAvailability += adRoom.getRoomSize();
 
+        return roomAvailability;
+    }
 
 //ACCESSOR
     //Counts total number of rooms  (used to calculate property taxes
