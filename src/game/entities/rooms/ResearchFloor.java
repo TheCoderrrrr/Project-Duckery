@@ -81,7 +81,6 @@ public class ResearchFloor extends Room{
             productLine.remove(productLine.getFirst());
             research = false;
         }
-
         else if (resTimer<=0 && productLine.isEmpty())
         {
             productsAvailable = false;
