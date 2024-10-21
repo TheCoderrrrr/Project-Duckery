@@ -62,13 +62,13 @@ public class AdRoom extends Room{
         }
         else if (makingAd && adTimer >0 && !ducks.isEmpty())
         {
-            adTimer--;
+            adTimer-= (int) Math.pow(1.5,getNumDucks() );
         }
-        else if (adTimer ==0 )
+        else if (adTimer <= 0 )
         {
-            ResourceManager.advertise(4000, 4);
+            ResourceManager.advertise(200, 4);
             makingAd = false;
-            adTimer = -1;
+            adTimer = adProductionTotalTime;
         }
     }
 

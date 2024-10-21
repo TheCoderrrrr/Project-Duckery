@@ -34,7 +34,7 @@ public class ResourceManager {
 
     public ResourceManager()
     {
-        fund = 300;
+        fund = 300000;
         roomVals = new ArrayList<>();
         incomeRate = 0;
         adLevel = 0;
@@ -156,7 +156,7 @@ public class ResourceManager {
     public static void advertise(int length, int boost){
         //advertise based on amount of time/
         adLevel  += boost;
-        adTimer += length;
+        adTimer = length;
     }
 
 

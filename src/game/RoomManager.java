@@ -84,7 +84,7 @@ public class RoomManager {
         ResourceManager.update(rooms, floors);
 
         //tells clipboard whether to allow users toa dd floors/basement
-        if ( !getWar() && curFloor> FLOOR_UNLOCK_ROOMS)
+        if ( curFloor> FLOOR_UNLOCK_ROOMS)
         {
             Clipboard.getHireMenu().addFloorButton();
         }
@@ -243,7 +243,7 @@ public class RoomManager {
             addRoom();
             ResourceManager.withdraw(ResourceManager.getRoomPrice(curFloor, curRoom));
         }
-        if (c == '2'&& curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+        if (c == '2'&& curFloor>FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
         {
             addFloor();
 //            floors.add(new Floor[]{new Floor (curFloor)});
@@ -263,7 +263,7 @@ public class RoomManager {
 
     //adds respective type of room.
     public static void addFloor() {
-        if (curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+        if (curFloor>FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
         {
             floors.add(new Floor[]{new Floor (curFloor)});
             ResourceManager.withdraw(ResourceManager.getFloorPrice(curFloor));
@@ -272,7 +272,7 @@ public class RoomManager {
     }
 
     public static void addBasement() {
-        if (curFloor>=FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+        if ( ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
         {
             floors.add(0, new Floor[]{new Floor (curBasement)});
             ResourceManager.withdraw(ResourceManager.getFloorPrice(curBasement));
@@ -282,7 +282,7 @@ public class RoomManager {
 
     public static void addRoom()
     {
-        if(curFloor < FLOOR_UNLOCK_ROOMS)
+        if(curFloor <= FLOOR_UNLOCK_ROOMS)
         {
             rooms.getLast()[curRoom] = new ProductRoom(curFloor, curRoom);
             if(spaceOnFloor()) {

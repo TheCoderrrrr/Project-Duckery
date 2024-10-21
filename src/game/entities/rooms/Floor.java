@@ -11,6 +11,7 @@ public class Floor extends ProductRoom {
     //a floor is a  longer room
     public Floor(int myFloor) {
         super(myFloor, 0);
+
         this.myFloor = myFloor;
         maxDucks = 6;
         width = 800;

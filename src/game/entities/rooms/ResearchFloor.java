@@ -31,7 +31,7 @@ public class ResearchFloor extends Room{
         resTimer = -1;
 
         productLine = new ArrayList<>();
-        productLine.add(new BrownBread());
+        //productLine.add(new BrownBread());
         productLine.add(new CosmicBread());
         productLine.add(new DivineBread());
         productLine.add(new Gun());
@@ -72,17 +72,16 @@ public class ResearchFloor extends Room{
         }
         if (research && resTimer>0)
         {
-            resTimer--;
+            resTimer-= (int) Math.pow(1.5,getNumDucks() );
         }
-        else if (resTimer ==0 && !productLine.isEmpty())
+        else if (research && resTimer <=0 && !productLine.isEmpty())
         {
             //to add: add to product list
             ProductRoom.addProduct(productLine.getFirst());
             productLine.remove(productLine.getFirst());
             research = false;
-            resTimer = -1;
         }
-        else if (resTimer == 0 && productLine.isEmpty())
+        else if (resTimer<=0 && productLine.isEmpty())
         {
             productsAvailable = false;
         }
@@ -125,9 +124,6 @@ public class ResearchFloor extends Room{
             if(research)
             {
                 ret = "Currently Researching "+productLine.getFirst().getName();
-            }
-            else if (getNumDucks() >0){
-                ret = "Not researching. \nGive us work by clicking the \"R\" button!";
             }
             else {
                 ret = "hire a duck to research new produckts!";

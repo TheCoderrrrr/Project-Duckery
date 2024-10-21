@@ -4,20 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="alright its done">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ibxm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="research room kinda works (press pink floating thing to add new product)">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Duckery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Duckery.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/End.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/End.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PayDucks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PayDucks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/ResourceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/RoomManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/bread/BlandBreadButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/bread/BrownBreadButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/bread/CosmicBreadButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/bread/DivineBreadButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/AdRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/AdRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
