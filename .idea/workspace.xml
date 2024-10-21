@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="alright its done">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ibxm.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="Somewhat balanced numerical values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Duckery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Duckery.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/End.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/End.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PayDucks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PayDucks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/paydayButtons/PayRoomTax.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +28,14 @@
     &quot;assignee&quot;: &quot;HappyHat952&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/TheCoderrrrr/Project-Duckery&quot;,
-    &quot;accountId&quot;: &quot;6de6eea3-8c01-474b-ac67-0e568ccd8f77&quot;
-  }
-}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f3ebac07-5b99-4ea9-8f85-3a6d34f65e45" />
+        <option name="url" value="https://github.com/TheCoderrrrr/Project-Duckery" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
     &quot;associatedIndex&quot;: 6
     }</component>
@@ -353,7 +343,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728257522524</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Somewhat balanced numerical values">
+      <option name="closed" value="true" />
+      <created>1728912122187</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1728912122187</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -368,7 +366,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed number of rooms per floor" />
     <MESSAGE value="can buy rooms now!" />
     <MESSAGE value="scrollable menu" />
     <MESSAGE value="can advertise" />
@@ -393,7 +390,8 @@
     <MESSAGE value="ALL SET" />
     <MESSAGE value="quick fix" />
     <MESSAGE value="alright its done" />
-    <option name="LAST_COMMIT_MESSAGE" value="alright its done" />
+    <MESSAGE value="Somewhat balanced numerical values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Somewhat balanced numerical values" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
