@@ -5,6 +5,7 @@ import game.clipboard.buttons.BuyingButton;
 import game.clipboard.MiniManager;
 import game.clipboard.buttons.ads.AdvertisingButton;
 import game.clipboard.menus.*;
+import game.managers.ResourceManager;
 import game.progressBar.ProgressBar;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;

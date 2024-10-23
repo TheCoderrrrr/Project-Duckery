@@ -1,6 +1,6 @@
 package core;
 
-import game.ResourceManager;
+import game.managers.ResourceManager;
 import open.TitleScreen;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;

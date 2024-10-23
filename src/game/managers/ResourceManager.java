@@ -1,9 +1,10 @@
-package game;
+package game.managers;
 
 import core.Main;
-import core.Sounds;
 import core.messages.FloatMessage;
 import core.messages.MessageManager;
+import game.RoomManager;
+import game.World;
 import game.entities.rooms.Floor;
 import game.entities.rooms.ProductRoom;
 import org.newdawn.slick.Color;
@@ -92,7 +93,7 @@ public class ResourceManager {
         //return room prices
         double price = 30;
 
-        int exp = floor*World.ROOMS_IN_FLOOR + room;
+        int exp = floor* World.ROOMS_IN_FLOOR + room;
 
         for (int i = 0; i< exp; i++)
         {

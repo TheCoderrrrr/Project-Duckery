@@ -4,6 +4,7 @@ import core.Images;
 import core.Main;
 import game.entities.Duck;
 import game.entities.rooms.ProductRoom;
+import game.managers.ResourceManager;
 import org.newdawn.slick.*;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;

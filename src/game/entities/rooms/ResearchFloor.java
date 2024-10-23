@@ -31,7 +31,7 @@ public class ResearchFloor extends Room{
         resTimer = -1;
 
         productLine = new ArrayList<>();
-        //productLine.add(new BrownBread());
+        productLine.add(new BrownBread());
         productLine.add(new CosmicBread());
         productLine.add(new DivineBread());
         productLine.add(new Gun());

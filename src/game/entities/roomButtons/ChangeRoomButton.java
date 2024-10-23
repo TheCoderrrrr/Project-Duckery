@@ -1,10 +1,9 @@
 package game.entities.roomButtons;
 
 import core.Images;
-import game.ResourceManager;
+import game.managers.ResourceManager;
 import game.clipboard.items.Item;
 import game.entities.rooms.ProductRoom;
-import game.entities.rooms.Room;
 
 public class ChangeRoomButton extends RoomButton{
     ProductRoom r;

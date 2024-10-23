@@ -1,15 +1,11 @@
 package game;
 
 import game.clipboard.items.bread.BlandBread;
-import game.clipboard.items.bread.BrownBread;
-import game.clipboard.items.weapon.Gun;
 import game.entities.rooms.*;
+import game.managers.ResourceManager;
 import org.newdawn.slick.Graphics;
-import game.clipboard.menus.HiringMenu;
 
 import java.util.ArrayList;
-
-import static game.World.getWar;
 
 public class RoomManager {
     private static ArrayList<ProductRoom[]> rooms;

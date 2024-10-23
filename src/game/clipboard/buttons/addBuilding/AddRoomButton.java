@@ -1,7 +1,7 @@
 package game.clipboard.buttons.addBuilding;
 
 import core.Images;
-import game.ResourceManager;
+import game.managers.ResourceManager;
 import game.clipboard.buttons.BuyingButton;
 import game.paydayButtons.PayRoomTax;
 import org.newdawn.slick.Color;

@@ -1,6 +1,6 @@
 package game.paydayButtons;
 
-import game.ResourceManager;
+import game.managers.ResourceManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 

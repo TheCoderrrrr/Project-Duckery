@@ -15,7 +15,7 @@ public class PopupManager {
     private NewsPaper newsPaper;
     private PayDay payDay;
     public int elapseTime;
-    public static int LENGTH_OF_WEEK = Main.FRAMES_PER_SECOND * 5;
+    public static int LENGTH_OF_WEEK = Main.FRAMES_PER_SECOND * 1;
     public static boolean timerRunning;
     private int numClicks = 0;
     private static boolean begin;

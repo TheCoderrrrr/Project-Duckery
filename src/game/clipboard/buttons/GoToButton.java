@@ -1,11 +1,8 @@
 package game.clipboard.buttons;
 
 import core.Images;
-import game.ResourceManager;
 import game.World;
-import game.paydayButtons.PayDucks;
 import org.newdawn.slick.Color;
-import org.newdawn.slick.SlickException;
 
 public class GoToButton extends BuyingButton{
 

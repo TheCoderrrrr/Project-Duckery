@@ -1,6 +1,6 @@
 package game.clipboard.buttons.ads;
 
-import game.ResourceManager;
+import game.managers.ResourceManager;
 import game.clipboard.buttons.BuyingButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;

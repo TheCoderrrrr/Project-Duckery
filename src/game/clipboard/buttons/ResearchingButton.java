@@ -1,8 +1,7 @@
 package game.clipboard.buttons;
 
 import game.PayDay;
-import game.ResourceManager;
-import game.World;
+import game.managers.ResourceManager;
 import game.clipboard.items.Item;
 import game.clipboard.menus.ResearchMenu;
 import game.entities.rooms.ProductRoom;

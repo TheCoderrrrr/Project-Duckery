@@ -1,9 +1,9 @@
 package game.clipboard.buttons.addBuilding;
 
 import core.Images;
-import game.ResourceManager;
 import game.RoomManager;
 import game.clipboard.buttons.BuyingButton;
+import game.managers.ResourceManager;
 import game.paydayButtons.PayRoomTax;
 import org.newdawn.slick.Color;
 
@@ -20,7 +20,10 @@ public class AddFloorButton extends BuyingButton {
 
     @Override
     public void onClick() {
-        RoomManager.addFloor();
-        price = RoomManager.getCurFloorPrice();
+        if (ResourceManager.getFunds()>price) {
+            RoomManager.addFloor();
+            price = RoomManager.getCurFloorPrice();
+        }
+
     }
 }

@@ -3,9 +3,8 @@ package game.clipboard.buttons;
 import core.Images;
 import game.RoomManager;
 import game.World;
-import game.entities.rooms.Room;
 import org.newdawn.slick.Color;
-import game.ResourceManager;
+import game.managers.ResourceManager;
 import org.newdawn.slick.SlickException;
 import game.paydayButtons.PayDucks;
 
