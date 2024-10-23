@@ -1,8 +1,9 @@
 package core;
-import game.ResourceManager;
+import game.managers.PopupManager;
+import game.managers.ResourceManager;
 import core.messages.MessageManager;
 import game.Clipboard;
-import game.PayDay;
+import game.popups.PayDay;
 import game.World;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -18,7 +19,7 @@ public class Game extends BasicGameState {
 
     private World world;
     private Clipboard clipboard;
-    private PayDay news;
+    private PopupManager popups;
     private boolean end;
 
     public Game(int id)
@@ -43,7 +44,7 @@ public class Game extends BasicGameState {
 
         clipboard = new Clipboard();
         world = new World(gc);
-        news = new PayDay();
+        popups = new PopupManager();
 
         end = false;
         gc.setShowFPS(true);
@@ -56,7 +57,7 @@ public class Game extends BasicGameState {
         clipboard.render(g);
         MessageManager.render(g);
         ResourceManager.render(g);
-        news.render(g);
+        popups.render(g);
     }
 
     @Override
@@ -64,7 +65,7 @@ public class Game extends BasicGameState {
         world.update();
         clipboard.update();
         MessageManager.update();
-        news.update(delta);
+        popups.update();
 
         if (World.getWar() && (ResourceManager.getPercentConquered() >=1 || ResourceManager.getPercentConquered()<0))
         {
@@ -90,7 +91,7 @@ public class Game extends BasicGameState {
     {
         world.mousePressed(button, x, y);
         clipboard.mousePressed(button, x, y);
-        news.mouseClicked(x, y);
+        popups.mousePressed(x, y);
     }
 
     @Override
