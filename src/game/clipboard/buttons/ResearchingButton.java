@@ -1,10 +1,10 @@
 package game.clipboard.buttons;
 
-import game.PayDay;
-import game.managers.ResourceManager;
+import game.ResourceManager;
 import game.clipboard.items.Item;
 import game.clipboard.menus.ResearchMenu;
 import game.entities.rooms.ProductRoom;
+import game.managers.PopupManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -35,7 +35,7 @@ public class ResearchingButton extends BuyingButton {
             ProductRoom.addProduct(myProduct);
             ResourceManager.withdraw(price);
             menu.removeItem(this);
-            PayDay.setBegin();
+            PopupManager.setBegin();
         }
     }
 }

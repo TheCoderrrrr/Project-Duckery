@@ -1,6 +1,6 @@
 package game.entities.rooms;
 
-import game.managers.ResourceManager;
+import game.ResourceManager;
 import game.World;
 import game.clipboard.buttons.ads.AdvertisingButton;
 import game.entities.Duck;

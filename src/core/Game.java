@@ -1,6 +1,6 @@
 package core;
+import game.ResourceManager;
 import game.managers.PopupManager;
-import game.managers.ResourceManager;
 import core.messages.MessageManager;
 import game.Clipboard;
 import game.popups.PayDay;
