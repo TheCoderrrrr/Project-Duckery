@@ -1,16 +1,14 @@
 package game.entities.rooms;
 
-import game.PayDay;
 import game.World;
 import game.clipboard.items.Item;
 import game.clipboard.items.bread.BlandBread;
-import game.clipboard.items.bread.BrownBread;
 import game.clipboard.items.bread.CosmicBread;
 import game.clipboard.items.bread.DivineBread;
 import game.clipboard.items.weapon.Gun;
 import game.entities.Duck;
-import game.entities.roomButtons.ResearchButton;
 import game.entities.roomButtons.RoomButton;
+import game.managers.PopupManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -68,7 +66,7 @@ public class ResearchFloor extends Room{
         if (!ducks.isEmpty() && !productLine.isEmpty() &&!research)
         {
             beginResearch();
-            PayDay.setBegin();
+            PopupManager.setBegin();
         }
         if (research && resTimer>0)
         {

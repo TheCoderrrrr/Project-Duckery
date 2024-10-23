@@ -1,17 +1,12 @@
 package game.entities.rooms;
 
-import game.PayDay;
 import game.ResourceManager;
 import game.World;
 import game.clipboard.buttons.ads.AdvertisingButton;
-import game.clipboard.items.Item;
-import game.clipboard.items.bread.BlandBread;
 import game.entities.Duck;
 import game.entities.roomButtons.RoomButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
-
-import java.util.ArrayList;
 
 public class AdRoom extends Room{
     int adProductionTotalTime;

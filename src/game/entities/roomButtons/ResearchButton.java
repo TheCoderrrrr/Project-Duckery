@@ -1,10 +1,9 @@
 package game.entities.roomButtons;
 
-import game.PayDay;
 import game.ResourceManager;
 import game.World;
-import game.entities.rooms.ProductRoom;
 import game.entities.rooms.ResearchFloor;
+import game.managers.PopupManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -30,7 +29,7 @@ public class ResearchButton extends RoomButton{
         {
             f.beginResearch();
             ResourceManager.withdraw(f.getFirstProuduct().getPrice());
-            PayDay.setBegin();
+            PopupManager.setBegin();
         }
 
         System.out.println("researching");
