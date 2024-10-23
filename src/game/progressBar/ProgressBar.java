@@ -4,12 +4,12 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
 public class ProgressBar {
-    int myX;
-    int myY;
-    int height;
-    int width;
-    double percent;
-    String title;
+    protected int myX;
+    protected int myY;
+    protected int height;
+    protected int width;
+    protected double percent;
+    protected String title;
 
     public ProgressBar(int x, int y, int h, int w, String title)
     {

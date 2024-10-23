@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="add floor works">
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/BreadCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ProgressUpgrader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/UpgradeManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/Upgrader.java" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="setup for the upgrade system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +28,12 @@
     &quot;assignee&quot;: &quot;HappyHat952&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/TheCoderrrrr/Project-Duckery",
-    "accountId": "6f20afe2-4f83-4747-85c2-a26799aa41a1"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TheCoderrrrr/Project-Duckery&quot;,
+    &quot;accountId&quot;: &quot;6f20afe2-4f83-4747-85c2-a26799aa41a1&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
     &quot;associatedIndex&quot;: 6
     }</component>
@@ -370,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729516291658</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="setup for the upgrade system">
+      <option name="closed" value="true" />
+      <created>1729689295180</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1729689295180</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -385,7 +388,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="scrollable menu" />
     <MESSAGE value="can advertise" />
     <MESSAGE value="can advertise/kind of" />
     <MESSAGE value="can probably research" />
@@ -410,7 +412,8 @@
     <MESSAGE value="alright its done" />
     <MESSAGE value="Somewhat balanced numerical values" />
     <MESSAGE value="add floor works" />
-    <option name="LAST_COMMIT_MESSAGE" value="add floor works" />
+    <MESSAGE value="setup for the upgrade system" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup for the upgrade system" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
