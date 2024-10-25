@@ -8,6 +8,7 @@ import game.clipboard.menus.*;
 import game.clipboard.progressUpgrade.AdManager;
 import game.clipboard.progressUpgrade.ResearchManager;
 import game.clipboard.progressUpgrade.UpgradeManager;
+import game.clipboard.progressUpgrade.WarManager;
 import game.managers.ResourceManager;
 import game.clipboard.ProgressBar;
 import org.newdawn.slick.Color;
@@ -32,6 +33,7 @@ public class Clipboard {
         //bars.add(new UpgradeManager(1, "test"));
         bars.add(new ResearchManager());
         bars.add(new AdManager());
+        bars.add(new WarManager());
         menus.add(h);
         //menus.add(new AdvertisingMenu());
         //menus.add(new HotkeyMenu());

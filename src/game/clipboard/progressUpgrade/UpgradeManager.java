@@ -3,9 +3,9 @@ package game.clipboard.progressUpgrade;
 import org.newdawn.slick.Graphics;
 
 public class UpgradeManager {
-    BreadCounter counter;
-    UpgradeBar bar;
-    UpgradeButton button;
+    protected BreadCounter counter;
+    protected UpgradeBar bar;
+    protected UpgradeButton button;
     final int X_LEFT = 1170;
     int myY;
     final int Y_TOP = 480;

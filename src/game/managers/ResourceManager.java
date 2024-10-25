@@ -30,6 +30,7 @@ public class ResourceManager {
     private static int breadMade;
     private static int warEffort;
     private static int enemyEffort;
+    private static int gunsMade;
 
     private int timer;
 
@@ -82,6 +83,7 @@ public class ResourceManager {
     public static double getIncomeRate(){return incomeRate;}
     public static double getFund(){return fund;}
     public static double getBreadMade(){return breadMade;}
+    public static int getGunsMade(){ return gunsMade;}
     public static double getWarEffort(){return warEffort;}
     public static double getPercentConquered(){
         return (double)warEffort/(double)(enemyEffort +warEffort);
@@ -139,6 +141,7 @@ public class ResourceManager {
                                 MessageManager.addMessage(new FloatMessage(
                                         "+ "+(room.getWarEffort()+adLevel), room.getX() + (float)room.getWidth()/2, room.getY(),
                                         Color.white, 70));
+                                gunsMade++;
                             }
                         }
                         if (room.getNumDucks() >0)

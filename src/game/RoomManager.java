@@ -84,8 +84,7 @@ public class RoomManager {
         {
             Clipboard.getHireMenu().addFloorButton();
         }
-        else if (curFloor > FLOOR_UNLOCK_ROOMS){
-            Clipboard.getHireMenu().addBasement();
+         if (World.getWar()){Clipboard.getHireMenu().addBasement();
         }
     }
     public static int getRoomAvailability()
@@ -246,9 +245,9 @@ public class RoomManager {
 //            curFloor ++;
 //            ResourceManager.withdraw(ResourceManager.getFloorPrice(curFloor));
         }
-        if (c == '3' && World.getWar()
-                && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curBasement))
+        if (c == '3' && World.getWar())
         {
+            //&& ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curBasement)
             addBasement();
 //            floors.add(0,new Floor[]{new Floor (curBasement)});
 //            curBasement --;

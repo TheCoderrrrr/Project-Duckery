@@ -25,7 +25,6 @@ public class Main extends StateBasedGame {
     public Main(String name) {
         super(name);
 
-
         open = new Opening(OPEN_ID);
         game = new Game(GAME_ID);
         end = new End(END_ID);
