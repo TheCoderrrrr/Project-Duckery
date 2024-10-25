@@ -15,7 +15,7 @@ public class PopupManager {
     private NewsPaper newsPaper;
     private PayDay payDay;
     public int elapseTime;
-    public static int LENGTH_OF_WEEK = Main.FRAMES_PER_SECOND * 1;
+    public static int LENGTH_OF_WEEK = Main.FRAMES_PER_SECOND * 45;
     public static boolean timerRunning;
     private int numClicks = 0;
     private static boolean begin;
@@ -39,11 +39,11 @@ public class PopupManager {
         if (hasBegun()) {
             g.setColor(Color.black);
             g.drawString("Time: " + formatTime(elapseTime), 1697, 42);
-            if (elapseTime % LENGTH_OF_WEEK == 0 && numClicks <= 1) {
+            if (elapseTime % LENGTH_OF_WEEK == 0 && numClicks < 1) {
                 payDay.render(g);
                 timerRunning = false;
             }
-            if (elapseTime % LENGTH_OF_WEEK == 0 && numClicks == 2) {
+            if (elapseTime % LENGTH_OF_WEEK == 0 && numClicks == 1) {
                 newsPaper.render(g);
             }
         }
@@ -67,17 +67,22 @@ public class PopupManager {
     }
 
     public void mousePressed(int x, int y) {
-        if (!payDay.getIsPaid() && elapseTime % LENGTH_OF_WEEK == 0 && numClicks == 0) {//checks that is in right state;
-            payDay.mouseClicked(x, y);
-        } else if (payDay.getIsPaid() && elapseTime % LENGTH_OF_WEEK == 0 && numClicks <= 1)//switching slides
-        {
-            numClicks++;
-        } else if (elapseTime % LENGTH_OF_WEEK == 0 && numClicks == 2) {
-            timerRunning = true;
-            World.unpause();
-            numClicks = 0;
-            payDay.setUpdated(false);
-            newsPaper.mouseClicked(x, y);
+
+        if (!timerRunning){
+            if (!payDay.getIsPaid() && elapseTime % LENGTH_OF_WEEK == 0 ) {//checks that is in right state;
+                payDay.mouseClicked(x, y);
+            } else if (payDay.getIsPaid() && elapseTime % LENGTH_OF_WEEK == 0 && numClicks <1)//switching slides
+            {
+                numClicks++;
+            } else if (elapseTime % LENGTH_OF_WEEK == 0 && numClicks == 1) {
+                timerRunning = true;
+                World.unpause();
+                numClicks = 0;
+                payDay.setUpdated(false);
+                newsPaper.mouseClicked(x, y);
+            }
         }
+
+
     }
 }

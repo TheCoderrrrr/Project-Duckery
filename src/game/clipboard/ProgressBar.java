@@ -1,4 +1,5 @@
-package game.progressBar;
+package game.clipboard;
+
 
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
@@ -6,7 +7,7 @@ import org.newdawn.slick.Graphics;
 public class ProgressBar {
     protected int myX;
     protected int myY;
-    protected int height;
+    protected  int height;
     protected int width;
     protected double percent;
     protected String title;

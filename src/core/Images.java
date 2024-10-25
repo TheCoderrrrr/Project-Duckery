@@ -23,6 +23,12 @@ public class Images {
     public static Image NEWS1;
     public static Image NEWS2;
     public static Image NEWS3;
+    public static Image NEWS4;
+    public static Image NEWS5;
+    public static Image NEWS6;
+    public static Image NEWS7;
+    public static Image NEWS8;
+    public static Image NEWS9;
     public static SpriteSheet BUTTONS;
 
 
@@ -32,7 +38,7 @@ public class Images {
         try
         {
             //duck + room art
-            DUCKSHEET = new SpriteSheet((new Image("res/duck/animated_duck.png")).getScaledCopy(448,64),64,64);
+            DUCKSHEET = new SpriteSheet((new Image("res/duck/duck-walk.png")).getScaledCopy(9*64,64),64,64);
             DUC1 = DUCKSHEET.getSubImage(0,0).getScaledCopy(64,64);
             ROOMS = new SpriteSheet(new Image("res/floors/rooms.png").getScaledCopy(1600,200),400,200);
             FLOORS = new SpriteSheet(new Image("res/floors/floors.png").getScaledCopy(4800,200),800,200);
@@ -51,9 +57,15 @@ public class Images {
 
 
             //add news images here
-            NEWS1 = new Image("res/news/news_one.png");
-            NEWS2 = new Image("res/news/news_two.png");
-            NEWS3 = new Image("res/news/news_three.png");
+            NEWS1 = new Image("res/news/news1.png");
+            NEWS2 = new Image("res/news/news2.png");
+            NEWS3 = new Image("res/news/news3.png");
+            NEWS4 = new Image("res/news/news4.png");
+            NEWS5 = new Image("res/news/news5.png");
+            NEWS6 = new Image("res/news/news6.png");
+            NEWS7 = new Image("res/news/news7.png");
+            NEWS8 = new Image("res/news/news8.png");
+            NEWS9 = new Image("res/news/news9.png");
 
 
 

@@ -1,6 +1,6 @@
 package game.entities.roomButtons;
 
-import game.ResourceManager;
+import game.managers.ResourceManager;
 import game.World;
 import game.entities.rooms.ResearchFloor;
 import game.managers.PopupManager;

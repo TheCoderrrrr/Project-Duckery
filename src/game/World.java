@@ -62,7 +62,7 @@ public class World {
 
     public void render (Graphics g) {
         //makes the sky
-        if (yDisplace<-2000)
+        if (yDisplace<Main.getAdjustedX(-2000))
         {
             g.setBackground(Color.green);
         }
@@ -74,12 +74,12 @@ public class World {
 
         //makes the grass
         g.setColor(Color.green);
-        g.fillRect(0, (int) (yDisplace*GROUND_CHANGE) +700, 2000, 2000);
+        g.fillRect(0, Main.getAdjustedY((int) (yDisplace*GROUND_CHANGE) +700), Main.getAdjustedX(2000),
+                Main.getAdjustedY(2000));
 
         //draws the building
         roomManager.render(g);
 
-        g.setColor (Color.black);
 
 
     }
@@ -99,7 +99,9 @@ public class World {
             roomManager.update();
             int mouseX = (int)MouseInfo.getPointerInfo().getLocation().getX();
             int mouseY = (int) MouseInfo.getPointerInfo().getLocation().getY();
-            Clipboard.updateInfo(""+mouseX+", "+mouseY+
+
+
+            Clipboard.updateInfo("mouse"+mouseX+", "+mouseY+
                     "\nINFO: \n"+roomManager.getRoomInfo(mouseX, mouseY)+ "\n"+
                     Clipboard.getButtonInfo(mouseX, mouseY));
         }

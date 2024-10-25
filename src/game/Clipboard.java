@@ -1,12 +1,14 @@
 package game;
 
 import core.Images;
+import core.Main;
 import game.clipboard.buttons.BuyingButton;
-import game.clipboard.MiniManager;
 import game.clipboard.buttons.ads.AdvertisingButton;
 import game.clipboard.menus.*;
+import game.clipboard.progressUpgrade.ResearchManager;
+import game.clipboard.progressUpgrade.UpgradeManager;
 import game.managers.ResourceManager;
-import game.progressBar.ProgressBar;
+import game.clipboard.ProgressBar;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -14,10 +16,10 @@ import java.util.ArrayList;
 
 public class Clipboard {
 
-    //manages all of the buttons and lets them get clicked;
-    static MiniManager hire;
+    //manages all  the buttons and lets them get clicked;
     static ArrayList<BuyingButton> buttons = new ArrayList<>();
     static ArrayList<Menu> menus = new ArrayList<Menu>();
+    static ArrayList<UpgradeManager> bars = new ArrayList<UpgradeManager>();
     static HiringMenu h;
     static String info;
     static ProgressBar warBar;
@@ -26,8 +28,10 @@ public class Clipboard {
     {
         h = new HiringMenu();
 
+        //bars.add(new UpgradeManager(1, "test"));
+        bars.add(new ResearchManager());
         menus.add(h);
-        menus.add(new AdvertisingMenu());
+        //menus.add(new AdvertisingMenu());
         menus.add(new HotkeyMenu());
         info = "tester";
 
@@ -37,9 +41,11 @@ public class Clipboard {
 
 
     public void render(Graphics g) {
-        g.drawImage(Images.CLIPBOARD.getScaledCopy(700,900),1100,70);
 
-        g.drawString(info, 1150,120);
+        g.drawImage(Images.CLIPBOARD.getScaledCopy(Main.getAdjustedX(700), Main.getAdjustedY(900)),
+                Main.getAdjustedX(1100), Main.getAdjustedY(70));
+
+        g.drawString(info, Main.getAdjustedX(1150),Main.getAdjustedX(120));
 
         for(Menu m: menus)
         {
@@ -53,6 +59,10 @@ public class Clipboard {
         g.setColor(Color.black);
         g.drawString("$" + ResourceManager.getFund() +"\nBread made: " + ResourceManager.getBreadMade() +
                 "\nEmployees: "+World.getTotalDucks(), 1600,110);
+        for (UpgradeManager b: bars)
+        {
+            b.render( g);
+        }
     }
 
     public void update() {
@@ -60,6 +70,10 @@ public class Clipboard {
         if(World.getWar())
         {
             warBar.update(ResourceManager.getPercentConquered());
+        }
+        for (UpgradeManager b: bars)
+        {
+            b.update();
         }
 
     }
@@ -90,6 +104,10 @@ public class Clipboard {
             for(Menu m: menus)
             {
                 m.click(x, y);
+            }
+            for(UpgradeManager b: bars)
+            {
+                b.click(x, y);
             }
         }
     }

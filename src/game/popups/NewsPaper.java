@@ -19,6 +19,12 @@ public class NewsPaper {
         news.add(Images.NEWS1);
         news.add(Images.NEWS2);
         news.add(Images.NEWS3);
+        news.add(Images.NEWS4);
+        news.add(Images.NEWS5);
+        news.add(Images.NEWS6);
+        news.add(Images.NEWS7);
+        news.add(Images.NEWS8);
+        news.add(Images.NEWS9);
         finsihed = false;
     }
 

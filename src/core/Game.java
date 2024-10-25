@@ -1,5 +1,5 @@
 package core;
-import game.ResourceManager;
+import game.managers.ResourceManager;
 import game.managers.PopupManager;
 import core.messages.MessageManager;
 import game.Clipboard;
@@ -54,6 +54,7 @@ public class Game extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         g.setBackground(Color.darkGray);
         world.render(g);
+
         clipboard.render(g);
         MessageManager.render(g);
         ResourceManager.render(g);
@@ -89,6 +90,13 @@ public class Game extends BasicGameState {
     }
     public void mousePressed(int button , int x, int y)
     {
+//        x = Main.getAdjustedX(x);
+//        y = Main.getAdjustedY(y);
+
+
+        x = Main.getOriginalX(x);
+        y = Main.getOriginalY(y);
+
         world.mousePressed(button, x, y);
         clipboard.mousePressed(button, x, y);
         popups.mousePressed(x, y);

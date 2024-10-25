@@ -1,5 +1,6 @@
 package game.entities;
 
+import core.Main;
 import game.World;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Graphics;
@@ -21,7 +22,8 @@ public abstract class Entity {
     public void render(Graphics g) {
         if (isOver(Mouse.getX(), Mouse.getY())) {
         }
-        g.drawImage(image, x, y + World.getYDisplace());
+        g.drawImage(image .getScaledCopy(Main.getAdjustedX(image.getWidth()), Main.getAdjustedY(image.getHeight())),
+                Main.getAdjustedX(x), Main.getAdjustedY(y + World.getYDisplace()));
     }
 
     public abstract void update();

@@ -1,6 +1,7 @@
 package game.entities.rooms;
 
 import core.Images;
+import core.Main;
 import game.World;
 import game.clipboard.items.Item;
 import game.entities.Duck;
@@ -66,25 +67,25 @@ abstract public class Room {
     public void render(Graphics g) {
 
         //draws this if no image
-        if ((myFloor + myRoom) % 2 == 0) {
-            myColor = (Color.white);
-        } else {
-            myColor = Color.lightGray;
-        }
+
+        myColor = Color.lightGray;
         g.setColor(myColor);
 
         //draws this if YES image
         if (myImage != null && !pause) {
-            g.drawImage(myImage, x, World.getYDisplace() + y);
+            g.drawImage(myImage.getScaledCopy(Main.getAdjustedX(myImage.getWidth()), Main.getAdjustedY(myImage.getHeight())),
+
+                   Main.getAdjustedX(x), Main.getAdjustedY(World.getYDisplace() + y));
         } else if (pause) {
             int i = pauseTimer % 20 / 10;
-            g.drawImage(Images.BUILD_ANIMATION.getSubImage(i, 0).getScaledCopy(width,HEIGHT), x, World.getYDisplace() + y);
+            g.drawImage(Images.BUILD_ANIMATION.getSubImage(i, 0).getScaledCopy(Main.getAdjustedX(width),Main.getAdjustedY(HEIGHT))
+                    , Main.getAdjustedX(x), Main.getAdjustedY(World.getYDisplace() + y));
         } else {
-            g.fillRect(x, curYPosition(), width, HEIGHT);// creates a square room at a given location
+            g.fillRect(Main.getAdjustedX(x),Main.getAdjustedY(curYPosition()), Main.getAdjustedX( width), Main.getAdjustedX( HEIGHT));// creates a square room at a given location
         }
 
         g.setColor(Color.black);
-        g.drawString("Ducks: " +ducks.size()+"/"+maxDucks, x, y + World.getYDisplace() );
+        g.drawString("Ducks: " +ducks.size()+"/"+maxDucks, Main.getAdjustedX( x), Main.getAdjustedY( World.getYDisplace() + y));
     }
 
     //ACCESSOR

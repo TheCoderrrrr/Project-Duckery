@@ -1,7 +1,9 @@
 package open;
 
 import core.Images;
+import core.Main;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SpriteSheet;
 
 public class IntroAnimation {
@@ -17,7 +19,9 @@ public class IntroAnimation {
 
     public static void render(Graphics g)
     {
-        g.drawImage(mySprite.getSubImage(0,slide),0,0);
+        Image myImage = mySprite.getSubImage(0, slide);
+        myImage = myImage.getScaledCopy(Main.getAdjustedX(myImage.getWidth()), Main.getAdjustedY(myImage.getHeight()));
+        g.drawImage(myImage,0,0);
     }
 
     public static void changeSlide()

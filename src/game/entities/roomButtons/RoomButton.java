@@ -1,5 +1,6 @@
 package game.entities.roomButtons;
 
+import core.Main;
 import game.World;
 import game.entities.rooms.ProductRoom;
 import game.entities.rooms.Room;
@@ -42,7 +43,8 @@ abstract public class RoomButton {
             g.fillRect(myX, myY+ World.getYDisplace(), SIZE, SIZE);
         }
         else {
-            g.drawImage(myImage.getScaledCopy(SIZE,SIZE), myX, myY + World.getYDisplace());
+            g.drawImage(myImage.getScaledCopy(Main.getAdjustedX(SIZE), Main.getAdjustedY(SIZE)),
+                    Main.getAdjustedX(myX), Main.getAdjustedY(myY + World.getYDisplace()));
         }
 
     }

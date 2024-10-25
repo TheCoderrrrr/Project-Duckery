@@ -2,24 +2,25 @@ package game.entities.rooms;
 
 import game.World;
 import game.clipboard.items.Item;
+import game.clipboard.items.bread.BrownBread;
 import game.clipboard.items.bread.BlandBread;
 import game.clipboard.items.bread.CosmicBread;
 import game.clipboard.items.bread.DivineBread;
 import game.clipboard.items.weapon.Gun;
 import game.entities.Duck;
 import game.entities.roomButtons.RoomButton;
-import game.managers.PopupManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
 import java.util.ArrayList;
 
 public class ResearchFloor extends Room{
-    int resTotalTime;
-    int resTimer;
-    private boolean research; // tells if a product is being researched
-    boolean productsAvailable;
-    ArrayList<Item> productLine;
+    static private int resTotalTime;
+    static private int resTimer;
+    static private boolean research; // tells if a product is being researched
+    static boolean productsAvailable;
+    static ArrayList<Item> productLine;
+    static boolean hasDucks;
 
     public ResearchFloor() {
         super(0,0);
@@ -33,6 +34,7 @@ public class ResearchFloor extends Room{
         productLine.add(new CosmicBread());
         productLine.add(new DivineBread());
         productLine.add(new Gun());
+
 
         productsAvailable = true;
         myImage = myFloorTypes.getSubImage(5,0);
@@ -54,8 +56,14 @@ public class ResearchFloor extends Room{
                     , x, World.getYDisplace() + y+ 20);
         }
 
-        for (Duck duck : ducks) duck.render(g);
-        for (int i=0;i<myButtons.size();i++) myButtons.get(i).render(g);
+        for (Duck duck : ducks)
+        {
+            duck.render(g);
+        }
+        for (int i=0;i<myButtons.size();i++)
+        {
+            myButtons.get(i).render(g);
+        }
 
     }
 
@@ -63,10 +71,12 @@ public class ResearchFloor extends Room{
     {
         super.update();
 
-        if (!ducks.isEmpty() && !productLine.isEmpty() &&!research)
+        hasDucks = !ducks.isEmpty();
+
+        //instantly starts count for ONLY first bread
+        if (!ducks.isEmpty() && !productLine.isEmpty() &&!research && productLine.getFirst() instanceof BrownBread)
         {
             beginResearch();
-            PopupManager.setBegin();
         }
         if (research && resTimer>0)
         {
@@ -75,9 +85,9 @@ public class ResearchFloor extends Room{
         else if (research && resTimer <=0 && !productLine.isEmpty())
         {
             //to add: add to product list
-            ProductRoom.addProduct(productLine.getFirst());
-            productLine.remove(productLine.getFirst());
-            research = false;
+//            ProductRoom.addProduct(productLine.getFirst());
+//            productLine.remove(productLine.getFirst());
+//            research = false;
         }
         else if (resTimer<=0 && productLine.isEmpty())
         {
@@ -85,7 +95,14 @@ public class ResearchFloor extends Room{
         }
     }
 
-    public Item getFirstProuduct() {
+    public static void releaseProduct()
+    {
+        ProductRoom.addProduct(productLine.getFirst());
+        productLine.remove(productLine.getFirst());
+        research = false;
+    }
+
+    public static Item getFirstProuduct() {
         if (productLine.isEmpty()) {
             return new BlandBread();
         }
@@ -96,14 +113,16 @@ public class ResearchFloor extends Room{
 
     }
 
-    public void beginResearch() {
-        if (!ducks.isEmpty() )
+    public static void beginResearch() {
+        if (hasDucks && !productLine.isEmpty())
         {
             System.out.println("researching "+productLine.getFirst().getName());
             resTimer = resTotalTime;
             research = true;
         }
     }
+
+    public static  float getPercentDone(){ return (float)resTimer/resTotalTime;}
 
     public String getInfo(int x, int y)
     {

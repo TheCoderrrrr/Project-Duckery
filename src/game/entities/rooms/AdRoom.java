@@ -1,6 +1,6 @@
 package game.entities.rooms;
 
-import game.ResourceManager;
+import game.managers.ResourceManager;
 import game.World;
 import game.clipboard.buttons.ads.AdvertisingButton;
 import game.entities.Duck;
@@ -9,8 +9,8 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
 public class AdRoom extends Room{
-    int adProductionTotalTime;
-    int adTimer;
+    static private int adProductionTotalTime;
+    static private int adTimer;
     private boolean makingAd; // tells if a product is being researched
 
     AdvertisingButton[] ads;
@@ -75,6 +75,8 @@ public class AdRoom extends Room{
             makingAd = true;
         }
     }
+
+    public static  float getPercentDone(){ return (float)adTimer/adProductionTotalTime;}
 
     public String getInfo(int x, int y)
     {

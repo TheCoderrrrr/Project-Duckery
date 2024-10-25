@@ -39,8 +39,6 @@ public class ProductRoom  extends Room{
 
         if(!pause)
         {
-//            g.drawString("Num Ducks: "+getTimeToMake()+"\nFloor:"+myFloor+"\nRoom:"+timer +
-//                    "\nProduct" + getProductName(), x, World.getYDisplace() + y);
             for (Duck duck : ducks) duck.render(g);
             for (int i=0;i<myButtons.size();i++) myButtons.get(i).render(g);
         }

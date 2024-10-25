@@ -1,7 +1,7 @@
 package game.clipboard.menus;
 
 import game.clipboard.buttons.*;
-import game.clipboard.buttons.ResearchingButton;
+//import game.clipboard.buttons.ResearchingButton;
 //import game.clipboard.buttons.bread.BlandBreadButton;
 //import game.clipboard.buttons.bread.BrownBreadButton;
 //import game.clipboard.buttons.bread.CosmicBreadButton;
@@ -38,8 +38,6 @@ public class ResearchMenu extends Menu {
         }
     }
 
-    public void removeItem(ResearchingButton r) {
-        myButtons.remove(r);
-    }
+
 }
 

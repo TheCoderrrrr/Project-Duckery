@@ -112,12 +112,12 @@ public class Duck extends Entity {
 
     public boolean inRoomBounds()
     {
-        return (x >= room.getLeftWall() && x + size < room.getRightWall() && y + getYDisplace() + size + 40 < room.getFloor());
+        return (x >= room.getLeftWall() && x + size < room.getRightWall() && y + getYDisplace() + size + 60 < room.getFloor());
 
     }
 
     public boolean isAboveFloor()
     {
-        return (y + size  + 40 < room.getY()+ room.HEIGHT);
+        return (y + size  + 60 < room.getY()+ room.HEIGHT);
     }
 }
