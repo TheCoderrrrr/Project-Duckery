@@ -12,6 +12,6 @@ public class DivineBread extends Item {
         myIndex = 3;
         roomImage = Images.ROOMS.getSubImage(3,0);
         isBasement = false;
-        price = 1000;
+        quotaValue = 20;
     }
 }

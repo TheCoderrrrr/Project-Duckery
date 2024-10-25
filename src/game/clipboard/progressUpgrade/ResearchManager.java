@@ -14,5 +14,6 @@ public class ResearchManager extends UpgradeManager{
     {
         counter.setCounter((int)ResourceManager.getBreadMade());
         bar.setPercent(1-ResearchFloor.getPercentDone());
+        counter.setTotal(ResearchFloor.getFirstProuduct().getQuotaValue());
     }
 }

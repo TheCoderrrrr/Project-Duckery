@@ -35,7 +35,7 @@ public class ResourceManager {
 
     public ResourceManager()
     {
-        fund = 300000;
+        fund = 300;
         roomVals = new ArrayList<>();
         incomeRate = 0;
         adLevel = 0;
@@ -213,6 +213,12 @@ public class ResourceManager {
     {
         if (value<=fund){
             fund -= value;
+        }
+    }
+    public static void takeBread(int value)
+    {
+        if (value<=breadMade){
+            breadMade -= value;
         }
     }
 

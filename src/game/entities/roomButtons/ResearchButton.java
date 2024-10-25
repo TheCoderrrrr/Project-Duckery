@@ -13,7 +13,7 @@ public class ResearchButton extends RoomButton{
         super(researchFloor, height);
         f = researchFloor;
         myColor = Color.pink;
-        info = "CLICK to research mystery produckt!\nCosts "+f.getFirstProuduct().getPrice();
+        info = "CLICK to research mystery produckt!\nCosts "+f.getFirstProuduct().getQuotaValue();
     }
 
     public void render (Graphics g)
@@ -25,10 +25,10 @@ public class ResearchButton extends RoomButton{
 
     @Override
     public void action() {
-        if (ResourceManager.getFunds()>f.getFirstProuduct().getPrice())
+        if (ResourceManager.getBreadMade()>f.getFirstProuduct().getQuotaValue())
         {
             f.beginResearch();
-            ResourceManager.withdraw(f.getFirstProuduct().getPrice());
+            ResourceManager.takeBread(f.getFirstProuduct().getQuotaValue());
             PopupManager.setBegin();
         }
 

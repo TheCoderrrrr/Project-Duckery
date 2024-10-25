@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="epic new research system + paydays clicking fixed">
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/AdButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_3_2024_7_14_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Clipboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Clipboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/AdManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/AdManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/AdRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/rooms/AdRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/weapon/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/weapon/Gun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ResearchButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ResearchButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/ResearchButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/entities/roomButtons/ResearchButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/managers/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/managers/ResourceManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,6 +1,8 @@
 package game.clipboard.progressUpgrade;
 
 import game.entities.rooms.ResearchFloor;
+import game.managers.PopupManager;
+import game.managers.ResourceManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -20,8 +22,14 @@ public class ResearchButton extends UpgradeButton {
     {
         if (mouseOver(x,y))
         {
-            releaseProduct();
-            ResearchFloor.beginResearch();
+
+            if (ResourceManager.getBreadMade()>ResearchFloor.getFirstProuduct().getQuotaValue())
+            {
+                ResearchFloor.beginResearch();
+                ResourceManager.takeBread(ResearchFloor.getFirstProuduct().getQuotaValue());
+                releaseProduct();
+            }
+
         }
     }
 }

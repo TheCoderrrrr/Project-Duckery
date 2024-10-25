@@ -13,57 +13,53 @@ public class Item {
     protected int myIndex;
     protected boolean isBasement;
     protected int warEffort;
-    protected int price;
+    protected int quotaValue;
 
-    public Item()
-    {
+    public Item() {
     }
 
-    public void render(Graphics g)
-    {
+    public void render(Graphics g) {
 
     }
 
-    public void update()
-    {
+    public void update() {
 
     }
-    public int getPrice()
-    {
-        return price;
+
+    public int getQuotaValue() {
+        return quotaValue;
     }
-    public int getValue()
-    {
+
+    public int getValue() {
         return value;
     }
-    public int getWarEffort()
-    {
+
+    public int getWarEffort() {
         return warEffort;
     }
-    public int getTimeToCreate()
-    {
+
+    public int getTimeToCreate() {
         return timeToCreate * Main.FRAMES_PER_SECOND;
     }
-    public String getName()
-    {
-        if(!name.isEmpty()) return name;
+
+    public String getName() {
+        if (!name.isEmpty()) return name;
         else return "";
     }
 
-    public Image getRoomImage()
-    {
+    public Image getRoomImage() {
         return roomImage;
     }
-    public int getImageIndex()
-    {
+
+    public int getImageIndex() {
         return myIndex;
     }
-    public boolean getIsBasement()
-    {
+
+    public boolean getIsBasement() {
         return isBasement;
     }
-    public Image getIconImage()
-    {
+
+    public Image getIconImage() {
         return iconImage;
     }
 }

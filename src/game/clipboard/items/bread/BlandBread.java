@@ -13,6 +13,6 @@ public class BlandBread extends Item {
         name = "Bland Bread";
         roomImage = Images.ROOMS.getSubImage(0,0);
         isBasement = false;
-        price = 20;
+        quotaValue = 0;
     }
 }

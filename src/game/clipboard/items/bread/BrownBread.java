@@ -12,7 +12,7 @@ public class BrownBread extends Item {
         myIndex = 1;
         roomImage = Images.ROOMS.getSubImage(1,0);
         isBasement = false;
-        price = 70;
+        quotaValue = 3;
     }
 
 }

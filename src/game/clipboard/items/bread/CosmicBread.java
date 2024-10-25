@@ -12,6 +12,6 @@ public class CosmicBread extends Item {
         myIndex = 2;
         roomImage = Images.ROOMS.getSubImage(2,0);
         isBasement = false;
-        price = 200;
+        quotaValue = 10;
     }
 }
