@@ -11,7 +11,9 @@ import org.newdawn.slick.Graphics;
 public class AdRoom extends Room{
     static private int adProductionTotalTime;
     static private int adTimer;
-    private boolean makingAd; // tells if a product is being researched
+    private static boolean makingAd; // tells if a product is being researched
+    private static boolean hasDucks;
+    private static boolean first;
 
     AdvertisingButton[] ads;
 
@@ -21,6 +23,7 @@ public class AdRoom extends Room{
         maxDucks = 6;
         adProductionTotalTime = 30*60;
         adTimer = -1;
+        first = true;
 
         myImage = myFloorTypes.getSubImage(5,0);
 
@@ -50,10 +53,12 @@ public class AdRoom extends Room{
     {
         super.update();
 
+        hasDucks = !ducks.isEmpty();
         // if not making an ad and there are no ducks, start making ad
-        if(!makingAd && !ducks.isEmpty())
+        if(!makingAd && !ducks.isEmpty() && first)
         {
             beginResearch();
+            first = false;
         }
         else if (makingAd && adTimer >0 && !ducks.isEmpty())
         {
@@ -61,15 +66,18 @@ public class AdRoom extends Room{
         }
         else if (adTimer <= 0 )
         {
-            ResourceManager.advertise(200, 4);
-            makingAd = false;
-            adTimer = adProductionTotalTime;
+           //releaseBlitz();
         }
     }
 
+    public static void releaseBlitz()
+    {
+        ResourceManager.advertise(200, 4);
+        adTimer = adProductionTotalTime;
+    }
 
-    public void beginResearch() {
-        if (!ducks.isEmpty() )
+    public static void beginResearch() {
+        if (hasDucks )
         {
             adTimer = adProductionTotalTime;
             makingAd = true;

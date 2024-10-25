@@ -5,6 +5,7 @@ import core.Main;
 import game.clipboard.buttons.BuyingButton;
 import game.clipboard.buttons.ads.AdvertisingButton;
 import game.clipboard.menus.*;
+import game.clipboard.progressUpgrade.AdManager;
 import game.clipboard.progressUpgrade.ResearchManager;
 import game.clipboard.progressUpgrade.UpgradeManager;
 import game.managers.ResourceManager;
@@ -30,9 +31,10 @@ public class Clipboard {
 
         //bars.add(new UpgradeManager(1, "test"));
         bars.add(new ResearchManager());
+        bars.add(new AdManager());
         menus.add(h);
         //menus.add(new AdvertisingMenu());
-        menus.add(new HotkeyMenu());
+        //menus.add(new HotkeyMenu());
         info = "tester";
 
         warBar = new ProgressBar(1550,230,200,175, "WAR PROGRESS!!");
