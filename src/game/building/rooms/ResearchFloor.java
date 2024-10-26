@@ -1,4 +1,4 @@
-package game.entities.rooms;
+package game.building.rooms;
 
 import game.World;
 import game.clipboard.items.Item;
@@ -7,8 +7,8 @@ import game.clipboard.items.bread.BlandBread;
 import game.clipboard.items.bread.CosmicBread;
 import game.clipboard.items.bread.DivineBread;
 import game.clipboard.items.weapon.Gun;
-import game.entities.Duck;
-import game.entities.roomButtons.RoomButton;
+import game.building.Duck;
+import game.building.roomButtons.RoomButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -30,9 +30,9 @@ public class ResearchFloor extends Room{
         resTimer = -1;
 
         productLine = new ArrayList<>();
-        productLine.add(new BrownBread());
-        productLine.add(new CosmicBread());
-        productLine.add(new DivineBread());
+//        productLine.add(new BrownBread());
+//        productLine.add(new CosmicBread());
+//        productLine.add(new DivineBread());
         productLine.add(new Gun());
 
 
@@ -49,7 +49,7 @@ public class ResearchFloor extends Room{
         {
             g.drawString("add a duck to research an improved product", x, World.getYDisplace() + y + 20);
         }
-        else if (research)
+        else if (research && !productLine.isEmpty())
         {
             g.drawString("currently researching" + productLine.getFirst().getName()
                     +"\nTime to comletion: "+(resTimer)
@@ -97,20 +97,22 @@ public class ResearchFloor extends Room{
 
     public static void releaseProduct()
     {
-        ProductRoom.addProduct(productLine.getFirst());
-        productLine.remove(productLine.getFirst());
-        research = false;
+        if (!productLine.isEmpty()){
+            ProductRoom.addProduct(productLine.getFirst());
+            productLine.remove(productLine.getFirst());
+        }
+
     }
 
     public static Item getFirstProuduct() {
-        if (productLine.isEmpty()) {
-            return new BlandBread();
-        }
-        else
+
+        if (productLine.isEmpty())
         {
+            return null;
+        }
+        else {
             return productLine.getFirst();
         }
-
     }
 
     public static void beginResearch() {
@@ -138,7 +140,7 @@ public class ResearchFloor extends Room{
         }
         if (!overButton)
         {
-            if(research)
+            if(research && !productLine.isEmpty())
             {
                 ret = "Currently Researching "+productLine.getFirst().getName();
             }

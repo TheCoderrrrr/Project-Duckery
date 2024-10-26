@@ -11,6 +11,7 @@ public class CosmicBread extends Item {
         name = "Cosmic Bread";
         myIndex = 2;
         roomImage = Images.ROOMS.getSubImage(2,0);
+        iconImage = Images.BREAD_BUTTONS.getSubImage(2,0);
         isBasement = false;
         quotaValue = 10;
     }

@@ -6,7 +6,7 @@ import game.clipboard.items.Item;
 public class Gun extends Item {
     public Gun()
     {
-        timeToCreate = 100;
+        timeToCreate = 6;
         name = "Pew Pew";
         myIndex = 4;
         roomImage = Images.ROOMS.getSubImage(3,0);

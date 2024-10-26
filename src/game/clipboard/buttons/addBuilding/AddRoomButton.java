@@ -6,6 +6,7 @@ import game.clipboard.buttons.BuyingButton;
 import game.paydayButtons.PayRoomTax;
 import org.newdawn.slick.Color;
 import game.RoomManager;
+import org.newdawn.slick.Graphics;
 
 public class AddRoomButton extends BuyingButton {
 
@@ -17,6 +18,19 @@ public class AddRoomButton extends BuyingButton {
         info = "Costs "+ PayRoomTax.ROOM_TAX+" per day";
         image = Images.BUTTONS.getSubImage(1,0).getScaledCopy(SIZE,SIZE);
 
+    }
+
+    public void render(Graphics g)
+    {
+        super.render(g);
+        if (price< ResourceManager.getFunds())
+        {
+            g.setColor(Color.green);
+        }
+        else {
+            g.setColor(Color.red);
+        }
+        g.drawString("price: "+price, x,y +image.getHeight());
     }
 
     @Override

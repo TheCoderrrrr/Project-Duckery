@@ -10,6 +10,7 @@ public class BrownBread extends Item {
         timeToCreate = 5;
         name = "Brown Bread";
         myIndex = 1;
+        iconImage = Images.BREAD_BUTTONS.getSubImage(1,0);
         roomImage = Images.ROOMS.getSubImage(1,0);
         isBasement = false;
         quotaValue = 3;

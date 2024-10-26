@@ -1,8 +1,8 @@
-package game.entities;
+package game.building;
 
 import core.Sounds;
 import core.Images;
-import game.entities.rooms.Room;
+import game.building.rooms.Room;
 
 import static core.Images.DUCKSHEET;
 import static game.World.getYDisplace;
@@ -87,7 +87,7 @@ public class Duck extends Entity {
 
         if(timer2 % 600 == 0)
         {
-            quack();
+            //quack();
         }
     }
     public void quack()

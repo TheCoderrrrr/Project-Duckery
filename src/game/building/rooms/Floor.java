@@ -1,6 +1,5 @@
-package game.entities.rooms;
+package game.building.rooms;
 
-import game.World;
 import game.RoomManager;
 
 public class Floor extends ProductRoom {

@@ -6,17 +6,17 @@ public class UpgradeManager {
     protected BreadCounter counter;
     protected UpgradeBar bar;
     protected UpgradeButton button;
-    final int X_LEFT = 1170;
-    int myY;
-    final int Y_TOP = 480;
-    final int Y_DISP = 160;
+    protected final int X_LEFT = 1170;
+    protected int myY;
+    protected final int Y_TOP = 480;
+    protected final int Y_DISP = 160;
 
     public UpgradeManager(int order, String name)
     {
         myY = Y_TOP + Y_DISP * order;
         counter = new BreadCounter(X_LEFT+200, myY + 70);
         bar = new UpgradeBar(X_LEFT, myY, name);
-        button = new UpgradeButton(X_LEFT + 475, myY);
+        button = new UpgradeButton(X_LEFT + 475, myY, bar, counter);
     }
 
     public void update()
@@ -24,6 +24,7 @@ public class UpgradeManager {
         button.resetMessage();
         button.addMessage(bar.getMessage());
         button.addMessage(counter.getMessage());
+        button.update();
     }
     public void render(Graphics g)
     {

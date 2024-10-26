@@ -5,6 +5,7 @@ import game.RoomManager;
 import game.World;
 import org.newdawn.slick.Color;
 import game.managers.ResourceManager;
+import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import game.paydayButtons.PayDucks;
 
@@ -18,6 +19,19 @@ public class HiringButton extends BuyingButton {
         price = 10;
         image = Images.ADD_DUCK;
 
+    }
+
+    public void render(Graphics g)
+    {
+        super.render(g);
+        if (price< ResourceManager.getFunds())
+        {
+            g.setColor(Color.green);
+        }
+        else {
+            g.setColor(Color.red);
+        }
+        g.drawString("price: "+price, x,y +image.getHeight());
     }
 
     @Override

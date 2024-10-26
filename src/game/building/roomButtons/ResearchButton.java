@@ -1,8 +1,8 @@
-package game.entities.roomButtons;
+package game.building.roomButtons;
 
 import game.managers.ResourceManager;
 import game.World;
-import game.entities.rooms.ResearchFloor;
+import game.building.rooms.ResearchFloor;
 import game.managers.PopupManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;

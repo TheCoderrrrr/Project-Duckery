@@ -1,15 +1,15 @@
-package game.clipboard.progressUpgrade;
+package game.clipboard.progressUpgrade.ad;
 
-import game.entities.rooms.AdRoom;
-import game.entities.rooms.ResearchFloor;
+import game.building.rooms.AdRoom;
+import game.clipboard.progressUpgrade.BreadCounter;
+import game.clipboard.progressUpgrade.UpgradeBar;
+import game.clipboard.progressUpgrade.UpgradeButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
-import static game.entities.rooms.ResearchFloor.releaseProduct;
-
 public class AdButton extends UpgradeButton {
-    public AdButton(int x, int y) {
-        super(x, y);
+    public AdButton(int x, int y, UpgradeBar bar, BreadCounter counter) {
+        super(x, y, bar, counter);
     }
     public void render(Graphics g)
     {

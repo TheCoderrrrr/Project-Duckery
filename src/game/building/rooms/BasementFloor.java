@@ -1,4 +1,4 @@
-package game.entities.rooms;
+package game.building.rooms;
 
 public class BasementFloor extends Floor {
 

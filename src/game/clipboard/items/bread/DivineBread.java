@@ -11,6 +11,7 @@ public class DivineBread extends Item {
         name = "Divine Bread";
         myIndex = 3;
         roomImage = Images.ROOMS.getSubImage(3,0);
+        iconImage = Images.BREAD_BUTTONS.getSubImage(3,0);
         isBasement = false;
         quotaValue = 20;
     }

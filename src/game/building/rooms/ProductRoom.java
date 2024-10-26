@@ -1,17 +1,13 @@
-package game.entities.rooms;
+package game.building.rooms;
 
 
-import core.Images;
-import game.World;
 import game.clipboard.items.Item;
 import game.clipboard.items.weapon.Gun;
-import game.entities.Duck;
-import game.entities.roomButtons.ChangeRoomButton;
-import game.entities.roomButtons.RoomButton;
+import game.building.Duck;
+import game.building.roomButtons.ChangeRoomButton;
+import game.building.roomButtons.RoomButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.SpriteSheet;
 
 import java.util.ArrayList;
 

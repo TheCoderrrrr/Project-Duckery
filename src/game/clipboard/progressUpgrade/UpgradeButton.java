@@ -4,18 +4,39 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
 public class UpgradeButton {
-    int myX;
-    int myY;
-    final int SIZE = 100;
-    String message;
-    Color myColor;
+    protected int myX;
+    protected int myY;
+    protected final int SIZE = 100;
+    protected String message;
+    protected Color myColor;
+
+    protected UpgradeBar bar;
+    protected BreadCounter count;
     //individual upgraders;
-    public UpgradeButton(int x, int y)
+    public UpgradeButton(int x, int y, UpgradeBar bar, BreadCounter count)
     {
         myX = x;
         myY = y;
         myColor = Color.green;
         message = "";
+
+        this.bar = bar;
+        this.count = count;
+    }
+
+    public void update()
+    {
+        if (count.getComplete() && bar.getComplete())
+        {
+            myColor = Color.green;
+        }
+        else if (count.getComplete()|| bar.getComplete())
+        {
+            myColor = Color.yellow;
+        }
+        else {
+            myColor = Color.red;
+        }
     }
     public void render(Graphics g)
     {
@@ -26,15 +47,11 @@ public class UpgradeButton {
     }
     public void click(int x , int y)
     {
-        if (mouseOver(x,y))
-        {
-            myColor = Color.red;
-        }
 
     }
     public boolean mouseOver(int x, int y)
     {
-        return x>myX && x<(myX+SIZE) && x>myY && y<(myY+SIZE);
+        return x>myX && x<(myX+SIZE) && y>myY && y<(myY+SIZE);
     }
     public void resetMessage()
     {

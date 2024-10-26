@@ -1,4 +1,4 @@
-package game.entities.roomButtons;
+package game.building.roomButtons;
 
 public class ChangeRoomManager {
 }

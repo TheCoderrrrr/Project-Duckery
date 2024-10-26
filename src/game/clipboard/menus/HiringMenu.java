@@ -4,7 +4,6 @@ import game.clipboard.buttons.HiringButton;
 import game.clipboard.buttons.addBuilding.AddBasementButton;
 import game.clipboard.buttons.addBuilding.AddFloorButton;
 import game.clipboard.buttons.addBuilding.AddRoomButton;
-import game.entities.roomButtons.RoomButton;
 
 public class HiringMenu extends Menu{
     AddRoomButton r;

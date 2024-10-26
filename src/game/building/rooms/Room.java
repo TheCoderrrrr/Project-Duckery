@@ -1,11 +1,11 @@
-package game.entities.rooms;
+package game.building.rooms;
 
 import core.Images;
 import core.Main;
 import game.World;
 import game.clipboard.items.Item;
-import game.entities.Duck;
-import game.entities.roomButtons.RoomButton;
+import game.building.Duck;
+import game.building.roomButtons.RoomButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;

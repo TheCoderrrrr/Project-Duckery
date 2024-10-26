@@ -1,9 +1,9 @@
-package game.entities.roomButtons;
+package game.building.roomButtons;
 
 import core.Main;
 import game.World;
-import game.entities.rooms.ProductRoom;
-import game.entities.rooms.Room;
+import game.building.rooms.ProductRoom;
+import game.building.rooms.Room;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;

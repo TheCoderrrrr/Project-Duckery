@@ -1,12 +1,10 @@
-package game.entities;
+package game.building;
 
 import core.Main;
 import game.World;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
-
-import java.awt.*;
 
 public abstract class Entity {
     protected int x;

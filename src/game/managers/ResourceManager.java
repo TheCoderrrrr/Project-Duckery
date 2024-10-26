@@ -5,8 +5,8 @@ import core.messages.FloatMessage;
 import core.messages.MessageManager;
 import game.RoomManager;
 import game.World;
-import game.entities.rooms.Floor;
-import game.entities.rooms.ProductRoom;
+import game.building.rooms.Floor;
+import game.building.rooms.ProductRoom;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
@@ -133,13 +133,13 @@ public class ResourceManager {
                             }
                             else
                             {
-                                warEffort+=room.getWarEffort();
-                                enemyEffort -= room.getWarEffort();
+//                                warEffort+=room.getWarEffort();
+//                                enemyEffort -= room.getWarEffort();
                                 //enemyEffort-=room.getWarEffort();
                                 fund += room.getValue();//costs money to build weapons
                                 room.resetTimer();
                                 MessageManager.addMessage(new FloatMessage(
-                                        "+ "+(room.getWarEffort()+adLevel), room.getX() + (float)room.getWidth()/2, room.getY(),
+                                        "+ "+1+" gun", room.getX() + (float)room.getWidth()/2, room.getY(),
                                         Color.white, 70));
                                 gunsMade++;
                             }
@@ -156,6 +156,12 @@ public class ResourceManager {
         incomeRate = ((int) (incomeRate *100))/100;
     }
 
+    public static void attack(int value)
+    {
+        warEffort += value*5;
+        enemyEffort -= value*5;
+        gunsMade -= value;//lose all weapons made in attack
+    }
 
     public static void advertise(int length, int boost){
         //advertise based on amount of time/

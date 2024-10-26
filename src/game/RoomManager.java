@@ -1,7 +1,7 @@
 package game;
 
 import game.clipboard.items.bread.BlandBread;
-import game.entities.rooms.*;
+import game.building.rooms.*;
 import game.managers.ResourceManager;
 import org.newdawn.slick.Graphics;
 

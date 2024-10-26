@@ -12,6 +12,7 @@ public class BlandBread extends Item {
         timeToCreate = 10;
         name = "Bland Bread";
         roomImage = Images.ROOMS.getSubImage(0,0);
+        iconImage = Images.BREAD_BUTTONS.getSubImage(0,0);
         isBasement = false;
         quotaValue = 0;
     }

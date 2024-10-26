@@ -1,5 +1,6 @@
 package game.clipboard.buttons;
 
+import game.managers.ResourceManager;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -50,6 +51,12 @@ public abstract class BuyingButton {
         }
         else {
             g.drawImage(image.getScaledCopy(w,h), x,y);
+            if (price> ResourceManager.getFunds())
+            {
+                g.setColor(new Color(0f,0f,0f,.3f));
+                g.fillRect(x,y,w,h+20);
+            }
+
         }
     }
 

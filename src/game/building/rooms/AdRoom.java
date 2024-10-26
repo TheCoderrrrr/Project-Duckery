@@ -1,10 +1,10 @@
-package game.entities.rooms;
+package game.building.rooms;
 
 import game.managers.ResourceManager;
 import game.World;
 import game.clipboard.buttons.ads.AdvertisingButton;
-import game.entities.Duck;
-import game.entities.roomButtons.RoomButton;
+import game.building.Duck;
+import game.building.roomButtons.RoomButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
