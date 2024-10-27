@@ -22,8 +22,8 @@ public class UpgradeManager {
     public void update()
     {
         button.resetMessage();
-        button.addMessage(bar.getMessage());
-        button.addMessage(counter.getMessage());
+//        button.addMessage(bar.getMessage());
+//        button.addMessage(counter.getMessage());
         button.update();
     }
     public void render(Graphics g)

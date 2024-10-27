@@ -11,12 +11,13 @@ public class WarManager extends UpgradeManager {
     int minimum;
     int maximum;
     public WarManager( ) {
-        super(-1, "war");
+        super(2, "war");
         minimum = 20;
         maximum = 50;
         counter = new BreadCounter(X_LEFT+200, myY + 70);
         counter.setTotal(minimum);
-        bar = new WeaponsBar(X_LEFT, myY, "woop de woop");
+        counter.setName("guns");
+        bar = new WeaponsBar(X_LEFT, myY, "war");
         bar.setTotal(maximum);
         bar.setColor(Color.red);
         button = new WarButton(X_LEFT+475, myY, bar, counter);

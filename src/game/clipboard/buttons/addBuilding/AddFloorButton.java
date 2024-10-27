@@ -22,19 +22,19 @@ public class AddFloorButton extends BuyingButton {
     public void render(Graphics g)
     {
         super.render(g);
-        if (price< ResourceManager.getFunds())
+        if (RoomManager.getCurFloorPrice()< ResourceManager.getFunds())
         {
             g.setColor(Color.green);
         }
         else {
             g.setColor(Color.red);
         }
-        g.drawString("price: "+price, x,y +image.getHeight());
+        g.drawString("price: "+RoomManager.getCurFloorPrice(), x,y +image.getHeight());
     }
 
     @Override
     public void onClick() {
-        if (ResourceManager.getFunds()>price) {
+        if (ResourceManager.getFunds()>RoomManager.getCurFloorPrice()) {
             RoomManager.addFloor();
             price = RoomManager.getCurFloorPrice();
         }

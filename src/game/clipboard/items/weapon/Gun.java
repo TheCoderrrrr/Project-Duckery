@@ -13,6 +13,7 @@ public class Gun extends Item {
         warEffort = 20;
         isBasement = true;
         value = -50;
+        quotaValue = 250;
     }
 
 }

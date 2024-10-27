@@ -26,16 +26,13 @@ public class UpgradeButton {
 
     public void update()
     {
-        if (count.getComplete() && bar.getComplete())
+
+        if (!count.getComplete()|| !bar.getComplete())
         {
-            myColor = Color.green;
-        }
-        else if (count.getComplete()|| bar.getComplete())
-        {
-            myColor = Color.yellow;
+            myColor = Color.lightGray;
         }
         else {
-            myColor = Color.red;
+            myColor = Color.green;
         }
     }
     public void render(Graphics g)

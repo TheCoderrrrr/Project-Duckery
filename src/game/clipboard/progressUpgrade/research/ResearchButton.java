@@ -33,7 +33,7 @@ public class ResearchButton extends UpgradeButton {
         if (mouseOver(x,y))
         {
 
-            if (ResearchFloor.getFirstProuduct() != null && ResourceManager.getBreadMade()>ResearchFloor.getFirstProuduct().getQuotaValue())
+            if (ResearchFloor.getFirstProuduct() != null && bar.getComplete() && count.getComplete())
             {
                 ResearchFloor.beginResearch();
                 ResourceManager.takeBread(ResearchFloor.getFirstProuduct().getQuotaValue());

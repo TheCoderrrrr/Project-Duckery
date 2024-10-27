@@ -26,8 +26,14 @@ public class ProgressBar {
         g.setColor(Color.black);
         g.drawString(title, myX, myY- 25);
         g.fillRect(myX, myY, width, height);
+
+        g.drawString("DUCKS", myX+5, myY+(int)(height*(1.0-percent))+5);
+
         g.setColor(Color.yellow);
         g.fillRoundRect(myX+5, myY+(int)(height*(1.0-percent))+5, width-10,(int) (height*percent)-10, 10);
+
+        g.setColor(Color.red);
+        g.fillRoundRect(myX+5, myY+5, width-10,(int) (height*(1-percent))-10, 10);
     }
 
     public void update(double percent)

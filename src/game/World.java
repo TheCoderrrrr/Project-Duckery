@@ -80,6 +80,12 @@ public class World {
         //draws the building
         roomManager.render(g);
 
+        if (war)
+        {
+            g.setColor(new Color(.3f,0f,0f,.3f));
+            g.fillRect(0,0,Main.getScreenWidth(), Main.getScreenHeight());
+        }
+
 
 
     }

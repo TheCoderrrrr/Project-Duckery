@@ -4,48 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="epic new research system + paydays clicking fixed">
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/war/WeaponsBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/libs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="almost ready for release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/End.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/End.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Clipboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Clipboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/RoomManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/building/rooms/AdRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/AdRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/building/rooms/ProductRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/ProductRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/building/rooms/ResearchFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/ResearchFloor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/ProgressBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/ProgressBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddBasementButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddBasementButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddFloorButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddFloorButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddRoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddRoomButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BlandBread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ads/AdvertisingButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ads/BillboardAd.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ads/NewspaperAd.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ads/TeleAd.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/BrownBread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/CosmicBread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/bread/DivineBread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/items/weapon/Gun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/items/weapon/Gun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/HiringMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/HiringMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/AdButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ad/AdButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/AdManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ad/AdManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ResearchButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/research/ResearchButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ResearchManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/research/ResearchManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/UpgradeBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/UpgradeBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/AdvertisingMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/BreadCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/BreadCounter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/UpgradeButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/UpgradeButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/UpgradeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/UpgradeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/WarButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/war/WarButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/WarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/war/WarManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/Duck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/Machine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/StorageRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/roomButtons/ChangeRoomButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/ChangeRoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/roomButtons/ChangeRoomManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/ResearchButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/roomButtons/ResearchButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/roomButtons/RoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/roomButtons/RoomButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/AdRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/AdRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/BasementFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/BasementFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/ProductRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/ProductRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/ResearchFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/ResearchFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/entities/rooms/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ad/AdButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ad/AdButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ad/AdManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/ad/AdManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/research/ResearchButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/research/ResearchButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/research/ResearchManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/research/ResearchManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/war/WarManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/war/WarManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/managers/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/managers/ResourceManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -422,7 +409,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729826182543</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="epic new research system + paydays clicking fixed">
+      <option name="closed" value="true" />
+      <created>1729976450143</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1729976450143</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -437,7 +432,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="can advertise/kind of" />
     <MESSAGE value="can probably research" />
     <MESSAGE value="added images" />
     <MESSAGE value="ducks are able to be picked up and dropped" />
@@ -462,7 +456,8 @@
     <MESSAGE value="add floor works" />
     <MESSAGE value="setup for the upgrade system" />
     <MESSAGE value="epic new research system + paydays clicking fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="epic new research system + paydays clicking fixed" />
+    <MESSAGE value="almost ready for release" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost ready for release" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -471,6 +466,11 @@
           <url>file://$PROJECT_DIR$/libs/src/Main.java</url>
           <line>11</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/game/clipboard/items/weapon/Gun.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/core/Main.java</url>

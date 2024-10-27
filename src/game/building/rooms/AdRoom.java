@@ -2,7 +2,7 @@ package game.building.rooms;
 
 import game.managers.ResourceManager;
 import game.World;
-import game.clipboard.buttons.ads.AdvertisingButton;
+//import game.clipboard.buttons.ads.AdvertisingButton;
 import game.building.Duck;
 import game.building.roomButtons.RoomButton;
 import org.newdawn.slick.Color;
@@ -15,13 +15,13 @@ public class AdRoom extends Room{
     private static boolean hasDucks;
     private static boolean first;
 
-    AdvertisingButton[] ads;
+    //AdvertisingButton[] ads;
 
     public AdRoom() {
         super(1,0);
         width = 800;
         maxDucks = 6;
-        adProductionTotalTime = 30*60;
+        adProductionTotalTime = 40*60;
         adTimer = -1;
         first = true;
 
@@ -72,7 +72,7 @@ public class AdRoom extends Room{
 
     public static void releaseBlitz()
     {
-        ResourceManager.advertise(200, 4);
+        ResourceManager.advertise(200, 10);
         adTimer = adProductionTotalTime;
     }
 

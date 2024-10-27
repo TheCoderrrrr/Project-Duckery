@@ -13,7 +13,7 @@ public class BrownBread extends Item {
         iconImage = Images.BREAD_BUTTONS.getSubImage(1,0);
         roomImage = Images.ROOMS.getSubImage(1,0);
         isBasement = false;
-        quotaValue = 3;
+        quotaValue = 15;
     }
 
 }

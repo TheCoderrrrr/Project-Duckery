@@ -57,7 +57,7 @@ public class End extends BasicGameState {
     }
 
     public void keyPressed(int key, char c) {
-        sbg.enterState(1);
+
     }
 
     public void mousePressed(int button, int x, int y) {

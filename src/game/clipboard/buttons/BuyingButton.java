@@ -73,7 +73,7 @@ public abstract class BuyingButton {
     }
     public String getInfo()
     {
-        String ret = name+"\nPrice: "+price+"\n"+info;
+        String ret = name;
         return ret;
     }
 

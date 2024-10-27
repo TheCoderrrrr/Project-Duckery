@@ -13,6 +13,6 @@ public class DivineBread extends Item {
         roomImage = Images.ROOMS.getSubImage(3,0);
         iconImage = Images.BREAD_BUTTONS.getSubImage(3,0);
         isBasement = false;
-        quotaValue = 20;
+        quotaValue = 150;
     }
 }

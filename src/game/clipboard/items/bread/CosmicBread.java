@@ -13,6 +13,6 @@ public class CosmicBread extends Item {
         roomImage = Images.ROOMS.getSubImage(2,0);
         iconImage = Images.BREAD_BUTTONS.getSubImage(2,0);
         isBasement = false;
-        quotaValue = 10;
+        quotaValue = 80;
     }
 }

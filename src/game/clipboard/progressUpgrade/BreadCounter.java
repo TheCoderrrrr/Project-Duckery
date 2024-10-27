@@ -8,12 +8,14 @@ public class BreadCounter {
     int total;
     int x;
     int y;
+    String name;
 
     public BreadCounter(int x, int y){
         counter = 0;
         total = 1;
         this.x = x;
         this.y = y;
+        name = "bread";
     }
 
     public BreadCounter(int counter, int total, int x, int y){
@@ -36,7 +38,7 @@ public class BreadCounter {
         g.setColor(Color.white);
         g.fillRect(x,y, 220,20 );
         g.setColor(Color.black);
-        g.drawString("Bread: "+counter+" / "+total, x, y);
+        g.drawString(name +": "+counter+" / "+total, x, y);
     }
     public void setCounter(int count){
         counter = count;
@@ -44,6 +46,7 @@ public class BreadCounter {
     public boolean getComplete(){return  counter>=total;}
     public void setTotal(int total){this.total = total; }
     public void addCounter(){ counter++;}
+    public void setName(String name){ this.name = name;}
 
 
 }

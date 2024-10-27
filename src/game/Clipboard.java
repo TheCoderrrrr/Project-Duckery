@@ -2,8 +2,9 @@ package game;
 
 import core.Images;
 import core.Main;
+import game.building.rooms.ResearchFloor;
 import game.clipboard.buttons.BuyingButton;
-import game.clipboard.buttons.ads.AdvertisingButton;
+//import game.clipboard.buttons.ads.AdvertisingButton;
 import game.clipboard.menus.*;
 import game.clipboard.progressUpgrade.ad.AdManager;
 import game.clipboard.progressUpgrade.research.ResearchManager;
@@ -25,21 +26,24 @@ public class Clipboard {
     static HiringMenu h;
     static String info;
     static ProgressBar warBar;
+    static ResearchManager resMan;
+    static WarManager warManager;
 
     public Clipboard()
     {
         h = new HiringMenu();
+        resMan = new ResearchManager();
+        warManager = new WarManager();
 
         //bars.add(new UpgradeManager(1, "test"));
-        bars.add(new ResearchManager());
+        bars.add(resMan);
         bars.add(new AdManager());
-        bars.add(new WarManager());
         menus.add(h);
         //menus.add(new AdvertisingMenu());
         //menus.add(new HotkeyMenu());
         info = "tester";
 
-        warBar = new ProgressBar(1350,130,200,175, "WAR PROGRESS!!");
+        warBar = new ProgressBar(1350,135,180,130, "WAR PROGRESS!!");
 
     }
 
@@ -60,6 +64,7 @@ public class Clipboard {
             warBar.render(g);
         }
 
+
         g.setColor(Color.black);
         g.drawString("$" + ResourceManager.getFund() +"\nBread made: " + ResourceManager.getBreadMade() +
                 "\nEmployees: "+World.getTotalDucks(), 1600,110);
@@ -70,7 +75,7 @@ public class Clipboard {
     }
 
     public void update() {
-        AdvertisingButton.update();
+        //AdvertisingButton.update();
         if(World.getWar())
         {
             warBar.update(ResourceManager.getPercentConquered());
@@ -78,6 +83,11 @@ public class Clipboard {
         for (UpgradeManager b: bars)
         {
             b.update();
+        }
+        if (ResearchFloor.getFirstProuduct()== null && !bars.contains(warManager))
+        {
+            bars.remove(resMan);
+            bars.add(warManager);//adds the war manager as soon as weapon is added
         }
 
     }

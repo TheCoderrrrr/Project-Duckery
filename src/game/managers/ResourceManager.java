@@ -36,7 +36,7 @@ public class ResourceManager {
 
     public ResourceManager()
     {
-        fund = 300;
+        fund = 200;
         roomVals = new ArrayList<>();
         incomeRate = 0;
         adLevel = 0;
@@ -93,13 +93,14 @@ public class ResourceManager {
     public static int getRoomPrice(int floor, int room)
     {
         //return room prices
-        double price = 30;
+        floor -=2;
+        double price = 70;
 
         int exp = floor* World.ROOMS_IN_FLOOR + room;
 
         for (int i = 0; i< exp; i++)
         {
-            price *= 1.25;
+            price *= 1.2;
         }
         return (int)price;
 
@@ -259,23 +260,23 @@ public class ResourceManager {
         //price of next floor: should be updated
         if ( floor >0)
         {
-            double price = (int)(getRoomPrice(World.FLOOR_UNLOCK_ROOMS*World.ROOMS_IN_FLOOR, 0)/10);
+            double price = (int)(getRoomPrice(World.FLOOR_UNLOCK_ROOMS, 0));
             int exp = floor - World.FLOOR_UNLOCK_ROOMS;
 
             for (int i = 0; i< exp; i++)
             {
-                price *= 1.5;
+                price *= 1.1;
             }
             return (int)price;
         }
         else
         {
-            double price = (int)(getRoomPrice(World.BASEMENT_UNLOCK_FLOOR*World.ROOMS_IN_FLOOR, 0)/10);
-            int exp = floor - World.BASEMENT_UNLOCK_FLOOR;
+            double price = (int)(getRoomPrice(7, 0));
+            int exp = -floor;
 
             for (int i = 0; i< exp; i++)
             {
-                price *= 1.75;
+                price *= 1.4;
             }
             return (int) price;
         }

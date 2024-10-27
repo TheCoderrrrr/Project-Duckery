@@ -179,7 +179,7 @@ public class RoomManager {
     }
     public static int getCurBasementPrice()
     {
-        return ResourceManager.getFloorPrice(-curBasement);
+        return ResourceManager.getFloorPrice(curBasement);
     }
 
     //checks if there are 2 to a floor.
@@ -258,7 +258,7 @@ public class RoomManager {
 
     //adds respective type of room.
     public static void addFloor() {
-        if (curFloor>FLOOR_UNLOCK_ROOMS && ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+        if (curFloor>FLOOR_UNLOCK_ROOMS)
         {
             floors.add(new Floor[]{new Floor (curFloor)});
             ResourceManager.withdraw(ResourceManager.getFloorPrice(curFloor));
@@ -267,10 +267,10 @@ public class RoomManager {
     }
 
     public static void addBasement() {
-        if ( ResourceManager.getFunds()>=ResourceManager.getFloorPrice(curFloor))
+        if ( ResourceManager.getFunds()>=getCurBasementPrice())
         {
             floors.add(0, new Floor[]{new Floor (curBasement)});
-            ResourceManager.withdraw(ResourceManager.getFloorPrice(curBasement));
+            ResourceManager.withdraw(getCurBasementPrice());
             curBasement --;
         }
     }

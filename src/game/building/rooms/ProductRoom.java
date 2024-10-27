@@ -116,6 +116,21 @@ public class ProductRoom  extends Room{
         }
 
     }
+    public void switchProduct()
+    {
+        if (!isBasement())
+        {
+            curItem ++;
+            pause = true;
+            pauseTimer = TOTAL_BUILD_TIME;
+            myImage = myRoomTypes.getSubImage(products.get(curItem).getImageIndex(),0);
+
+            resetTimer();
+            lastCurItem = curItem;
+            myButtons.removeFirst();
+        }
+
+    }
 //mutator
 
 
