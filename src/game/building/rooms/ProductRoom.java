@@ -116,7 +116,7 @@ public class ProductRoom  extends Room{
     }
     public void switchProduct()
     {
-        if (!isBasement())
+        if (!isBasement() && (curItem+1)<products.size())
         {
             curItem ++;
             pause = true;

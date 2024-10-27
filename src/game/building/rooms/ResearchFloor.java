@@ -47,7 +47,7 @@ public class ResearchFloor extends Room{
         g.setColor(Color.black);
         if (ducks.isEmpty())
         {
-            g.drawString("hire a duck to research new produckts!", x+10, World.getYDisplace() + y + 300);
+            g.drawString("hire a duck to research new produckts!", x+10, World.getYDisplace() + y + 30);
         }
         else if (research && !productLine.isEmpty())
         {

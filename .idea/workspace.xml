@@ -4,31 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="almost ready for release">
-      <change afterPath="$PROJECT_DIR$/res/clipboard/scrollers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/Button.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/clipboard/scrollButtons/Scroller.java" afterDir="false" />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="should be ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/duck/duck_one.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Images.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Clipboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Clipboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/building/roomButtons/ChangeRoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/roomButtons/ChangeRoomButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/building/roomButtons/ResearchButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/building/roomButtons/RoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/roomButtons/RoomButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/building/rooms/AdRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/AdRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/building/rooms/ProductRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/ProductRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/building/rooms/ResearchFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/ResearchFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/building/rooms/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/BuyingButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/GoToButton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/ScrollButton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddBasementButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddBasementButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddFloorButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddFloorButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddRoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/addBuilding/AddRoomButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/HotkeyMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/menus/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/menus/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/BreadCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/BreadCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/research/ResearchButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/progressUpgrade/research/ResearchButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +33,12 @@
     &quot;assignee&quot;: &quot;HappyHat952&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/TheCoderrrrr/Project-Duckery",
-    "accountId": "6de6eea3-8c01-474b-ac67-0e568ccd8f77"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TheCoderrrrr/Project-Duckery&quot;,
+    &quot;accountId&quot;: &quot;6de6eea3-8c01-474b-ac67-0e568ccd8f77&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
     &quot;associatedIndex&quot;: 6
     }</component>
@@ -68,23 +50,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/senmr/Downloads/Technica/ProjectTemplate (1)/ProjectTemplate",
-    "onboarding.tips.debug.path": "C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/senmr/Downloads/Technica/ProjectTemplate (1)/ProjectTemplate&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/NS254/Downloads/Project-Duckery/libs/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\senmr\Downloads\Project-Duckery\res" />
@@ -421,7 +403,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729988340354</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="should be ready!">
+      <option name="closed" value="true" />
+      <created>1730040223309</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1730040223309</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -436,7 +426,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="can probably research" />
     <MESSAGE value="added images" />
     <MESSAGE value="ducks are able to be picked up and dropped" />
     <MESSAGE value="floor and rooms streamlined, pickup and move ducks" />
@@ -461,7 +450,8 @@
     <MESSAGE value="setup for the upgrade system" />
     <MESSAGE value="epic new research system + paydays clicking fixed" />
     <MESSAGE value="almost ready for release" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost ready for release" />
+    <MESSAGE value="should be ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="should be ready!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

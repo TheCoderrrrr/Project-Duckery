@@ -24,7 +24,13 @@ public class HiringButton extends BuyingButton {
     public void render(Graphics g)
     {
         super.render(g);
-        if (price< ResourceManager.getFunds())
+        if (World.getDuckLimit() + 1 > RoomManager.getRoomAvailability() && price<=ResourceManager.getFunds())
+        {
+            g.setColor(new Color(0f,0f,0f,.3f));
+            g.fillRect(x,y,w,h+20);
+        }
+
+        if (price<= ResourceManager.getFunds()  ||  World.getDuckLimit() + 1 <= RoomManager.getRoomAvailability())
         {
             g.setColor(Color.green);
         }

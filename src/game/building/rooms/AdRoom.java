@@ -40,7 +40,7 @@ public class AdRoom extends Room{
         else if (makingAd)
         {
             g.drawString("currently creating new ad"
-                    , x, World.getYDisplace() + y+ 20);
+                    , x+10, World.getYDisplace() + y+ 30);
         }
 
         for (Duck duck : ducks) duck.render(g);
