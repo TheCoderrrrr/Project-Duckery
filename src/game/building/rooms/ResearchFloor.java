@@ -47,13 +47,12 @@ public class ResearchFloor extends Room{
         g.setColor(Color.black);
         if (ducks.isEmpty())
         {
-            g.drawString("add a duck to research an improved product", x, World.getYDisplace() + y + 20);
+            g.drawString("hire a duck to research new produckts!", x+10, World.getYDisplace() + y + 300);
         }
         else if (research && !productLine.isEmpty())
         {
-            g.drawString("currently researching" + productLine.getFirst().getName()
-                    +"\nTime to comletion: "+(resTimer)
-                    , x, World.getYDisplace() + y+ 20);
+            g.drawString("currently researching " + productLine.getFirst().getName()
+                    , x+10, World.getYDisplace() + y+ 30);
         }
 
         for (Duck duck : ducks)

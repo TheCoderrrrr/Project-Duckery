@@ -7,7 +7,7 @@ public class Gun extends Item {
     public Gun()
     {
         timeToCreate = 6;
-        name = "Pew Pew";
+        name = "Gun";
         myIndex = 4;
         roomImage = Images.ROOMS.getSubImage(3,0);
         warEffort = 20;

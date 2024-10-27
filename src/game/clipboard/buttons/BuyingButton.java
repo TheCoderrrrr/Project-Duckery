@@ -51,6 +51,7 @@ public abstract class BuyingButton {
         }
         else {
             g.drawImage(image.getScaledCopy(w,h), x,y);
+            //draws a gray square over image if there's not enough money;
             if (price> ResourceManager.getFunds())
             {
                 g.setColor(new Color(0f,0f,0f,.3f));

@@ -24,7 +24,7 @@ public class AddBasementButton  extends BuyingButton {
     {
         super.render(g);
 
-        if (price< ResourceManager.getFunds())
+        if (price<= ResourceManager.getFunds())
         {
             g.setColor(Color.green);
         }

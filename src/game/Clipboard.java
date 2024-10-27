@@ -6,21 +6,25 @@ import game.building.rooms.ResearchFloor;
 import game.clipboard.buttons.BuyingButton;
 //import game.clipboard.buttons.ads.AdvertisingButton;
 import game.clipboard.menus.*;
+import game.clipboard.menus.Menu;
 import game.clipboard.progressUpgrade.ad.AdManager;
 import game.clipboard.progressUpgrade.research.ResearchManager;
 import game.clipboard.progressUpgrade.UpgradeManager;
 import game.clipboard.progressUpgrade.war.WarManager;
+import game.clipboard.scrollButtons.Scroller;
 import game.managers.ResourceManager;
 import game.clipboard.ProgressBar;
+import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Clipboard {
 
     //manages all  the buttons and lets them get clicked;
-    static ArrayList<BuyingButton> buttons = new ArrayList<>();
+    static ArrayList<Scroller> scrollers = new ArrayList<>();
     static ArrayList<Menu> menus = new ArrayList<Menu>();
     static ArrayList<UpgradeManager> bars = new ArrayList<UpgradeManager>();
     static HiringMenu h;
@@ -35,13 +39,15 @@ public class Clipboard {
         resMan = new ResearchManager();
         warManager = new WarManager();
 
-        //bars.add(new UpgradeManager(1, "test"));
         bars.add(resMan);
         bars.add(new AdManager());
         menus.add(h);
-        //menus.add(new AdvertisingMenu());
-        //menus.add(new HotkeyMenu());
-        info = "tester";
+
+        info = "";
+
+        scrollers = new ArrayList<>();
+        scrollers.add(new Scroller(970,100, Images.SCROLLER.getSubImage(0,0),"up"));
+        scrollers.add(new Scroller(970,100+128, Images.SCROLLER.getSubImage(0,1),"down"));
 
         warBar = new ProgressBar(1350,135,180,130, "WAR PROGRESS!!");
 
@@ -58,6 +64,10 @@ public class Clipboard {
         for(Menu m: menus)
         {
             m.render(g);
+        }
+        for(Scroller s: scrollers)
+        {
+            s.render(g);
         }
         if(World.getWar())
         {
@@ -88,6 +98,21 @@ public class Clipboard {
         {
             bars.remove(resMan);
             bars.add(warManager);//adds the war manager as soon as weapon is added
+        }
+        for(Scroller s: scrollers)
+        {
+            s.update();
+        }
+
+        int mouseX = (int) MouseInfo.getPointerInfo().getLocation().getX();
+        int mouseY = (int) MouseInfo.getPointerInfo().getLocation().getY();
+        for(Scroller s: scrollers)
+        {
+            if (s.mouseOver(mouseX, mouseY))
+            {
+                s.click(mouseX,mouseY);
+            }
+
         }
 
     }
@@ -123,6 +148,8 @@ public class Clipboard {
             {
                 b.click(x, y);
             }
+
+
         }
     }
 

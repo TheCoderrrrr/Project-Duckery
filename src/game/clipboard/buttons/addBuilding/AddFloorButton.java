@@ -22,7 +22,7 @@ public class AddFloorButton extends BuyingButton {
     public void render(Graphics g)
     {
         super.render(g);
-        if (RoomManager.getCurFloorPrice()< ResourceManager.getFunds())
+        if (RoomManager.getCurFloorPrice()<= ResourceManager.getFunds())
         {
             g.setColor(Color.green);
         }

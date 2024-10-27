@@ -30,7 +30,7 @@ public class ChangeRoomButton extends RoomButton{
         {
 
             ResourceManager.withdraw(20);
-            r.switchProduct(i);
+            r.switchProduct();
         }
 
     }

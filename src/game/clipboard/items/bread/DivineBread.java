@@ -8,7 +8,7 @@ public class DivineBread extends Item {
     {
         value = 19;
         timeToCreate = 24;
-        name = "Divine Bread";
+        name = "Divine \nBread";
         myIndex = 3;
         roomImage = Images.ROOMS.getSubImage(3,0);
         iconImage = Images.BREAD_BUTTONS.getSubImage(3,0);

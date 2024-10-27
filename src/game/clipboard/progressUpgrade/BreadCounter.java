@@ -37,7 +37,13 @@ public class BreadCounter {
     {
         g.setColor(Color.white);
         g.fillRect(x,y, 220,20 );
-        g.setColor(Color.black);
+        if (getComplete())
+        {
+            g.setColor(Color.green);
+        }
+        else {
+            g.setColor(Color.red);
+        }
         g.drawString(name +": "+counter+" / "+total, x, y);
     }
     public void setCounter(int count){

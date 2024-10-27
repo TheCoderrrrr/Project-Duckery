@@ -8,7 +8,7 @@ public class CosmicBread extends Item {
     {
         value = 14;
         timeToCreate = 20;
-        name = "Cosmic Bread";
+        name = "Cosmic\nBread";
         myIndex = 2;
         roomImage = Images.ROOMS.getSubImage(2,0);
         iconImage = Images.BREAD_BUTTONS.getSubImage(2,0);

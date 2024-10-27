@@ -1,7 +1,6 @@
 package game.clipboard.menus;
 
 import game.clipboard.buttons.BuyingButton;
-import game.clipboard.buttons.ScrollButton;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 

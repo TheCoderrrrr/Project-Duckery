@@ -29,7 +29,7 @@ public class UpgradeBar extends ProgressBar {
     public void render(Graphics g)
     {
         g.setColor(Color.black);
-        g.drawString(title+getComplete(), myX, myY- 25);
+        g.drawString(title, myX, myY- 25);
         g.fillRect(myX, myY, width, height);
         g.setColor(color);
         if (percent<=1)

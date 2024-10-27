@@ -35,12 +35,11 @@ public class AdRoom extends Room{
         g.setColor(Color.black);
         if (ducks.isEmpty())
         {
-            g.drawString("pls gimme ducks", x, World.getYDisplace() + y + 20);
+            g.drawString("hire a duck to make an advertisement!", x+10 , World.getYDisplace() + y + 30);
         }
         else if (makingAd)
         {
             g.drawString("currently creating new ad"
-                            +"\nTime to comletion: "+(adTimer)
                     , x, World.getYDisplace() + y+ 20);
         }
 

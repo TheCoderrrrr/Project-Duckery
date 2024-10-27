@@ -176,6 +176,10 @@ public class World {
             yDisplace = (currBasement* ProductRoom.HEIGHT);
         }
     }
+    public static void scroll(int i)
+    {
+        yDisplace += i;
+    }
     //moves the screen + displaces.
     public void mouseWheelMoved(int newValue) {
         if (newValue> 0)

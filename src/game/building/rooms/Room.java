@@ -85,7 +85,17 @@ abstract public class Room {
         }
 
         g.setColor(Color.black);
-        g.drawString("Ducks: " +ducks.size()+"/"+maxDucks, Main.getAdjustedX( x), Main.getAdjustedY( World.getYDisplace() + y));
+        g.fillRect(Main.getAdjustedX(x+10), Main.getAdjustedY( World.getYDisplace() + y+10), 100,20);
+
+        if (ducks.size() == maxDucks)
+        {
+            g.setColor(Color.red);
+        }
+        else {
+            g.setColor(Color.green);
+        }
+
+        g.drawString("Ducks: " +ducks.size()+"/"+maxDucks, Main.getAdjustedX( x+10), Main.getAdjustedY( World.getYDisplace() + y + 10));
     }
 
     //ACCESSOR

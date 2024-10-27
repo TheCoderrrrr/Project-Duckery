@@ -20,7 +20,7 @@ public class ResearchButton extends UpgradeButton {
         if (ResearchFloor.getFirstProuduct() != null)
         {
             g.setColor(Color.black);
-            g.drawString("add "+ResearchFloor.getFirstProuduct().getName(), myX, myY);
+            g.drawString("add \n"+ResearchFloor.getFirstProuduct().getName(), myX, myY);
         }
         else
         {

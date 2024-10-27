@@ -11,6 +11,7 @@ public class Images {
     public static SpriteSheet FLOORS;
     public static SpriteSheet BUILD_ANIMATION;
     public static SpriteSheet BREAD_BUTTONS;
+    public static SpriteSheet SCROLLER;
 
 
     public static SpriteSheet TITLE_SCREEN;
@@ -54,6 +55,7 @@ public class Images {
             CLIPBOARD = new Image("res/clipboard/clipboard.png");
             BREAD_BUTTONS = new SpriteSheet(new Image("res/floors/bread_buttons.png"), 48,48);
             BUTTONS = new SpriteSheet(new Image("res/clipboard/buttons.png"),96,96);
+            SCROLLER = new SpriteSheet(new Image("res/clipboard/scrollers.png"),128,128);
 
 
             //add news images here

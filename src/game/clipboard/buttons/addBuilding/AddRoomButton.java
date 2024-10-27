@@ -23,7 +23,7 @@ public class AddRoomButton extends BuyingButton {
     public void render(Graphics g)
     {
         super.render(g);
-        if (price< ResourceManager.getFunds())
+        if (price<= ResourceManager.getFunds())
         {
             g.setColor(Color.green);
         }

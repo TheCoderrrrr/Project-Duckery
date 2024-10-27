@@ -38,9 +38,6 @@ public class ProductRoom  extends Room{
             for (Duck duck : ducks) duck.render(g);
             for (int i=0;i<myButtons.size();i++) myButtons.get(i).render(g);
         }
-        else {
-            //g.drawString("Building "+ getProductName() + " room!\n ETA: "+pauseTimer, x, World.getYDisplace() + y);
-        }
 
     }
     public void update()
@@ -51,11 +48,12 @@ public class ProductRoom  extends Room{
             if (!isBasement() && myButtons.size()!= products.size())
             {
                 myButtons = new ArrayList<>();
-                for (Item p: products)
+                for (int p = 0; p<products.size(); p++)
                 {
-                    if (p != products.get(curItem))
+                    //products.get(p) != products.get(curItem) &&
+                    if (p==(curItem+1))
                     {
-                        myButtons.add(new ChangeRoomButton(this, p, myButtons.size()));
+                        myButtons.add(new ChangeRoomButton(this, products.get(p), myButtons.size()));
                     }
 
                 }
@@ -127,7 +125,6 @@ public class ProductRoom  extends Room{
 
             resetTimer();
             lastCurItem = curItem;
-            myButtons.removeFirst();
         }
 
     }
