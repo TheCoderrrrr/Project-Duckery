@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="should be ready!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/building/roomButtons/RoomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/roomButtons/RoomButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/building/rooms/AdRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/AdRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/building/rooms/ProductRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/ProductRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/building/rooms/ResearchFloor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/building/rooms/ResearchFloor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/clipboard/buttons/HiringButton.java" afterDir="false" />
-    </list>
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="fixed room button error." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -411,7 +404,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730040223309</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="fixed room button error.">
+      <option name="closed" value="true" />
+      <created>1730066375759</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1730066375759</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -426,7 +427,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added images" />
     <MESSAGE value="ducks are able to be picked up and dropped" />
     <MESSAGE value="floor and rooms streamlined, pickup and move ducks" />
     <MESSAGE value="takes time to update rooms!" />
@@ -451,7 +451,8 @@
     <MESSAGE value="epic new research system + paydays clicking fixed" />
     <MESSAGE value="almost ready for release" />
     <MESSAGE value="should be ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="should be ready!" />
+    <MESSAGE value="fixed room button error." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed room button error." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

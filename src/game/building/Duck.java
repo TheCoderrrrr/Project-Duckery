@@ -87,7 +87,7 @@ public class Duck extends Entity {
 
         if(timer2 % 600 == 0)
         {
-            //quack();
+            quack();
         }
     }
     public void quack()
