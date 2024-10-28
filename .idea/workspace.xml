@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="fixed room button error." />
+    <list default="true" id="d280b54e-cda1-4cc2-a482-847d75779c14" name="Changes" comment="return of glorious duck sounds">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -412,7 +414,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730066375759</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="return of glorious duck sounds">
+      <option name="closed" value="true" />
+      <created>1730066732251</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1730066732251</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -427,7 +437,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ducks are able to be picked up and dropped" />
     <MESSAGE value="floor and rooms streamlined, pickup and move ducks" />
     <MESSAGE value="takes time to update rooms!" />
     <MESSAGE value="added room-specific button system" />
@@ -452,7 +461,8 @@
     <MESSAGE value="almost ready for release" />
     <MESSAGE value="should be ready!" />
     <MESSAGE value="fixed room button error." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed room button error." />
+    <MESSAGE value="return of glorious duck sounds" />
+    <option name="LAST_COMMIT_MESSAGE" value="return of glorious duck sounds" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

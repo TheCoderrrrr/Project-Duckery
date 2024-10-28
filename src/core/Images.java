@@ -48,7 +48,7 @@ public class Images {
 
             //title screen + animation
             TITLE_SCREEN = new SpriteSheet(new Image("res/duckery.png"),1920, 1080);
-            TITLE_ANIM = new SpriteSheet (new Image("res/animation.png").getScaledCopy(1920,1080*4),1920, 1080);
+            TITLE_ANIM = new SpriteSheet (new Image("res/animation.png"),1920, 1080);
 
             //clipboard buttons + art
             ADD_DUCK = new Image("res/clipboard/add_duck.png");
